@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e
+
+input=$1
+output=$2
+if [ "X$input" == "X" ]; then
+   echo "Error: No input file was specified"
+   exit 1
+fi
+if [ "X$output" == "X" ]; then
+   echo "Error: No output file was specified"
+   exit 1
+fi
+
+#MODEL_FAMILY=fn1.7-pretrained
+MODEL_FAMILY=fn1.7-20181001
+TGT_OUT=/tmp/$(basename $input).${MODEL_FAMILY}-predicted-targets.conll
+FRM_OUT=/tmp/$(basename $input).${MODEL_FAMILY}-predicted-frames.conll
+
+mydir=`dirname "$(readlink -f "$0")"`
+cd ${mydir}/../../open-sesame
+#cd /home/ymarton/src/open-sesame
+
+python -m sesame.targetid --mode predict \
+                            --model_name ${MODEL_FAMILY}-targetid \
+                            --raw_input $input \
+			    --output $TGT_OUT
+python -m sesame.frameid --mode predict \
+                           --model_name ${MODEL_FAMILY}-frameid \
+			   --raw_input $TGT_OUT \
+			   --output $FRM_OUT
+#                           --raw_input ${OUTDIR}/logs/${MODEL_FAMILY}-targetid/predicted-targets.conll
+#python -m sesame.argid --mode predict \
+#                         --model_name ${MODEL_FAMILY}-argid \
+#                         --raw_input logs/${MODEL_FAMILY}-frameid/predicted-frames.conll
+echo "Sesame done predicting"
+
+#echo "#predicted targets"                                 > $output
+#cat logs/${MODEL_FAMILY}-targetid/predicted-targets.conll >> $output
+#echo "#predicted frames"                                  >> $output
+
+#cat logs/${MODEL_FAMILY}-frameid/predicted-frames.conll   > $output
+cat $FRM_OUT  > $output
+
+#echo "#predicted args"                                    >> $output
+#cat logs/${MODEL_FAMILY}-argid/predicted-args.conll       >> $output
+#echo "#skipping predicted args"                          >> $output
+
+echo "copied tmp output $FRM_OUT  to $output"
+rm $TGT_OUT
+rm $FRM_OUT

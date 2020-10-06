@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+base="$1"
+batchSize=$2
+taskID=$3
+# taskID must be last param! (will be appended by worker-wrapper.sh)
+echo "param 0 = $0"
+echo "batchSize=$batchSize taskID=$taskID"
+
+#let "start = $TaskID * 10"
+#let "end = $start + 9"
+let "start = ${base} + ${taskID} * ${batchSize}"
+echo "start=${start}"
+let "end = $start + $batchSize - 1"
+echo "start=$start end=$end"
+
+#CMD="/usr/bin/python2.7 /data/semfit/ukwac_batch_proc-2-sesame+anim.py $start $end"
+CMD="/users/yuvalm/scripts/RW-relabel/ukwac_batch_proc.py $start $end"
+echo "$CMD"
+$CMD

@@ -1,0 +1,2166 @@
+abandon baby ARG0 3
+abandon baby ARG1 2.8
+
+abandon cat ARG0 4.6
+abandon cat ARG1 4.8
+
+abandon child ARG0 4.6
+abandon child ARG1 3.1
+
+abandon kidnapper ARG0 3.9
+abandon kidnapper ARG1 1.5
+
+accept award ARG0 1.1
+accept award ARG1 6.6
+
+accept friend ARG0 6.1
+accept friend ARG1 5.8
+
+accept neighbor ARG0 5.4
+accept neighbor ARG1 4.4
+
+accept student ARG0 5.9
+accept student ARG1 5.3
+
+accept teenager ARG0 5.5
+accept teenager ARG1 4.1
+
+accuse criminal ARG0 3.4
+accuse criminal ARG1 6.9
+
+accuse defendant ARG0 3.6
+accuse defendant ARG1 6.8
+
+accuse dog ARG0 1.3
+accuse dog ARG1 3.5
+
+accuse prosecutor ARG0 6.8
+accuse prosecutor ARG1 2.6
+
+accuse suspect ARG0 3.3
+accuse suspect ARG1 6.8
+
+accuse witness ARG0 6.4
+accuse witness ARG1 3.2
+
+admire actress ARG0 4.6
+admire actress ARG1 6.4
+
+admire athlete ARG0 4.8
+admire athlete ARG1 6.4
+
+admire disciple ARG0 5.6
+admire disciple ARG1 4.1
+
+admire fan ARG0 6.8
+admire fan ARG1 1.7
+
+admire groupie ARG0 6.9
+admire groupie ARG1 1.9
+
+adopt baby ARG0 1.4
+adopt baby ARG1 6.4
+
+adopt child ARG0 2
+adopt child ARG1 6.2
+
+adopt committee ARG0 5.5
+adopt committee ARG1 3.3
+
+adopt couple ARG0 5.9
+adopt couple ARG1 1.6
+
+adopt policy ARG0 2.1
+adopt policy ARG1 6
+
+applaud actress ARG0 2.9
+applaud actress ARG1 6.5
+
+applaud critic ARG0 5
+applaud critic ARG1 1.5
+
+applaud director ARG0 4.8
+applaud director ARG1 4.5
+
+applaud musician ARG0 2.9
+applaud musician ARG1 6.8
+
+applaud performance ARG0 1.2
+applaud performance ARG1 6.7
+
+approve candidate ARG0 4
+approve candidate ARG1 4.8
+
+approve committee ARG0 6.2
+approve committee ARG1 3.8
+
+approve contractor ARG0 5.7
+approve contractor ARG1 3.6
+
+approve plan ARG0 1.8
+approve plan ARG1 5.3
+
+approve policy ARG0 2.3
+approve policy ARG1 5.2
+
+arrest cop ARG0 6.7
+arrest cop ARG1 1.6
+
+arrest corporal ARG0 5
+arrest corporal ARG1 1.5
+
+arrest crook ARG0 1.2
+arrest crook ARG1 5.9
+
+arrest guard ARG0 5
+arrest guard ARG1 1.6
+
+arrest police ARG0 6.4
+arrest police ARG1 1.5
+
+arrest suspect ARG0 1.4
+arrest suspect ARG1 5.5
+
+assist employee ARG0 6
+assist employee ARG1 5.3
+
+assist grandmother ARG0 6
+assist grandmother ARG1 6.1
+
+assist host ARG0 6.1
+assist host ARG1 3.4
+
+assist moron ARG0 1.7
+assist moron ARG1 3.4
+
+attack boxer ARG0 6.4
+attack boxer ARG1 6.1
+
+attack fort ARG0 1.6
+attack fort ARG1 6
+
+attack infantry ARG0 5.6
+attack infantry ARG1 5.7
+
+attack opinion ARG0 3.2
+attack opinion ARG1 6.5
+
+attack pacifist ARG0 1.9
+attack pacifist ARG1 3.4
+
+attack troops ARG0 6.6
+attack troops ARG1 6.2
+
+audit accountant ARG0 6
+audit accountant ARG1 4
+
+audit businessman ARG0 3.8
+audit businessman ARG1 6
+
+audit citizen ARG0 2.2
+audit citizen ARG1 5.5
+
+audit corporation ARG0 4.8
+audit corporation ARG1 6.1
+
+audit government ARG0 6.2
+audit government ARG1 3
+
+audit taxpayer ARG0 2.7
+audit taxpayer ARG1 6.2
+
+beat bully ARG0 6.5
+beat bully ARG1 1.9
+
+beat egg ARG0 1.2
+beat egg ARG1 6.1
+
+beat parent ARG0 3.7
+beat parent ARG1 2.2
+
+beat wimp ARG0 1.7
+beat wimp ARG1 4.9
+
+betray liar ARG0 6.9
+betray liar ARG1 4.7
+
+betray partner ARG0 3.5
+betray partner ARG1 4.5
+
+betray wife ARG0 3.4
+betray wife ARG1 4.4
+
+blame skydiver ARG0 2
+blame skydiver ARG1 1.5
+
+blame student ARG0 5.3
+blame student ARG1 4.7
+
+blame weatherman ARG0 3.4
+blame weatherman ARG1 5.5
+
+blame writer ARG0 4.5
+blame writer ARG1 4.9
+
+bother mechanic ARG0 2.8
+bother mechanic ARG1 3.4
+
+bother receptionist ARG0 2.1
+bother receptionist ARG1 4.7
+
+break child ARG0 6
+break child ARG1 1.4
+
+break horse ARG0 3.8
+break horse ARG1 2.9
+
+break vase ARG0 1.1
+break vase ARG1 5.9
+
+break window ARG0 1
+break window ARG1 6
+
+bribe judge ARG0 1.6
+bribe judge ARG1 4.5
+
+bribe manager ARG0 3.6
+bribe manager ARG1 5.1
+
+bribe undertaker ARG0 2.2
+bribe undertaker ARG1 2.5
+
+bury bone ARG0 1.3
+bury bone ARG1 6.2
+
+bury evidence ARG0 1.4
+bury evidence ARG1 4.3
+
+bury undertaker ARG0 6.7
+bury undertaker ARG1 2.3
+
+bury victim ARG0 1.8
+bury victim ARG1 5.3
+
+calm family ARG0 5.9
+calm family ARG1 4.1
+
+calm hostage ARG0 2.6
+calm hostage ARG1 4.4
+
+calm small_child ARG0 2.2
+calm small_child ARG1 6.4
+
+calm teacher ARG0 5.4
+calm teacher ARG1 2.5
+
+capture archeologist ARG0 5.1
+capture archeologist ARG1 1.4
+
+capture army ARG0 6.5
+capture army ARG1 3.1
+
+capture criminal ARG0 3.6
+capture criminal ARG1 6.1
+
+capture fugitive ARG0 2.6
+capture fugitive ARG1 5.1
+
+capture hunter ARG0 6
+capture hunter ARG1 2
+
+capture monkey ARG0 3.2
+capture monkey ARG1 3.9
+
+capture policeman ARG0 6.4
+capture policeman ARG1 2.1
+
+capture prisoner ARG0 1.8
+capture prisoner ARG1 5
+
+capture rabbit ARG0 2.3
+capture rabbit ARG1 5.5
+
+capture soldier ARG0 6.2
+capture soldier ARG1 4.7
+
+capture tourist ARG0 4.1
+capture tourist ARG1 2.5
+
+capture troop ARG0 6
+capture troop ARG1 3.9
+
+capture valley ARG0 1.4
+capture valley ARG1 1.8
+
+caress dancer ARG0 3.6
+caress dancer ARG1 4
+
+caress electrician ARG0 1.5
+caress electrician ARG1 1.3
+
+caress grandmother ARG0 6.2
+caress grandmother ARG1 4.6
+
+caress hostess ARG0 3
+caress hostess ARG1 2.7
+
+carry furniture ARG0 1.6
+carry furniture ARG1 5.3
+
+carry invalid ARG0 1.3
+carry invalid ARG1 4.3
+
+carry newborn ARG0 1.2
+carry newborn ARG1 6.2
+
+carry orderly ARG0 5.3
+carry orderly ARG1 1.6
+
+carry postman ARG0 6.8
+carry postman ARG1 1.6
+
+challenge aristocrat ARG0 3.9
+challenge aristocrat ARG1 3.6
+
+challenge coward ARG0 1.2
+challenge coward ARG1 3.8
+
+challenge knight ARG0 6.7
+challenge knight ARG1 5.5
+
+challenge moron ARG0 2.2
+challenge moron ARG1 3.1
+
+chase bull ARG0 6.3
+chase bull ARG1 2.5
+
+chase car ARG0 3.6
+chase car ARG1 4.5
+
+chase lion ARG0 6.6
+chase lion ARG1 2.6
+
+chase mouse ARG0 3.1
+chase mouse ARG1 5.5
+
+chase rabbit ARG0 3.3
+chase rabbit ARG1 5.1
+
+cheer athlete ARG0 6.2
+cheer athlete ARG1 6.6
+
+cheer crowd ARG0 6.4
+cheer crowd ARG1 2.9
+
+cheer farmer ARG0 1.9
+cheer farmer ARG1 1.7
+
+cheer performance ARG0 1.5
+cheer performance ARG1 5.4
+
+cheer quarterback ARG0 3.8
+cheer quarterback ARG1 5.2
+
+cheer spectators ARG0 6.7
+cheer spectators ARG1 1.3
+
+cheer touchdown ARG0 1.4
+cheer touchdown ARG1 6
+
+choose candidate ARG0 4
+choose candidate ARG1 5.6
+
+choose committee ARG0 6.4
+choose committee ARG1 4.3
+
+choose computer ARG0 3.3
+choose computer ARG1 4.3
+
+choose contestant ARG0 6
+choose contestant ARG1 5.3
+
+choose customer ARG0 6.6
+choose customer ARG1 1.8
+
+choose shopper ARG0 6.4
+choose shopper ARG1 1.9
+
+conquer king ARG0 6.1
+conquer king ARG1 3.8
+
+conquer kingdom ARG0 3.1
+conquer kingdom ARG1 5.7
+
+conquer peasants ARG0 2.9
+conquer peasants ARG1 4.5
+
+consider alternatives ARG0 1.3
+consider alternatives ARG1 6.6
+
+consider carpenter ARG0 5.1
+consider carpenter ARG1 5.1
+
+consider coroner ARG0 5.8
+consider coroner ARG1 3.4
+
+consider golfer ARG0 5.2
+consider golfer ARG1 2.6
+
+consider scientists ARG0 6.6
+consider scientists ARG1 4
+
+consider secretary ARG0 5.2
+consider secretary ARG1 4.6
+
+console bride ARG0 3.4
+console bride ARG1 4.2
+
+console coward ARG0 2.1
+console coward ARG1 3.9
+
+console secretary ARG0 3.1
+console secretary ARG1 2.2
+
+console widow ARG0 3.6
+console widow ARG1 6.6
+
+convict criminal ARG0 1.4
+convict criminal ARG1 5.9
+
+convict defendant ARG0 2.4
+convict defendant ARG1 4.5
+
+convict judge ARG0 6.4
+convict judge ARG1 1.5
+
+convict juror ARG0 6.6
+convict juror ARG1 1.3
+
+convict suspect ARG0 1.8
+convict suspect ARG1 5.5
+
+convince aunt ARG0 3.3
+convince aunt ARG1 3.9
+
+convince hypnotist ARG0 6.2
+convince hypnotist ARG1 1.9
+
+convince inmate ARG0 3.5
+convince inmate ARG1 4.3
+
+convince spy ARG0 5
+convince spy ARG1 3.3
+
+corner fugitive ARG0 3.7
+corner fugitive ARG1 4.9
+
+corner horse ARG0 3.3
+corner horse ARG1 3.9
+
+corner mouse ARG0 1.9
+corner mouse ARG1 5.9
+
+corner nurse ARG0 3
+corner nurse ARG1 2.3
+
+crucify president ARG0 2.6
+crucify president ARG1 3.1
+
+crucify savior ARG0 2.3
+crucify savior ARG1 4.9
+
+crucify teacher ARG0 1.8
+crucify teacher ARG1 2.2
+
+crush avalanche ARG0 6.9
+crush avalanche ARG1 1.6
+
+crush buddy ARG0 3
+crush buddy ARG1 2.7
+
+crush climber ARG0 2.6
+crush climber ARG1 5
+
+crush skunk ARG0 1.4
+crush skunk ARG1 4
+
+cure businesswoman ARG0 1.9
+cure businesswoman ARG1 3
+
+cure doctor ARG0 6.8
+cure doctor ARG1 3.8
+
+cure drug ARG0 6.3
+cure drug ARG1 1.8
+
+cure patient ARG0 1.4
+cure patient ARG1 6.1
+
+cure person ARG0 3.2
+cure person ARG1 5.6
+
+cure physician ARG0 6.7
+cure physician ARG1 3.1
+
+cure saint ARG0 3.7
+cure saint ARG1 2.3
+
+cure soldier ARG0 3
+cure soldier ARG1 4.3
+
+cure treatment ARG0 5.8
+cure treatment ARG1 1.3
+
+cure veterinarian ARG0 6.4
+cure veterinarian ARG1 3.3
+
+describe boy ARG0 6.2
+describe boy ARG1 5.8
+
+describe cashier ARG0 4.7
+describe cashier ARG1 3.2
+
+describe explorer ARG0 6.9
+describe explorer ARG1 3.9
+
+describe necklace ARG0 1.2
+describe necklace ARG1 5.9
+
+describe person ARG0 6.5
+describe person ARG1 6.3
+
+desert infant ARG0 1.3
+desert infant ARG1 2.7
+
+desert turtle ARG0 1.6
+desert turtle ARG1 2.7
+
+desert wife ARG0 3.1
+desert wife ARG1 4.4
+
+devour carrot ARG0 1
+devour carrot ARG1 5.7
+
+devour cookie ARG0 1
+devour cookie ARG1 6.7
+
+devour fish ARG0 3.9
+devour fish ARG1 6.1
+
+devour glutton ARG0 5.3
+devour glutton ARG1 1.6
+
+devour goose ARG0 3.7
+devour goose ARG1 5.2
+
+devour mouse ARG0 4.2
+devour mouse ARG1 4.6
+
+devour pig ARG0 5.3
+devour pig ARG1 5.6
+
+devour rabbit ARG0 3.3
+devour rabbit ARG1 5.7
+
+devour snake ARG0 6.2
+devour snake ARG1 3.9
+
+dismiss principal ARG0 6.3
+dismiss principal ARG1 2
+
+dismiss pupil ARG0 1.5
+dismiss pupil ARG1 5.5
+
+dismiss student ARG0 1.5
+dismiss student ARG1 5.9
+
+dismiss teacher ARG0 6.8
+dismiss teacher ARG1 2.5
+
+disobey brat ARG0 6.7
+disobey brat ARG1 3.1
+
+disobey children ARG0 6.1
+disobey children ARG1 3.3
+
+disobey commanders ARG0 1.9
+disobey commanders ARG1 3.6
+
+disobey orders ARG0 1.2
+disobey orders ARG1 5.4
+
+disobey troops ARG0 2.6
+disobey troops ARG1 2.8
+
+disown babysitter ARG0 1.8
+disown babysitter ARG1 2.3
+
+disown daughter ARG0 2.4
+disown daughter ARG1 3
+
+disown slave ARG0 2
+disown slave ARG1 3.7
+
+do laborer ARG0 6.5
+do laborer ARG1 1.7
+
+do sloth ARG0 2.3
+do sloth ARG1 2
+
+do vegetable ARG0 1.9
+do vegetable ARG1 1.5
+
+do work ARG0 1.5
+do work ARG1 6.4
+
+draw artist ARG0 6.6
+draw artist ARG1 2.1
+
+draw model ARG0 2
+draw model ARG1 6.4
+
+draw picture ARG0 1.2
+draw picture ARG1 6.7
+
+draw poster ARG0 1.1
+draw poster ARG1 5.9
+
+eat chicken ARG0 5.9
+eat chicken ARG1 6.7
+
+eat man ARG0 6.9
+eat man ARG1 1.7
+
+eat poultry ARG0 1.2
+eat poultry ARG1 6.6
+
+eat steak ARG0 1
+eat steak ARG1 6.9
+
+enslave army ARG0 5.4
+enslave army ARG1 2.9
+
+enslave peasants ARG0 1.7
+enslave peasants ARG1 5.6
+
+enslave pirates ARG0 6.3
+enslave pirates ARG1 2.7
+
+enslave victim ARG0 1.5
+enslave victim ARG1 4.3
+
+entertain audience ARG0 1.7
+entertain audience ARG1 6.7
+
+entertain businessman ARG0 5
+entertain businessman ARG1 4.5
+
+entertain comedian ARG0 6.9
+entertain comedian ARG1 2.7
+
+entertain idea ARG0 5.1
+entertain idea ARG1 4.2
+
+entertain patron ARG0 1.7
+entertain patron ARG1 4.7
+
+entertain stripper ARG0 7
+entertain stripper ARG1 2.2
+
+evaluate applicant ARG0 3.3
+evaluate applicant ARG1 5.7
+
+evaluate automobile ARG0 1.2
+evaluate automobile ARG1 4.5
+
+evaluate committee ARG0 6.3
+evaluate committee ARG1 3.9
+
+evaluate instructor ARG0 6.1
+evaluate instructor ARG1 4
+
+evaluate possibilities ARG0 1.9
+evaluate possibilities ARG1 6.3
+
+evaluate student ARG0 5.4
+evaluate student ARG1 5.5
+
+evaluate supervisor ARG0 6.7
+evaluate supervisor ARG1 4.3
+
+examine defendant ARG0 2.7
+examine defendant ARG1 5.8
+
+examine doctor ARG0 6.6
+examine doctor ARG1 1.9
+
+examine evidence ARG0 1.4
+examine evidence ARG1 6.3
+
+examine horse ARG0 1.4
+examine horse ARG1 4.9
+
+examine patient ARG0 2.1
+examine patient ARG1 6.3
+
+examine report ARG0 3.2
+examine report ARG1 6.3
+
+examine scientist ARG0 6.7
+examine scientist ARG1 2.3
+
+excuse auditor ARG0 3.5
+excuse auditor ARG1 2.6
+
+excuse drummer ARG0 2.7
+excuse drummer ARG1 2.1
+
+excuse optometrist ARG0 3.9
+excuse optometrist ARG1 2.3
+
+excuse prince ARG0 4
+excuse prince ARG1 4.4
+
+execute hangman ARG0 5.1
+execute hangman ARG1 3.9
+
+execute hostages ARG0 1.7
+execute hostages ARG1 4.9
+
+execute martyr ARG0 2.7
+execute martyr ARG1 4
+
+execute martyr ARG0 2.1
+execute martyr ARG1 4.5
+
+execute murderer ARG0 6.6
+execute murderer ARG1 4.9
+
+execute nun ARG0 1.1
+execute nun ARG1 1.3
+
+execute plumber ARG0 1.6
+execute plumber ARG1 1.4
+
+execute strategy ARG0 1.9
+execute strategy ARG1 4.8
+
+execute terrorists ARG0 6.1
+execute terrorists ARG1 4
+
+exile criminal ARG0 2.2
+exile criminal ARG1 5.5
+
+exile dictator ARG0 6
+exile dictator ARG1 4.1
+
+expect housewife ARG0 4.8
+expect housewife ARG1 2.6
+
+expect mailman ARG0 2.5
+expect mailman ARG1 4.8
+
+expect package ARG0 1.3
+expect package ARG1 5.5
+
+expect plumber ARG0 3.1
+expect plumber ARG1 4.8
+
+expect salesman ARG0 3.7
+expect salesman ARG1 2.5
+
+fight boxer ARG0 6.8
+fight boxer ARG1 6.1
+
+fight landlord ARG0 4.4
+fight landlord ARG1 4.1
+
+fight maniac ARG0 6.1
+fight maniac ARG1 3.2
+
+fight pacifist ARG0 1.4
+fight pacifist ARG1 2
+
+fight wrestler ARG0 6.2
+fight wrestler ARG1 5.8
+
+find archeologist ARG0 6.4
+find archeologist ARG1 1.8
+
+find child ARG0 5.4
+find child ARG1 4.1
+
+find goat ARG0 2.9
+find goat ARG1 2.8
+
+find kitten ARG0 4.3
+find kitten ARG1 4.7
+
+find singer ARG0 2.9
+find singer ARG1 3.5
+
+fire employee ARG0 1.9
+fire employee ARG1 6.4
+
+fire employer ARG0 6.1
+fire employer ARG1 2.4
+
+fire laborer ARG0 1.6
+fire laborer ARG1 6.1
+
+fire owner ARG0 6.3
+fire owner ARG1 1.9
+
+fire supervisor ARG0 5.9
+fire supervisor ARG1 3.4
+
+flatter aristocrat ARG0 3.4
+flatter aristocrat ARG1 4.1
+
+flatter girl ARG0 5.7
+flatter girl ARG1 6.2
+
+flatter glutton ARG0 2.3
+flatter glutton ARG1 1.8
+
+flatter psychoanalyst ARG0 3
+flatter psychoanalyst ARG1 2.2
+
+flog guard ARG0 4.8
+flog guard ARG1 1.9
+
+flog inmate ARG0 4.1
+flog inmate ARG1 4.1
+
+flog prisoner ARG0 3.5
+flog prisoner ARG1 4.5
+
+flog slave ARG0 2.3
+flog slave ARG1 5.3
+
+frighten baby ARG0 2
+frighten baby ARG1 5.5
+
+frighten cat ARG0 3.1
+frighten cat ARG1 5.5
+
+frighten hiker ARG0 1.8
+frighten hiker ARG1 3.8
+
+frighten maid ARG0 1.2
+frighten maid ARG1 3.2
+
+frighten monster ARG0 6.4
+frighten monster ARG1 1.8
+
+frighten nurse ARG0 3.8
+frighten nurse ARG1 3
+
+frighten snake ARG0 6.2
+frighten snake ARG1 3.9
+
+govern president ARG0 6.7
+govern president ARG1 2.7
+
+govern territory ARG0 1.5
+govern territory ARG1 6.7
+
+govern villagers ARG0 3.2
+govern villagers ARG1 6.5
+
+grab banana ARG0 1
+grab banana ARG1 6.2
+
+grab quarterback ARG0 6.1
+grab quarterback ARG1 5.3
+
+grab stewardess ARG0 4.6
+grab stewardess ARG1 3
+
+grade examination ARG0 4
+grade examination ARG1 6.5
+
+grade foreman ARG0 4.5
+grade foreman ARG1 3.2
+
+grade paper ARG0 1.1
+grade paper ARG1 6.5
+
+grade professor ARG0 6.7
+grade professor ARG1 2.4
+
+grade pupil ARG0 2.3
+grade pupil ARG1 6.8
+
+grade student ARG0 2.4
+grade student ARG1 6.8
+
+grade teacher ARG0 6.9
+grade teacher ARG1 2.6
+
+grade undergraduate ARG0 2.4
+grade undergraduate ARG1 7
+
+grasp child ARG0 5.4
+grasp child ARG1 5.7
+
+grasp hammer ARG0 1
+grasp hammer ARG1 6.3
+
+grasp reporter ARG0 4.8
+grasp reporter ARG1 3.1
+
+grow crops ARG0 3.8
+grow crops ARG1 6
+
+grow flowers ARG0 2.8
+grow flowers ARG1 5.9
+
+grow pigs ARG0 1.8
+grow pigs ARG1 3.1
+
+grow rabbits ARG0 2
+grow rabbits ARG1 3.1
+
+haunt ghost ARG0 6.3
+haunt ghost ARG1 2.5
+
+haunt memory ARG0 5.8
+haunt memory ARG1 4.9
+
+haunt salesman ARG0 2.2
+haunt salesman ARG1 1.8
+
+haunt woman ARG0 2.3
+haunt woman ARG1 3.2
+
+help assistant ARG0 6.3
+help assistant ARG1 3.8
+
+help cause ARG0 2.5
+help cause ARG1 5.6
+
+help fireman ARG0 6.7
+help fireman ARG1 3.9
+
+help gardener ARG0 4.5
+help gardener ARG1 4
+
+help victim ARG0 1.9
+help victim ARG1 5.9
+
+hire applicant ARG0 1.3
+hire applicant ARG1 5.6
+
+hire boss ARG0 6.7
+hire boss ARG1 2.9
+
+hire chairman ARG0 4.5
+hire chairman ARG1 2.7
+
+hire employee ARG0 1.9
+hire employee ARG1 5.6
+
+hire friend ARG0 4.1
+hire friend ARG1 4.4
+
+hire manager ARG0 6.7
+hire manager ARG1 3.6
+
+hire supervisor ARG0 6.3
+hire supervisor ARG1 4.5
+
+hit director ARG0 2.7
+hit director ARG1 1.9
+
+hit guard ARG0 5.1
+hit guard ARG1 3.6
+
+hit undergraduate ARG0 2.5
+hit undergraduate ARG1 1.9
+
+hunt cowboys ARG0 4.4
+hunt cowboys ARG1 1.5
+
+hunt divers ARG0 4.4
+hunt divers ARG1 1.6
+
+hunt fugitives ARG0 2.9
+hunt fugitives ARG1 5.6
+
+hunt lion ARG0 6.4
+hunt lion ARG1 5.1
+
+hunt mouse ARG0 2.6
+hunt mouse ARG1 5
+
+hunt rabbit ARG0 2.4
+hunt rabbit ARG1 6.7
+
+hypnotize butterfly ARG0 2.3
+hypnotize butterfly ARG1 1.1
+
+hypnotize patient ARG0 1.3
+hypnotize patient ARG1 5.3
+
+hypnotize pendulum ARG0 4.5
+hypnotize pendulum ARG1 1.3
+
+hypnotize psychoanalyst ARG0 5.8
+hypnotize psychoanalyst ARG1 2
+
+hypnotize volunteer ARG0 1.4
+hypnotize volunteer ARG1 3.9
+
+identify jewelry ARG0 1.7
+identify jewelry ARG1 4.4
+
+identify jogger ARG0 4.1
+identify jogger ARG1 3.6
+
+identify nurse ARG0 5.8
+identify nurse ARG1 4.2
+
+identify pilot ARG0 5.7
+identify pilot ARG1 3.4
+
+identify thief ARG0 4.2
+identify thief ARG1 4.4
+
+indicate man ARG0 3.9
+indicate man ARG1 3.7
+
+indicate newscaster ARG0 6.2
+indicate newscaster ARG1 4.1
+
+indicate video ARG0 4.8
+indicate video ARG1 3.3
+
+inject janitor ARG0 1.9
+inject janitor ARG1 1.7
+
+inject patient ARG0 2.8
+inject patient ARG1 6.4
+
+injure supervisor ARG0 1.9
+injure supervisor ARG1 1.5
+
+injure butterfly ARG0 1.1
+injure butterfly ARG1 4.3
+
+injure peasant ARG0 2.4
+injure peasant ARG1 3.7
+
+inspire worker ARG0 4.1
+inspire worker ARG1 4.7
+
+inspire mentor ARG0 6.4
+inspire mentor ARG1 3.5
+
+inspire poet ARG0 6.1
+inspire poet ARG1 6.3
+
+inspire veterinarian ARG0 3.5
+inspire veterinarian ARG1 3.4
+
+instruct coach ARG0 6.7
+instruct coach ARG1 2.1
+
+instruct janitor ARG0 1.7
+instruct janitor ARG1 3.9
+
+instruct judge ARG0 5.3
+instruct judge ARG1 1.7
+
+instruct jury ARG0 3.2
+instruct jury ARG1 3.9
+
+instruct novice ARG0 1.6
+instruct novice ARG1 5.3
+
+instruct player ARG0 3.7
+instruct player ARG1 6.6
+
+instruct professor ARG0 6.8
+instruct professor ARG1 1.9
+
+instruct student ARG0 2.6
+instruct student ARG1 6.2
+
+instruct trainee ARG0 1.7
+instruct trainee ARG1 6.2
+
+interrogate culprit ARG0 2
+interrogate culprit ARG1 5.4
+
+interrogate inspector ARG0 6.3
+interrogate inspector ARG1 1.6
+
+interrogate police ARG0 6.3
+interrogate police ARG1 2.1
+
+interrogate prisoner ARG0 1.7
+interrogate prisoner ARG1 5.1
+
+interrogate suspect ARG0 1.7
+interrogate suspect ARG1 5.8
+
+interrogate warden ARG0 5.4
+interrogate warden ARG1 2.1
+
+interview applicant ARG0 1.6
+interview applicant ARG1 6.6
+
+interview athlete ARG0 2.3
+interview athlete ARG1 6.1
+
+interview candidate ARG0 2.6
+interview candidate ARG1 6.6
+
+interview dancer ARG0 2.1
+interview dancer ARG1 4.3
+
+interview housewife ARG0 1.8
+interview housewife ARG1 1.9
+
+interview newspaper ARG0 4.1
+interview newspaper ARG1 1.5
+
+interview performer ARG0 2
+interview performer ARG1 6.2
+
+interview reporter ARG0 6.8
+interview reporter ARG1 2.7
+
+investigate auditor ARG0 6.2
+investigate auditor ARG1 2.2
+
+investigate crime ARG0 1.2
+investigate crime ARG1 6.6
+
+investigate detective ARG0 6.4
+investigate detective ARG1 1.9
+
+investigate gangster ARG0 3.5
+investigate gangster ARG1 6.4
+
+investigate punk ARG0 1.9
+investigate punk ARG1 4.2
+
+investigate suspect ARG0 2.4
+investigate suspect ARG1 6.4
+
+investigate theft ARG0 1.2
+investigate theft ARG1 6.8
+
+invite buddy ARG0 6.5
+invite buddy ARG1 6.3
+
+invite friend ARG0 6.6
+invite friend ARG1 6.4
+
+invite guest ARG0 1.9
+invite guest ARG1 6.4
+
+invite host ARG0 6.5
+invite host ARG1 2.2
+
+invite organizer ARG0 5
+invite organizer ARG1 3.4
+
+invite relative ARG0 5.8
+invite relative ARG1 6
+
+invite visitor ARG0 1.9
+invite visitor ARG1 5.5
+
+involve instructor ARG0 5.2
+involve instructor ARG1 3.4
+
+involve lieutenant ARG0 4
+involve lieutenant ARG1 3.1
+
+involve lover ARG0 6.2
+involve lover ARG1 6.1
+
+involve woman ARG0 4.2
+involve woman ARG1 5.3
+
+involve dog ARG0 2
+involve dog ARG1 5
+
+kick donkey ARG0 6.1
+kick donkey ARG1 3.4
+
+kick girl ARG0 4.6
+kick girl ARG1 3.9
+
+kick janitor ARG0 2
+kick janitor ARG1 1.5
+
+kick punter ARG0 5.4
+kick punter ARG1 2.1
+
+kick wimp ARG0 1.6
+kick wimp ARG1 5.4
+
+kill assassin ARG0 7
+kill assassin ARG1 3.5
+
+kill farmer ARG0 3.9
+kill farmer ARG1 1.6
+
+kill secretary ARG0 1.2
+kill secretary ARG1 1.5
+
+kill victim ARG0 1.7
+kill victim ARG1 5.7
+
+kiss bride ARG0 6.7
+kiss bride ARG1 6.3
+
+kiss dog ARG0 2.6
+kiss dog ARG1 3.4
+
+kiss frog ARG0 1.2
+kiss frog ARG1 1.7
+
+kiss lover ARG0 6.9
+kiss lover ARG1 6.6
+
+kiss niece ARG0 4.9
+kiss niece ARG1 4.9
+
+kiss princess ARG0 5.9
+kiss princess ARG1 5.9
+
+lecture child ARG0 1.7
+lecture child ARG1 5.9
+
+lecture coach ARG0 6.1
+lecture coach ARG1 1.7
+
+lecture cop ARG0 5.5
+lecture cop ARG1 3
+
+lecture freshman ARG0 1.9
+lecture freshman ARG1 5.4
+
+lecture parent ARG0 6.9
+lecture parent ARG1 3.2
+
+lecture policeman ARG0 5.9
+lecture policeman ARG1 2.3
+
+lecture student ARG0 2.3
+lecture student ARG1 6.9
+
+lecture teacher ARG0 6.8
+lecture teacher ARG1 2.1
+
+lecture teenager ARG0 3.1
+lecture teenager ARG1 6
+
+lift bellboy ARG0 6.5
+lift bellboy ARG1 2.6
+
+lift bricks ARG0 1.3
+lift bricks ARG1 5.4
+
+lift infant ARG0 2.5
+lift infant ARG1 5.9
+
+lift kitten ARG0 1.9
+lift kitten ARG1 5.4
+
+lift puppy ARG0 2
+lift puppy ARG1 5.6
+
+lift workers ARG0 6.1
+lift workers ARG1 2.1
+
+love girl ARG0 6.2
+love girl ARG1 6.6
+
+love grandmother ARG0 6.6
+love grandmother ARG1 6.6
+
+love husband ARG0 6.6
+love husband ARG1 6.8
+
+love teacher ARG0 5.6
+love teacher ARG1 5.2
+
+love textbook ARG0 1
+love textbook ARG1 1.9
+
+marry bride ARG0 6.4
+marry bride ARG1 7
+
+marry contestant ARG0 2.1
+marry contestant ARG1 2.6
+
+marry minister ARG0 4.7
+marry minister ARG1 3.2
+
+marry priest ARG0 4
+marry priest ARG1 1.3
+
+marry teenager ARG0 3.4
+marry teenager ARG1 3
+
+overthrow dictator ARG0 4.3
+overthrow dictator ARG1 5.3
+
+overthrow government ARG0 3.1
+overthrow government ARG1 4.8
+
+overthrow peasants ARG0 4.2
+overthrow peasants ARG1 2.1
+
+overthrow revolutionary ARG0 5.8
+overthrow revolutionary ARG1 2.7
+
+paint artist ARG0 6.7
+paint artist ARG1 6.4
+
+paint landscape ARG0 1.3
+paint landscape ARG1 1.5
+
+paint model ARG0 1.8
+paint model ARG1 2
+
+paint princess ARG0 2.4
+paint princess ARG1 2.4
+
+parade delinquent ARG0 2.8
+parade delinquent ARG1 3.5
+
+parade group ARG0 5.5
+parade group ARG1 3.7
+
+parade regiment ARG0 3.7
+parade regiment ARG1 4.2
+
+parade sparrow ARG0 1.4
+parade sparrow ARG1 2.1
+
+pardon judge ARG0 5.8
+pardon judge ARG1 2.1
+
+pardon juror ARG0 4.3
+pardon juror ARG1 2.9
+
+pardon traitor ARG0 1.2
+pardon traitor ARG1 2.5
+
+pay carpenter ARG0 3.7
+pay carpenter ARG1 5.3
+
+pay cashier ARG0 3.1
+pay cashier ARG1 5.4
+
+pay customer ARG0 6.5
+pay customer ARG1 1.6
+
+pay man ARG0 5.5
+pay man ARG1 3.6
+
+pay nurse ARG0 2.7
+pay nurse ARG1 3.6
+
+pay ransom ARG0 2.4
+pay ransom ARG1 4.5
+
+pay tax ARG0 1.6
+pay tax ARG1 5.4
+
+picture electrician ARG0 2.7
+picture electrician ARG1 1.6
+
+picture husband ARG0 4.6
+picture husband ARG1 5.1
+
+picture model ARG0 4.8
+picture model ARG1 6.9
+
+picture mother ARG0 4.9
+picture mother ARG1 5.1
+
+praise candidate ARG0 3
+praise candidate ARG1 4.5
+
+praise champion ARG0 4.6
+praise champion ARG1 7
+
+praise chemist ARG0 2.7
+praise chemist ARG1 4.1
+
+praise daredevil ARG0 3
+praise daredevil ARG1 4.6
+
+present announcer ARG0 6.7
+present announcer ARG1 2.6
+
+present delegate ARG0 5.5
+present delegate ARG1 4.1
+
+present lawyer ARG0 6.5
+present lawyer ARG1 3.1
+
+present nominee ARG0 4.2
+present nominee ARG1 5.5
+
+propose president ARG0 6.1
+propose president ARG1 3.1
+
+propose program ARG0 3.1
+propose program ARG1 6.2
+
+propose solution ARG0 1.5
+propose solution ARG1 6.6
+
+propose speaker ARG0 5.9
+propose speaker ARG1 2.3
+
+punish babysitter ARG0 4.4
+punish babysitter ARG1 2.1
+
+punish child ARG0 1.5
+punish child ARG1 5.8
+
+punish delinquent ARG0 1.7
+punish delinquent ARG1 5.7
+
+punish mother ARG0 6.4
+punish mother ARG1 2.3
+
+punish parent ARG0 6.5
+punish parent ARG1 1.5
+
+punish uncle ARG0 3.2
+punish uncle ARG1 1.9
+
+question criminal ARG0 2
+question criminal ARG1 6.6
+
+question defendant ARG0 2.8
+question defendant ARG1 6.6
+
+question lawyer ARG0 6.5
+question lawyer ARG1 2.9
+
+question waitress ARG0 5.3
+question waitress ARG1 5.1
+
+question witness ARG0 2
+question witness ARG1 6.7
+
+read author ARG0 6.3
+read author ARG1 3.4
+
+read book ARG0 1.3
+read book ARG1 6.6
+
+read historian ARG0 6.8
+read historian ARG1 2.8
+
+read philosopher ARG0 6.5
+read philosopher ARG1 3
+
+recognize celebrity ARG0 3.8
+recognize celebrity ARG1 6.8
+
+recognize fugitive ARG0 3
+recognize fugitive ARG1 5.3
+
+recognize man ARG0 5.5
+recognize man ARG1 4.8
+
+recognize van ARG0 1
+recognize van ARG1 4.1
+
+recognize witness ARG0 6.1
+recognize witness ARG1 3.9
+
+record man ARG0 5
+record man ARG1 2.8
+
+record message ARG0 1.8
+record message ARG1 5.6
+
+record performer ARG0 5.7
+record performer ARG1 5.1
+
+record scientist ARG0 6.3
+record scientist ARG1 2.9
+
+record singer ARG0 6.7
+record singer ARG1 5.5
+
+release cat ARG0 2.3
+release cat ARG1 3.9
+
+release conservationist ARG0 2.3
+release conservationist ARG1 1.9
+
+release hostage ARG0 1.8
+release hostage ARG1 5.5
+
+release inmate ARG0 1.5
+release inmate ARG1 5.9
+
+release jailer ARG0 5.4
+release jailer ARG1 2.6
+
+release priest ARG0 4.2
+release priest ARG1 2.1
+
+release prisoner ARG0 1.9
+release prisoner ARG1 5.1
+
+release warden ARG0 5.8
+release warden ARG1 1.6
+
+request doctor ARG0 5.9
+request doctor ARG1 5.2
+
+request equipment ARG0 1.1
+request equipment ARG1 5.1
+
+request prostitute ARG0 4.1
+request prostitute ARG1 4.3
+
+request soldier ARG0 4.4
+request soldier ARG1 2.9
+
+request specialist ARG0 5.7
+request specialist ARG1 5.5
+
+rescue child ARG0 2
+rescue child ARG1 5.3
+
+rescue hostage ARG0 1.4
+rescue hostage ARG1 5.2
+
+rescue knight ARG0 6
+rescue knight ARG1 1.7
+
+rescue lieutenant ARG0 5.3
+rescue lieutenant ARG1 3
+
+rescue maiden ARG0 1.6
+rescue maiden ARG1 4.9
+
+rescue mercenary ARG0 4.3
+rescue mercenary ARG1 2
+
+rescue peasant ARG0 1.9
+rescue peasant ARG1 2.7
+
+rescue rabbit ARG0 1.1
+rescue rabbit ARG1 3.4
+
+rescue victim ARG0 1.2
+rescue victim ARG1 4.9
+
+revive athlete ARG0 3.2
+revive athlete ARG1 3.8
+
+revive comedian ARG0 2.7
+revive comedian ARG1 1.6
+
+revive patient ARG0 2.1
+revive patient ARG1 6.3
+
+rob musician ARG0 2
+rob musician ARG1 2.9
+
+rob thief ARG0 7
+rob thief ARG1 1.3
+
+rob victim ARG0 1.7
+rob victim ARG1 6.3
+
+scorn farmer ARG0 2.8
+scorn farmer ARG1 2.6
+
+scorn governor ARG0 4.2
+scorn governor ARG1 4.6
+
+scorn outcast ARG0 3.7
+scorn outcast ARG1 6.2
+
+scorn victim ARG0 4.2
+scorn victim ARG1 2
+
+scratch cat ARG0 6.9
+scratch cat ARG1 4.1
+
+scratch gardener ARG0 3.4
+scratch gardener ARG1 5.7
+
+scratch scout ARG0 3
+scratch scout ARG1 4.1
+
+scratch sofa ARG0 1.3
+scratch sofa ARG1 4.8
+
+scratch woman ARG0 4.7
+scratch woman ARG1 4.4
+
+scrub dog ARG0 1.6
+scrub dog ARG1 5
+
+scrub floor ARG0 1.2
+scrub floor ARG1 6
+
+scrub infant ARG0 1.3
+scrub infant ARG1 5.1
+
+scrub janitor ARG0 6.8
+scrub janitor ARG1 1.4
+
+scrub maid ARG0 6.7
+scrub maid ARG1 1.6
+
+search house ARG0 1.1
+search house ARG1 6.1
+
+search mother ARG0 5.4
+search mother ARG1 1.9
+
+search patrolman ARG0 6.3
+search patrolman ARG1 1.4
+
+search prisoner ARG0 1.7
+search prisoner ARG1 6.2
+
+search room ARG0 1.1
+search room ARG1 6
+
+search thief ARG0 5.7
+search thief ARG1 6.1
+
+seat artist ARG0 3.1
+seat artist ARG1 3.7
+
+seat boyfriend ARG0 5
+seat boyfriend ARG1 4.1
+
+seat custodian ARG0 2
+seat custodian ARG1 1.7
+
+seat guest ARG0 2.7
+seat guest ARG1 6.5
+
+see exhibit ARG0 1.2
+see exhibit ARG1 6.8
+
+see truck ARG0 1.1
+see truck ARG1 6.1
+
+see voyeur ARG0 5.8
+see voyeur ARG1 2.9
+
+see worm ARG0 2.4
+see worm ARG1 4.3
+
+select contestant ARG0 5.7
+select contestant ARG1 5.2
+
+select contractor ARG0 5.1
+select contractor ARG1 5
+
+select gourmet ARG0 4.3
+select gourmet ARG1 3.8
+
+select obstetrician ARG0 4.2
+select obstetrician ARG1 4.6
+
+select recipe ARG0 2.2
+select recipe ARG1 4.4
+
+select secretary ARG0 4.6
+select secretary ARG1 3.9
+
+send assistant ARG0 5.3
+send assistant ARG1 3.4
+
+send child ARG0 2.1
+send child ARG1 3
+
+send lawyer ARG0 5.2
+send lawyer ARG1 3.1
+
+send manager ARG0 5.6
+send manager ARG1 2.9
+
+send package ARG0 1.6
+send package ARG1 6.2
+
+sentence chef ARG0 1.2
+sentence chef ARG1 1.7
+
+sentence criminal ARG0 1.3
+sentence criminal ARG1 6.7
+
+sentence defendant ARG0 1.2
+sentence defendant ARG1 6.4
+
+sentence judge ARG0 6.9
+sentence judge ARG1 1.3
+
+sentence tailor ARG0 1.1
+sentence tailor ARG1 1.8
+
+separate boxers ARG0 3.1
+separate boxers ARG1 5.7
+
+separate organizer ARG0 6
+separate organizer ARG1 3.1
+
+separate squirrel ARG0 2.9
+separate squirrel ARG1 1.4
+
+separate twins ARG0 2.9
+separate twins ARG1 3.3
+
+serve butler ARG0 6.7
+serve butler ARG1 2.1
+
+serve customer ARG0 1.5
+serve customer ARG1 7
+
+serve food ARG0 1.1
+serve food ARG1 6.2
+
+serve patron ARG0 1.9
+serve patron ARG1 5.9
+
+serve waitress ARG0 6.8
+serve waitress ARG1 2.5
+
+shoot assassin ARG0 6.9
+shoot assassin ARG1 2.2
+
+shoot deer ARG0 1
+shoot deer ARG1 6.4
+
+shoot duck ARG0 1
+shoot duck ARG1 6.5
+
+shoot hunter ARG0 6.9
+shoot hunter ARG1 2.8
+
+shoot president ARG0 2.3
+shoot president ARG1 3.5
+
+shoot politician ARG0 2.7
+shoot politician ARG1 3.3
+
+shoot psychopath ARG0 5.8
+shoot psychopath ARG1 3.3
+
+show movie ARG0 5.1
+show movie ARG1 7
+
+show patient ARG0 4.7
+show patient ARG1 2.5
+
+show salesman ARG0 6.6
+show salesman ARG1 1.6
+
+show wallpaper ARG0 2.7
+show wallpaper ARG1 5.3
+
+sketch architect ARG0 6.5
+sketch architect ARG1 1.5
+
+sketch artist ARG0 6.5
+sketch artist ARG1 2.5
+
+sketch landscape ARG0 1.4
+sketch landscape ARG1 6.6
+
+sketch model ARG0 2.1
+sketch model ARG1 5.6
+
+sketch portrait ARG0 1.4
+sketch portrait ARG1 4.9
+
+sketch scientist ARG0 4.7
+sketch scientist ARG1 1.9
+
+sketch woman ARG0 4.3
+sketch woman ARG1 5.3
+
+slap child ARG0 4
+slap child ARG1 4.5
+
+slap fireman ARG0 1.5
+slap fireman ARG1 1.1
+
+slap prisoner ARG0 4.7
+slap prisoner ARG1 5.6
+
+slaughter butcher ARG0 6.2
+slaughter butcher ARG1 1.4
+
+slaughter cow ARG0 1.1
+slaughter cow ARG1 6.9
+
+slaughter farmer ARG0 5.9
+slaughter farmer ARG1 1.4
+
+slaughter pig ARG0 1
+slaughter pig ARG1 6.8
+
+stalk antelope ARG0 2.8
+stalk antelope ARG1 5
+
+stalk deer ARG0 2.3
+stalk deer ARG1 5.2
+
+stalk lion ARG0 5.9
+stalk lion ARG1 2.2
+
+stalk prey ARG0 1.7
+stalk prey ARG1 6
+
+stalk prowler ARG0 6.4
+stalk prowler ARG1 2.1
+
+stalk snake ARG0 4.9
+stalk snake ARG1 2.3
+
+stalk zebra ARG0 2.4
+stalk zebra ARG1 4.2
+
+startle bird ARG0 3.2
+startle bird ARG1 6
+
+startle burglar ARG0 6.5
+startle burglar ARG1 4.8
+
+startle kid ARG0 5.4
+startle kid ARG1 5.1
+
+startle librarian ARG0 1.9
+startle librarian ARG1 4.8
+
+startle prankster ARG0 6.7
+startle prankster ARG1 3
+
+steal criminal ARG0 6.7
+steal criminal ARG1 1.4
+
+steal infant ARG0 1.7
+steal infant ARG1 4.5
+
+steal van ARG0 1.1
+steal van ARG1 5.2
+
+steal wallet ARG0 1
+steal wallet ARG1 6.5
+
+study artist ARG0 5.7
+study artist ARG1 3.1
+
+study disease ARG0 1.2
+study disease ARG1 5.7
+
+study newborn ARG0 2.8
+study newborn ARG1 4
+
+study painting ARG0 1.3
+study painting ARG1 5.4
+
+study scientist ARG0 6.6
+study scientist ARG1 2.4
+
+study worm ARG0 1.4
+study worm ARG1 4.3
+
+take customer ARG0 5.2
+take customer ARG1 2.6
+
+take money ARG0 1.2
+take money ARG1 5.6
+
+take prisoner ARG0 4.6
+take prisoner ARG1 3
+
+take thief ARG0 6.7
+take thief ARG1 2
+
+teach boss ARG0 6.1
+teach boss ARG1 3.8
+
+teach courses ARG0 3.1
+teach courses ARG1 6.2
+
+teach employees ARG0 3.2
+teach employees ARG1 5.4
+
+teach instructor ARG0 7
+teach instructor ARG1 3.9
+
+teach instructor ARG0 6.5
+teach instructor ARG1 2.5
+
+teach person ARG0 4.8
+teach person ARG1 5.9
+
+teach professor ARG0 7
+teach professor ARG1 3.9
+
+teach student ARG0 2.3
+teach student ARG1 6.4
+
+teach trainee ARG0 1.6
+teach trainee ARG1 6.3
+
+terrorize army ARG0 5.5
+terrorize army ARG1 2.9
+
+terrorize landowner ARG0 2.8
+terrorize landowner ARG1 2.7
+
+terrorize peasants ARG0 2
+terrorize peasants ARG1 4.7
+
+terrorize pirates ARG0 6.5
+terrorize pirates ARG1 2.2
+
+terrorize victim ARG0 1.4
+terrorize victim ARG1 6.6
+
+thrill contestant ARG0 4.4
+thrill contestant ARG1 6
+
+thrill lawyer ARG0 3.9
+thrill lawyer ARG1 2.5
+
+thrill student ARG0 3.5
+thrill student ARG1 4.6
+
+throw ball ARG0 1.4
+throw ball ARG1 6.2
+
+throw cat ARG0 1.8
+throw cat ARG1 1.9
+
+throw daredevil ARG0 3.4
+throw daredevil ARG1 2.8
+
+throw pitcher ARG0 6.8
+throw pitcher ARG1 1.6
+
+tickle baby ARG0 2
+tickle baby ARG1 6.3
+
+tickle girlfriend ARG0 6
+tickle girlfriend ARG1 5.7
+
+tickle librarian ARG0 1.7
+tickle librarian ARG1 1.5
+
+tickle pilot ARG0 1.8
+tickle pilot ARG1 1.5
+
+time boss ARG0 5
+time boss ARG1 2.7
+
+time cook ARG0 6.4
+time cook ARG1 4.8
+
+time princess ARG0 2.1
+time princess ARG1 1.5
+
+time runner ARG0 6.7
+time runner ARG1 6.9
+
+torture captive ARG0 2
+torture captive ARG1 5.1
+
+torture kidnapper ARG0 5.7
+torture kidnapper ARG1 1.6
+
+torture man ARG0 2.9
+torture man ARG1 2.8
+
+torture rapist ARG0 6.6
+torture rapist ARG1 2.2
+
+torture scientist ARG0 3.2
+torture scientist ARG1 1.7
+
+torture slave ARG0 1.3
+torture slave ARG1 5.6
+
+torture victim ARG0 1.3
+torture victim ARG1 5.2
+
+tow car ARG0 5.2
+tow car ARG1 6.1
+
+tow family ARG0 2.6
+tow family ARG1 1.2
+
+tow man ARG0 3.7
+tow man ARG1 1.5
+
+tow trailer ARG0 3.3
+tow trailer ARG1 6.5
+
+transfer boss ARG0 6.3
+transfer boss ARG1 3.6
+
+transfer employee ARG0 2.3
+transfer employee ARG1 4.9
+
+transfer prisoner ARG0 1
+transfer prisoner ARG1 5.6
+
+transfer salesman ARG0 3
+transfer salesman ARG1 4.3
+
+transport cattle ARG0 2
+transport cattle ARG1 5.6
+
+transport gold ARG0 1.1
+transport gold ARG1 5.5
+
+transport prisoner ARG0 1.7
+transport prisoner ARG1 5.5
+
+transport smuggler ARG0 6.4
+transport smuggler ARG1 3.4
+
+trap fireman ARG0 2
+trap fireman ARG1 4.7
+
+trap fugitive ARG0 3
+trap fugitive ARG1 5.4
+
+trap gardener ARG0 4
+trap gardener ARG1 1.3
+
+visit dentist ARG0 3.2
+visit dentist ARG1 6.5
+
+visit family ARG0 6.4
+visit family ARG1 6.6
+
+visit grandmother ARG0 5.9
+visit grandmother ARG1 6.3
+
+visit museum ARG0 1
+visit museum ARG1 6.9
+
+visit prisoner ARG0 2.1
+visit prisoner ARG1 4.9
+
+visit shrine ARG0 1.1
+visit shrine ARG1 6.1
+
+visit tourist ARG0 6.8
+visit tourist ARG1 1.4
+
+walk beagle ARG0 1.7
+walk beagle ARG1 6.8
+
+walk nurse ARG0 5.3
+walk nurse ARG1 1.7
+
+want account ARG0 2.1
+want account ARG1 4.6
+
+want candy ARG0 1.1
+want candy ARG1 6.1
+
+want chef ARG0 4.8
+want chef ARG1 4.1
+
+want client ARG0 6
+want client ARG1 5.2
+
+want drummer ARG0 3.8
+want drummer ARG1 4.4
+
+warn daredevil ARG0 3.4
+warn daredevil ARG1 6.3
+
+warn mother ARG0 7
+warn mother ARG1 3.1
+
+warn salesman ARG0 2.3
+warn salesman ARG1 3.2
+
+warn skydiver ARG0 3.6
+warn skydiver ARG1 6.1
+
+warn weatherman ARG0 6.9
+warn weatherman ARG1 2.8
+
+watch audience ARG0 6.2
+watch audience ARG1 1.8
+
+watch building ARG0 1.1
+watch building ARG1 4.9
+
+watch director ARG0 6.1
+watch director ARG1 2.5
+
+watch guard ARG0 6.4
+watch guard ARG1 2.1
+
+watch sentry ARG0 4.2
+watch sentry ARG1 2.8
+
+whip cow ARG0 1.1
+whip cow ARG1 4.4
+
+whip hostage ARG0 2.2
+whip hostage ARG1 4.3
+
+whip waitress ARG0 1.2
+whip waitress ARG1 1.4
+
+worship creator ARG0 1.1
+worship creator ARG1 6.4
+
+worship god ARG0 1.4
+worship god ARG1 6.8
+
+worship goddess ARG0 1.5
+worship goddess ARG1 6.7
+
+worship king ARG0 2.6
+worship king ARG1 6.2
+
+worship pilgrim ARG0 5.2
+worship pilgrim ARG1 1.9
+
+worship priest ARG0 6.7
+worship priest ARG1 4.1
+
+worship princess ARG0 1.9
+worship princess ARG1 5
+
+worship statue ARG0 1.1
+worship statue ARG1 5.4
+
+write author ARG0 6.7
+write author ARG1 1.8
+
+write friend ARG0 5.3
+write friend ARG1 1.9
+
+write letter ARG0 1.4
+write letter ARG1 6.1
+
+write story ARG0 1.4
+write story ARG1 6.2
+

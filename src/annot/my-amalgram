@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# process raw text with Schneider's (2013-2014) AmalGram 2.0 (after tok+POStagging by SpaCy)
+# Yuval Marton 2019
+
+set -e
+
+fnin=$1
+fnout=$2
+
+fninbase=$(basename $fnin)
+temp_dir=$(mktemp -d)
+tmpfnin=$(mktemp ${temp_dir}/XXXXXX.${fninbase})
+mydir=$(dirname $0)
+
+echo "preprocessing into $tmpfnin"
+#cat $fnin | $mydir/myspacy.py | perl -pe 's/^(\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (.*)$/\2\t\5\t\9/g; s/^(\S+\t\S+\t)(.*?) (\S+)$/\1\t\t\3-\2/g; s/(.*?)\-$/\1/g '  > $tmpfnin
+#cat $fnin | $mydir/myspacy.py | perl -pe ' $in = $_; utf8::upgrade($in); $_ = $in; print "DBG ".$_;  s/^(\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (.*)$/\2\t\5\t\9/g; s/^(\S+\t\S+\t)(.*?) (\S+)$/\1\t\t\3-\2/g; s/(.*?)\-$/\1/g '  > $tmpfnin
+
+cat $fnin | $mydir/myspacy.py | iconv -f utf-8 -t utf-8 -c | perl -pe "use open ':std', ':encoding(UTF-8)';"'s/^(\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (.*)$/\2\t\5\t\9/g; s/^(\S+\t\S+\t)(.*?) (\S+)$/\1\t\t\3-\2/g; s/(.*?)\-$/\1/g;' |  iconv -f utf-8 -t utf-8 -c  > $tmpfnin
+
+#cat $fnin | $mydir/myspacy.py | iconv -f latin1 -t utf-8 | sed 's/^(\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (\S*) (.*)$/\2\t\5\t\9/' | sed 's/^(\S+\t\S+\t)(.*?) (\S+)$/\1\t\t\3-\2/' | sed 's/(.*?)\-$/\1/'  > $tmpfnin
+
+#cat $fnin | $mydir/myspacy.py | cut -d' ' -f2,5 --output-delimiter=\t  > $tmpfnin
+#cat $fnin | $mydir/myspacy.py | cut -d' ' -f2,5 | tr -s ' ' '\t'  > $tmpfnin
+
+echo "running AmalGram..."
+currdir=$(pwd)
+#cd /home/ymarton/src/pysupersensetagger
+cd $mydir/../../pysupersensetagger
+./sst.sh  $tmpfnin 
+cd $currdir
+
+#cat $fnin | $mydir/myspacy.py > ${fnout}.tmp1 # debug
+#cp ${tmpfnin}.pred.tags         ${fnout}.tmp2 # debug
+#cat ${tmpfnin}.pred.tags | iconv -f utf-8 -t utf-8 |  perl -pe "use open ':std', ':encoding(UTF-8)';"'s/`/_/g; s/Ī/I/g; '  > ${fnout}.tmp3 # debug
+#cut -f5 $tmpfnin | paste ${fnout}.tmp3 - | iconv -f utf-8 -t utf-8  > ${fnout}
+
+cut -f5 $tmpfnin | paste ${tmpfnin}.pred.tags - | iconv -f utf-8 -t utf-8  > ${fnout}
+
+
+#cat ${tmpfnin}.pred.tags  | iconv -f utf-8 -t utf-8  > ${fnout}  # without SpaCy's NER
+#cat ${tmpfnin}.pred.tags  | iconv -f utf-8 -t latin1  > ${fnout}  # without SpaCy's NER
+#cat ${tmpfnin}.pred.tags  | iconv -f latin1 -t utf-8  > ${fnout}  # without SpaCy's NER
+#cp ${tmpfnin}.pred.tags   ${fnout}  # without SpaCy's NER
