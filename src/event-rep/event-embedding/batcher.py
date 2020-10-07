@@ -51,14 +51,14 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
     else:
         get_batch = get_MT_batch
 
-    while True:
-        with open(file_name, 'rb') as f:
+    with open(file_name, 'r') as f:
+        if not random:
+            lines = f.readlines()
 
+        while True:
             if random:
                 file_length = os.stat(file_name).st_size
                 lines = random_lines(f, file_length, batch_size, rng)
-            else:
-                lines = f
 
             x_w_i = []
             x_r_i = []
@@ -66,8 +66,6 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
             y_r_i = []
             n_total_samples = 0
             n_neg_samples = 0
-
-            lines = f.readlines()
 
             for line in lines:
                 try:
@@ -127,11 +125,6 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
           
                         # print x_w_i[-1]
                         # print (os.getpid(), x_w_i[batch_size-1])
-
-                        # print x_w_i
-                        # print x_r_i
-                        # print y_w_i
-                        # print y_r_i
 
                         yield (get_batch(x_w_i, x_r_i, y_w_i, y_r_i))
                         x_w_i = []
