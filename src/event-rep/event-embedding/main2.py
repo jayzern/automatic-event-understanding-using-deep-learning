@@ -73,7 +73,7 @@ def run(experiment_name, data_version, model_name, load_previous,
     print('loss_weights: ', loss_weights)
     print('')
 
-    start_time = time.clock()
+    start_time = time.perf_counter()
 
     experiment_name_prefix = "%s_" % experiment_name
     tmp_exp_name = experiment_name_prefix + "temp"
@@ -270,14 +270,14 @@ def run(experiment_name, data_version, model_name, load_previous,
             self.best_epoch = best_epoch        #-1
 
         def on_epoch_begin(self, epoch, logs):
-            self.epoch_start = time.clock()
+            self.epoch_start = time.perf_counter()
             print ("Starting epoch %s  %s" % (epoch, time.ctime()))
 
         def on_batch_end(self, batch, logs):
             batch_n = batch + 1
             epoch_n = len(self.epoch)
             if batch_n % print_after_batches == 0:
-                elapsed_time = time.clock() - self.epoch_start
+                elapsed_time = time.perf_counter() - self.epoch_start
                 output = "batch %d; %d samples; %.1f sps; " % (
                     batch_n, 
                     batch_n * batch_size, 
@@ -371,7 +371,7 @@ def run(experiment_name, data_version, model_name, load_previous,
               patience=3, min_lr=min_lr) # min_lr=0.001
 
     print ('Training...', time.ctime())
-    train_start = time.clock()
+    train_start = time.perf_counter()
     while True:
         print("\nTraining batch size is now %s samples" % batch_size)
         model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
@@ -407,7 +407,7 @@ def run(experiment_name, data_version, model_name, load_previous,
         global_train_epoch = callback_container.epoch
         global_train_history = callback_container.history
     
-        train_end = time.clock()
+        train_end = time.perf_counter()
         print ('train and validate time: %f, sps: %f for batch size %d' \
             % (train_end - train_start,
                float(samples_per_epoch) / (train_end - train_start), #train_steps * batch_size / (train_end - train_start),
@@ -425,7 +425,7 @@ def run(experiment_name, data_version, model_name, load_previous,
             
 
     print ('Testing...',  time.ctime())
-    test_start = time.clock()
+    test_start = time.perf_counter()
 
     description_best = model_builder.load_description(MODEL_PATH, experiment_name)
     model.load(MODEL_PATH, experiment_name, description_best)
@@ -451,7 +451,7 @@ def run(experiment_name, data_version, model_name, load_previous,
     print ('test_result', test_result)
     print ('for metrics' , model.model.metrics_names)
 
-    test_end = time.clock()
+    test_end = time.perf_counter()
     print ('test time: %f, sps: %f' % (test_end - test_start, test_sample_size / (test_end - test_start)))
                                       #test_steps * batch_size / (test_end - test_start))
 
@@ -459,7 +459,7 @@ def run(experiment_name, data_version, model_name, load_previous,
  #   for k, v in sorted(result.items()):
  #       print "Test", k, v
                 
-    end_time = time.clock()
+    end_time = time.perf_counter()
     print ("Total running time %.2fh" % ((end_time - start_time) / 3600.))
     print  (time.ctime())
 

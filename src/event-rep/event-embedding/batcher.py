@@ -5,7 +5,7 @@
     Ref: Ottokar Tilk, Event participant modelling with neural networks, EMNLP 2016
 '''
 
-import os, re
+import os, re, sys
 from collections import OrderedDict
 
 
@@ -43,7 +43,6 @@ def get_MT_batch(x_w_i, x_r_i, y_w_i, y_r_i):
     np.asarray(y_r_i, dtype=np.int32)])
 
 
-
 def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, n_roles, random=False, rng=None, batch_size=0, neg=0, aligned=False):
     """Generates k noise samples for target role + 1 positive sample from data. Noise and positive samples share inputs"""
 
@@ -53,7 +52,7 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
         get_batch = get_MT_batch
 
     while True:
-        with open(file_name, 'r') as f:
+        with open(file_name, 'rb') as f:
 
             if random:
                 file_length = os.stat(file_name).st_size
@@ -68,11 +67,14 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
             n_total_samples = 0
             n_neg_samples = 0
 
+            lines = f.readlines()
+
             for line in lines:
                 try:
                     d = eval(line)
                 except:
                     continue
+
                 roles, words = map(list, zip(*d.items()))
 
                 # non_missing_inputs = [i for i, r in enumerate(roles) if words[i] != missing_word_id and r not in [5, 6]]
@@ -122,6 +124,7 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
                     y_r_i.append(target_roles)
 
                     if len(x_w_i) >= batch_size:
+          
                         # print x_w_i[-1]
                         # print (os.getpid(), x_w_i[batch_size-1])
 
@@ -130,11 +133,7 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
                         # print y_w_i
                         # print y_r_i
 
-                        # try:
                         yield (get_batch(x_w_i, x_r_i, y_w_i, y_r_i))
-                        # except:
-                        #     continue
-
                         x_w_i = []
                         x_r_i = []
                         y_w_i = []
