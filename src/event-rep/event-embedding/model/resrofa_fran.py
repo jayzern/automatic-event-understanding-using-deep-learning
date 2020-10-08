@@ -16,6 +16,7 @@ from .embeddings import factored_embedding
 from .layers import target_word_hidden, target_role_hidden
 #from generic import GenericModel
 from .generic_fran import GenericFrAnModel
+from .custom_acc import custom_acc
 
 
 #class MTRFwFAv1Res(GenericModel):

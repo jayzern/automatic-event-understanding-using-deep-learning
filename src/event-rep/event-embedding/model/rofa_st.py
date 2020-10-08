@@ -15,6 +15,7 @@ from tensorflow.keras.models import Model
 from .embeddings import role_based_word_embedding
 from .layers import target_word_hidden
 from .generic import GenericModel
+from .custom_acc import custom_acc
 
 
 class NNRF_ROFA(GenericModel):
@@ -69,7 +70,7 @@ class NNRF_ROFA(GenericModel):
 
         self.model = Model(inputs=[input_words, input_roles, target_role], outputs=[output_layer])
 
-        self.model.compile(optimizer, loss, metrics)
+        self.model.compile(optimizer, loss, [custom_acc])
 
 
     def set_0_bias(self):

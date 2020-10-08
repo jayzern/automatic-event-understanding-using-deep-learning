@@ -38,7 +38,11 @@ DATA_PATH = '/media/data-disk/data/event-rep/exp9_0.1-16-16-Roles2Args3Mods-NoFr
 # DATA2_DIR = '/root/home/data'
 #DATA2_DIR = '/root/home/data/rw-eng/ukwac-proc-out-preproc4DL-20190929'
 #DATA2_DIR = '/root/home/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp1_0.001-2-2-v1/'
+
+# TIM'S PATH
 DATA2_DIR = '/media/data-disk/data/event-rep/'
+# JONATHAN's PATH
+# DATA2_DIR = '/content/drive/My Drive/test_capstone/data'
 
 # Model path
 MODEL_PATH = os.path.join(BASE_DIR, 'model/')
@@ -231,16 +235,16 @@ EXP1_20190929_TEST_SIZE  = 313730
 #TEST_SIZE  = EXP1_20190929_TEST_SIZE  #= 240000 # 1576000   
 
 def getValidationSetSize(data_version):
-    ret_val, VALID_SIZE = subprocess.getstatusoutput("wc -l  %s/%s/NN_dev" % (DATA2_DIR, data_version))
+    ret_val, VALID_SIZE = subprocess.getstatusoutput("wc -l  \"%s/%s/NN_dev\"" % (DATA2_DIR, data_version))
     print ("VALID_SIZE: %s, ret_val: %s" % (VALID_SIZE, ret_val))
     return int(VALID_SIZE.split()[0])
 def getTestSetSize(data_version):
-    ret_val, TEST_SIZE  = subprocess.getstatusoutput("wc -l  %s/%s/NN_test" % (DATA2_DIR, data_version))
+    ret_val, TEST_SIZE  = subprocess.getstatusoutput("wc -l  \"%s/%s/NN_test\"" % (DATA2_DIR, data_version))
     print ("TEST_SIZE: %sm ret_val: %s" % (TEST_SIZE, ret_val))
     return int(TEST_SIZE.split()[0])
 
 def getTrainingSetSize(data_version):
-    ret_val, TRAIN_SIZE = subprocess.getstatusoutput("wc -l  %s/%s/NN_train" % (DATA2_DIR, data_version))
+    ret_val, TRAIN_SIZE = subprocess.getstatusoutput("wc -l  \"%s/%s/NN_train\"" % (DATA2_DIR, data_version))
     print ("TRAIN_SIZE: %s, ret_val: %s" % (TRAIN_SIZE, ret_val))
     return int(TRAIN_SIZE.split()[0])
 #def getSampleEpochs(data_version):

@@ -286,7 +286,7 @@ def run(experiment_name, data_version, model_name, load_previous,
             if batch_n % save_after_steps == 0:
                 try:
                     # model.save(MODEL_PATH, tmp_exp_name, model_name, learning_rate, learning_rate_decay, self.history, self.best_validation_cost, self.best_epoch, epoch_n)
-                    # changed model path because using read-only shared disk.
+                    # TIM's Model Path changed model path because using read-only shared disk.
                     model.save("model.h5", tmp_exp_name, model_name, learning_rate, learning_rate_decay, self.history, self.best_validation_cost, self.best_epoch, epoch_n)
                 except TypeError: # v1 model (without Frames / Anim or learning_rate_decay param)
                     # model.save(MODEL_PATH, tmp_exp_name, model_name, learning_rate,   self.history, self.best_validation_cost, self.best_epoch, epoch_n)

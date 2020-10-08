@@ -27,4 +27,4 @@ from .rofa_st import NNRF_ROFA
 from .resrofa_st import NNRF_ResROFA
 
 # Yuval's model with animacy and frames
-from .resrofa_fran import MTRFwFAv1Res
+#from .resrofa_fran import MTRFwFAv1Res

@@ -15,6 +15,7 @@ from tensorflow.keras.models import Model, load_model
 from .embeddings import role_based_word_embedding
 from .layers import target_word_hidden, target_role_hidden
 from .generic import GenericModel
+from .custom_acc import custom_acc
 
 
 class MTRF(GenericModel):
@@ -82,7 +83,7 @@ class MTRF(GenericModel):
 
         self.model = Model(inputs=[input_words, input_roles, target_word, target_role], outputs=[target_word_output, target_role_output])
 
-        self.model.compile(optimizer, loss, metrics, loss_weights)
+        self.model.compile(optimizer, loss, [custom_acc], loss_weights)
 
 
     def set_0_bias(self):
