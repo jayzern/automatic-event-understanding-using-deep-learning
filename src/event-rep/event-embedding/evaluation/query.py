@@ -147,6 +147,6 @@ if __name__ == "__main__":
         sys.exit('Target argument missing missing. Example: ' +  "{'A0':'tiger'}")
 
     #experiment_name = model_name + '_' + experiment
-    experiment_name = model_name + '_' + data_version + '_' + experiment_version
+    experiment_name = model_name + '_' + data_version + '_' + experiment
 
     query(model_name, experiment_name, inputs, target)

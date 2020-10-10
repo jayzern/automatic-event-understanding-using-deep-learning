@@ -78,14 +78,8 @@ def eval_GS(model_name, experiment_name, eval_file_name, model=None, print_resul
     with open(eval_file, 'r') as f, \
         open(result_file, 'w') as f_out:
 
-
-        first = True
-        for line in f:
-            # skip header
-            if first:
-                first = False
-                continue
-
+        lines = f.readlines()
+        for line in lines[1:]: # skip header
             s = line.split()
             sentence = " ".join(s[1:5])
             score = float(s[5])
@@ -218,7 +212,7 @@ if __name__ == "__main__":
         sys.exit("Experiment input argument missing missing")
 
     #experiment_name = model_name + '_' + experiment
-    experiment_name = model_name + '_' + data_version + '_' + experiment_version
+    experiment_name = model_name + '_' + data_version + '_' + experiment
 
     file2011 = 'GS2011data.txt'
     file2013 = 'GS2013data.txt'
