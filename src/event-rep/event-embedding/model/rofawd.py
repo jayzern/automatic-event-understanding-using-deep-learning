@@ -7,7 +7,7 @@
 
 import numpy as np
 from tensorflow.keras import backend as K
-from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, Flatten
+from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Multiply, Masking, Concatenate
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
@@ -17,16 +17,15 @@ from .layers import target_word_hidden, target_role_hidden
 from .generic import GenericModel
 from .custom_acc import custom_acc
 
-# Model is based of off resrofa.py
 
-class MTRFv4ResDense(GenericModel):
+class MTRFv4WD(GenericModel):
     """Multi-task non-incremental role-filler
 
     """
     def __init__(self, n_word_vocab=50001, n_role_vocab=7, n_factors_emb=300, n_hidden=300, word_vocabulary=None, role_vocabulary=None, 
         unk_word_id=50000, unk_role_id=7, missing_word_id=50001, 
         using_dropout=False, dropout_rate=0.3, optimizer='adagrad', loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=[1., 1.]):
-        super(MTRFv4ResDense, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
+        super(MTRFv4WD, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
             unk_word_id, unk_role_id, missing_word_id, using_dropout, dropout_rate, optimizer, loss, metrics)
 
         # minus 1 here because one of the role is target role
@@ -40,91 +39,43 @@ class MTRFv4ResDense(GenericModel):
         target_word = Input(shape=(1, ), dtype='int32', name='target_word')
         target_role = Input(shape=(1, ), dtype='int32', name='target_role')
 
-        emb_init = glorot_uniform()
-        
-        # word embedding; shape is (batch_size, input_length, n_factors_emb)
-        word_embedding = Embedding(n_word_vocab, n_factors_emb, 
-            embeddings_initializer=emb_init,
-            name='org_word_embedding')(input_words)
+        # input for the one hot word/roles
+        input_words_oh = Input(shape=(input_length, n_word_vocab), dtype='int8', name='input_words_oh')
+        input_roles_oh = Input(shape=(input_length, n_role_vocab), dtype='int8', name='input_roles_oh')
 
-        # a hack zeros out the missing word inputs
-        weights = np.ones((n_word_vocab, n_factors_emb))
-        weights[missing_word_id] = 0
-        mask = Embedding(n_word_vocab, n_factors_emb, 
-            weights=[weights], 
-            trainable=False,
-            name='word_mask')(input_words)
+        # role based embedding layer
+        embedding_layer = factored_embedding(input_words, input_roles, n_word_vocab, n_role_vocab, glorot_uniform(), 
+            missing_word_id, input_length, n_factors_emb, n_hidden, True, using_dropout, dropout_rate)
 
-        # masked word embedding
-        word_embedding = Multiply(name='word_embedding')([word_embedding, mask])
+        # Concatenate one hot word/role vectors with role based embedding layer
+        oh_embedding_concat_layer = Concatenate([embedding_layer, input_words_oh, input_roles_oh])
 
-        # role embedding; shape is (batch_size, input_length, n_factors_emb)
-        role_embedding = Embedding(n_role_vocab, n_factors_emb, 
-            embeddings_initializer=emb_init,
-            name='role_embedding')(input_roles)
+        # non-linear layer, using 1 to initialize
+        non_linearity = PReLU(alpha_initializer='ones')(oh_embedding_concat_layer)
 
-        if using_dropout:
-            # Drop-out layer after embeddings
-            word_embedding = Dropout(dropout_rate)(word_embedding)
-            role_embedding = Dropout(dropout_rate)(role_embedding)
-
-        # hidden units after combining 2 embeddings; shape is the same with embedding
-        product = Multiply()([word_embedding, role_embedding])
-
-        # fully connected layer, output shape is (batch_size, input_length, n_hidden)
-        lin_proj = Dense(n_factors_emb, 
-            activation='linear', 
-            use_bias=False,
-            input_shape=(n_factors_emb,), 
-            name='lin_proj')(product)
-
-        non_lin = PReLU(
-            alpha_initializer='ones',
-            name='non_lin')(lin_proj)
-        
-        # fully connected layer, output shape is (batch_size, input_length, n_hidden)
-        lin_proj2 = Dense(n_factors_emb, 
-            activation='linear', 
-            use_bias=False,
-            input_shape=(n_factors_emb,), 
-            name='lin_proj2')(non_lin)
-
-        residual_0 = Add(name='residual_0')([product, lin_proj2])
         # mean on input_length direction;
         # obtaining context embedding layer, shape is (batch_size, n_hidden)
         # context_embedding = Lambda(lambda x: K.mean(x, axis=1), 
         #     name='context_embedding',
-        #     output_shape=(n_factors_emb,))(residual_0)
+        #     output_shape=(n_hidden,))(non_linearity)
 
-        # NEW: dense layers pattern 1 with prelu
-
-        flatten_residual_0 = Flatten(name='flatten_residual_0')(residual_0)
-
-        context_embedding_dense1 = Dense(n_factors_emb,
+        # Dense version of context_embedding
+        context_embedding_dense = Dense(n_factors_emb,
             activation='linear',
             use_bias=False,
-            input_shape=(n_factors_emb*input_length,),
-            name='context_embedding_dense1')(flatten_residual_0)  
+            input_shape=(n_factors_emb+n_word_vocab+n_role_vocab,),
+            name='context_embedding_dense1')(non_linearity)
 
-        non_lin_dense1 = PReLU(
+        context_embedding = PReLU(
             alpha_initializer='ones',
-            name='non_lin_dense1')(context_embedding_dense1)  
-
-        context_embedding_dense2 = Dense(n_factors_emb,
-            activation='linear',
-            use_bias=False,
-            input_shape=(n_factors_emb,),
-            name='context_embedding_dense2')(non_lin_dense1) 
-
-        non_lin_dense2 = PReLU(
-            alpha_initializer='ones',
-            name='non_lin_dense2')(context_embedding_dense2)
-        
+            name='non_lin_dense1')(context_embedding_dense)  
+            
         # target word hidden layer
-        tw_hidden = target_word_hidden(non_lin_dense2, target_role, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden)
+        tw_hidden = target_word_hidden(context_embedding, target_role, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden, 
+            using_dropout=using_dropout, dropout_rate=dropout_rate)
 
         # target role hidden layer
-        tr_hidden = target_role_hidden(non_lin_dense2, target_word, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden, 
+        tr_hidden = target_role_hidden(context_embedding, target_word, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden, 
             using_dropout=using_dropout, dropout_rate=dropout_rate)
 
         # softmax output layer
@@ -157,7 +108,6 @@ class MTRFv4ResDense(GenericModel):
 
         return word_output_weights[1], role_output_weights[1]
 
-
     def set_bias(self, bias):
         word_output_weights = self.model.get_layer("softmax_word_output").get_weights()
         word_output_kernel = word_output_weights[0]
@@ -168,7 +118,6 @@ class MTRFv4ResDense(GenericModel):
         self.model.get_layer("softmax_role_output").set_weights([role_output_kernel, bias[1]])
 
         return bias
-        
 
     # Train and test
     # Deprecated temporarily
@@ -220,7 +169,7 @@ class MTRFv4ResDense(GenericModel):
         rank_list = np.argsort(predict_result, axis=1)[0]
         return rank_list[-topN:][::-1]
         # return [r[-topN:][::-1] for r in rank_list]
-
+        
     # TODO
     def list_top_words(self, i_w, i_r, t_r, topN=20, batch_size=1, verbose=0):
         """ Return a list of decoded top N target words.
