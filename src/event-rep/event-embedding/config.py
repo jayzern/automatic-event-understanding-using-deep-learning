@@ -35,12 +35,7 @@ DATA_PATH = os.path.join(BASE_DIR, 'data/')
 DATA_PATH = '/media/data-disk/data/event-rep/exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1/'
 
 # data2 path
-# DATA2_DIR = '/root/home/data'
-#DATA2_DIR = '/root/home/data/rw-eng/ukwac-proc-out-preproc4DL-20190929'
-#DATA2_DIR = '/root/home/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp1_0.001-2-2-v1/'
-
-# JONATHAN's PATH. PUT YOUR DATA PATH HERE....
-DATA2_DIR = '/content/drive/My Drive/test_capstone/data'
+DATA2_DIR = os.path.join(BASE_DIR, 'data/')
 
 # Model path
 MODEL_PATH = os.path.join(BASE_DIR, 'model/')
