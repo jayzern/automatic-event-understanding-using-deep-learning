@@ -49,6 +49,11 @@ source activate py2
 * Keras 2.0
 - details are under event-embedding-multitask/event-embedding/README.md
 
+### Dependencies for Python3
+* Python 3.7
+* CUDA 10.1
+* Tensorflow 2.3.0
+
 ### first, get the docker image:
 - Install nvidia-docker if you need it (and have GPUs) : https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)
 - then:
@@ -165,10 +170,32 @@ KERAS_BACKEND=theano python main2.py \
 * This format is different from the original code (Tony's)
 * Optional: You might also want to try adding `THEANO_FLAGS='device=cuda,force_device=True,floatX=float32'`
 
+## train model python3:
+```
+cd src/event-rep/event-embedding
+
+python3 main2.py \
+    MTRFv4Res \
+    exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 \
+    20200717-batch1024-iters25 \
+    --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
+```
+
 ### continued training
 to continue training a pre-trained model, or a model of which training was interupted:
 ```
 KERAS_BACKEND=theano python main2.py \
+    MTRFv4Res \
+    exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 \
+    20200717-batch1024-iters25 \
+    --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods \
+    --load_previous True
+```
+## continued training python3:
+```
+cd src/event-rep/event-embedding
+
+python3 main2.py \
     MTRFv4Res \
     exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 \
     20200717-batch1024-iters25 \
