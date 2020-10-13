@@ -17,6 +17,7 @@ from .layers import target_word_hidden, target_role_hidden
 from .generic import GenericModel
 from .custom_acc import custom_acc
 
+# Model is based of off resrofa.py
 
 class MTRFv4ResDense(GenericModel):
     """Multi-task non-incremental role-filler
@@ -116,19 +117,6 @@ class MTRFv4ResDense(GenericModel):
         non_lin_dense2 = PReLU(
             alpha_initializer='ones',
             name='non_lin_dense2')(context_embedding_dense2)
-
-        # NEW: dense layers pattern 2 with relu
-        # context_embedding_dense1 = Dense(n_factors_emb,
-        #     activation='relu',
-        #     use_bias=False,
-        #     input_shape=(n_factors_emb,),
-        #     name='context_embedding_dense1')(residual_0)  
-
-        # context_embedding_dense2 = Dense(n_factors_emb,
-        #     activation='relu',
-        #     use_bias=False,
-        #     input_shape=(n_factors_emb,),
-        #     name='context_embedding_dense2')(context_embedding_dense1) 
         
         # target word hidden layer
         tw_hidden = target_word_hidden(non_lin_dense2, target_role, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden)
