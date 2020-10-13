@@ -21,13 +21,8 @@ from .resrofa import MTRFv4Res
 # classname of ResRoFDense-MT: MTRFv4ResDense
 from .rofdense import MTRFv4ResDense
 
-<<<<<<< HEAD
-# classname of RofAWD: MTRFv4WD
-from .rofawd_lwz import MTRFv4WD
-=======
 # classname of RoFAWD-MT: MTRFv4WD
 from .rofawd import MTRFv4WD
->>>>>>> e6d0b881d243026e075047313d23dee22067b592
 
 # ablation study: sigle task version for composition methods
 

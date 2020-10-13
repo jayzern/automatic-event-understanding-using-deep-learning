@@ -9,8 +9,12 @@ def load_description(file_dir, model_name):
         description_file = os.path.join(file_dir, model_name + "_description")        
 
         with open(description_file, 'rb') as f:
-            description = cPickle.load(f)
-
+            try:
+                description = cPickle.load(f)
+            except UnicodeDecodeError:
+                f.seek(0)
+                description = cPickle.load(f, encoding='latin1')
+                
         return description
 
 def build_model(model_name, description):

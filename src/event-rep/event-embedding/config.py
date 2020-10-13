@@ -44,6 +44,7 @@ DATA2_DIR = '/content/drive/My Drive/test_capstone/data'
 
 # Model path
 MODEL_PATH = os.path.join(BASE_DIR, 'model/')
+# MODEL_PATH = '/media/data-disk/models'
 
 # Evaluation data path
 EVAL_PATH = os.path.join(BASE_DIR, 'eval_data/')
