@@ -7,7 +7,7 @@
 
 import numpy as np
 from tensorflow.keras import backend as K
-from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking
+from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, Flatten
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
@@ -90,7 +90,6 @@ class MTRFv4ResDense(GenericModel):
             name='lin_proj2')(non_lin)
 
         residual_0 = Add(name='residual_0')([product, lin_proj2])
-
         # mean on input_length direction;
         # obtaining context embedding layer, shape is (batch_size, n_hidden)
         # context_embedding = Lambda(lambda x: K.mean(x, axis=1), 
@@ -98,11 +97,14 @@ class MTRFv4ResDense(GenericModel):
         #     output_shape=(n_factors_emb,))(residual_0)
 
         # NEW: dense layers pattern 1 with prelu
+
+        flatten_residual_0 = Flatten(name='flatten_residual_0')(residual_0)
+
         context_embedding_dense1 = Dense(n_factors_emb,
             activation='linear',
             use_bias=False,
-            input_shape=(n_factors_emb,),
-            name='context_embedding_dense1')(residual_0)  
+            input_shape=(n_factors_emb*input_length,),
+            name='context_embedding_dense1')(flatten_residual_0)  
 
         non_lin_dense1 = PReLU(
             alpha_initializer='ones',

@@ -11,7 +11,7 @@ from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Mu
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
-from tensorflow import one_hot
+
 
 from .embeddings import factored_embedding
 from .layers import target_word_hidden, target_role_hidden
@@ -40,8 +40,10 @@ class MTRFv4WD(GenericModel):
         target_word = Input(shape=(1, ), dtype='int32', name='target_word')
         target_role = Input(shape=(1, ), dtype='int32', name='target_role')
 
+
         input_words_ohe = K.one_hot(input_words, n_word_vocab)
         input_roles_ohe = K.one_hot(input_roles, n_role_vocab)
+
 
         # role based embedding layer
         embedding_layer = factored_embedding(input_words, input_roles, n_word_vocab, n_role_vocab, glorot_uniform(), 
@@ -70,6 +72,7 @@ class MTRFv4WD(GenericModel):
 
         # target role hidden layer
         tr_hidden = target_role_hidden(non_linearity_2, target_word, n_word_vocab, n_role_vocab, glorot_uniform(), n_hidden, n_hidden, 
+
             using_dropout=using_dropout, dropout_rate=dropout_rate)
 
         # softmax output layer
