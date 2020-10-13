@@ -10,7 +10,7 @@ import pickle as cPickle
 
 
 import numpy as np
-from tensorflow.keras.optimizers import Adagrad
+from tensorflow.keras.optimizers import Adagrad, Adam
 from tensorflow.keras.callbacks import Callback, ModelCheckpoint, EarlyStopping, LambdaCallback, TerminateOnNaN, ReduceLROnPlateau
 import tensorflow.keras.backend as K
 
@@ -147,13 +147,14 @@ def run(experiment_name, data_version, model_name, load_previous,
 
     has_frames_or_anim = (len(frame_vocabulary) >= 3 and n_factors_emb_frame > 1) or (n_factors_emb_anim > 1)
     
-    adagrad = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0.0)
-#    adagrad = Adagrad(lr=learning_rate, epsilon=1e-08, decay=learning_rate_decay)
+    # adagrad = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0.0) #decay=learning_rate_decay
+    # JONATHAN change Optimizer
+    adamopt = Adam(learning_rate = 0.01)
 
     if re.search('NNRF', model_name):
         model = NNRF(n_word_vocab, n_role_vocab, 
             n_factors_emb_word, 512, n_hidden, word_vocabulary, role_vocabulary, unk_word_id, unk_role_id, missing_word_id, 
-            using_dropout, dropout_rate, optimizer=adagrad, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+            using_dropout, dropout_rate, optimizer=adamopt, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     else:
         if not has_frames_or_anim:  #len(frame_vocabulary) < 3:          # no Frames or Animacy
             model = eval(model_name)(
@@ -163,7 +164,7 @@ def run(experiment_name, data_version, model_name, load_previous,
                 word_vocabulary, role_vocabulary,
                 unk_word_id, unk_role_id,
                 missing_word_id,
-                using_dropout, dropout_rate, optimizer=adagrad, loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=loss_weights)
+                using_dropout, dropout_rate, optimizer=adamopt, loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=loss_weights)
         else:                                  # with Frames and Anim:
             model = eval(model_name)( 
                 n_hidden,
@@ -250,10 +251,11 @@ def run(experiment_name, data_version, model_name, load_previous,
         result['GFiller'] = round(rho_fil, 4)
         result['greenberg'] = round(rho_gre, 4)
 
-        # need to fix bug here:
+        # need to fix bug here: FIXED according to Yuval
         correct, _, acc = eval_bicknell_switch(model_name, experiment_name, 'bicknell', model, print_result, switch_test=False)
         result['bicknell'] = (acc, correct)
-
+        
+        # JONATHAN: Commented out here because taking long time to evaluate
         correlation = eval_GS(model_name, experiment_name, 'GS2013data.txt', model, print_result)
         result['GS'] = round(correlation, 4)
 
@@ -325,7 +327,7 @@ def run(experiment_name, data_version, model_name, load_previous,
 
             # print model.model.get_layer("softmax_word_output").get_weights()[1]
 
-            result = thematic_fit_evaluation(model_name, experiment_name, model, print_result=False)
+            result = thematic_fit_evaluation(model_name, experiment_name, model, print_result=True)
             for k, v in result.items():
                 logs[k] = v
 
