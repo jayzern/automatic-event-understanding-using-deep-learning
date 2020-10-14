@@ -172,7 +172,7 @@ def run(experiment_name, data_version, model_name, load_previous,
                 word_vocabulary, role_vocabulary, frame_vocabulary, anim_vocabulary,
                 unk_word_id,     unk_role_id,     unk_frame_id,     unk_anim_id,
                 missing_word_id, missing_role_id, missing_frame_id,missing_anim_id,
-                using_dropout, dropout_rate, optimizer=adagrad, loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=loss_weights)
+                using_dropout, dropout_rate, optimizer=adamopt, loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=loss_weights)
 
     # else:
     #     sys.exit('No such model!!!')
@@ -256,8 +256,8 @@ def run(experiment_name, data_version, model_name, load_previous,
         result['bicknell'] = (acc, correct)
         
         # JONATHAN: Commented out here because taking long time to evaluate
-        correlation = eval_GS(model_name, experiment_name, 'GS2013data.txt', model, print_result)
-        result['GS'] = round(correlation, 4)
+        # correlation = eval_GS(model_name, experiment_name, 'GS2013data.txt', model, print_result)
+        # result['GS'] = round(correlation, 4)
 
         return result
 
@@ -379,8 +379,10 @@ def run(experiment_name, data_version, model_name, load_previous,
     train_start = time.perf_counter()
     while True:
         print("\nTraining batch size is now %s samples" % batch_size)
-        model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
-#        model.optimizer = Adadelta(lr=learning_rate, epsilon=1e-08, rho=0.95)        
+        #model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
+#        model.optimizer = Adadelta(lr=learning_rate, epsilon=1e-08, rho=0.95)  
+        # JONATHAN change
+        model.optimizer = Adam(learning_rate = 0.01)
         print("new model optimizer: %s" % model.optimizer.__class__.__name__)
         print("new model optimizer LR: %.3f" % float(K.eval(model.optimizer.lr)))   
         model.model.fit(
