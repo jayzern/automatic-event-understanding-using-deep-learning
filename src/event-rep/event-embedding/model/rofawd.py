@@ -60,8 +60,8 @@ class MTRFv4WD(GenericModel):
 
         dense = Dense(n_factors_emb, 
             activation='linear', 
-            input_shape=(input_length * (n_factors_emb + n_word_vocab + n_role_vocab), ), 
-            name='dense')(flattened)
+            input_shape=(input_length * (n_factors_emb + n_word_vocab + n_role_vocab), ),
+            )(flattened)
 
         #PRelu activation
         non_linearity_2 = PReLU(alpha_initializer='ones')(dense)
