@@ -149,7 +149,7 @@ def run(experiment_name, data_version, model_name, load_previous,
     
     # adagrad = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0.0) #decay=learning_rate_decay
     # JONATHAN change Optimizer
-    adamopt = Adam(learning_rate = 0.01)
+    adamopt = Adam(learning_rate = learning_rate)
 
     if re.search('NNRF', model_name):
         model = NNRF(n_word_vocab, n_role_vocab, 
@@ -255,7 +255,7 @@ def run(experiment_name, data_version, model_name, load_previous,
         correct, _, acc = eval_bicknell_switch(model_name, experiment_name, 'bicknell', model, print_result, switch_test=False)
         result['bicknell'] = (acc, correct)
         
-        # JONATHAN: Commented out here because taking long time to evaluate
+        # JONATHAN: Commented out here because taking long time to evaluate DO NOT FORGET TO UNCOMMENT LATER
         # correlation = eval_GS(model_name, experiment_name, 'GS2013data.txt', model, print_result)
         # result['GS'] = round(correlation, 4)
 
@@ -382,7 +382,7 @@ def run(experiment_name, data_version, model_name, load_previous,
         #model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
 #        model.optimizer = Adadelta(lr=learning_rate, epsilon=1e-08, rho=0.95)  
         # JONATHAN change
-        model.optimizer = Adam(learning_rate = 0.01)
+        model.optimizer = Adam(learning_rate = learning_rate)
         print("new model optimizer: %s" % model.optimizer.__class__.__name__)
         print("new model optimizer LR: %.3f" % float(K.eval(model.optimizer.lr)))   
         model.model.fit(
