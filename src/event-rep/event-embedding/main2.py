@@ -20,7 +20,6 @@ import tensorflow.keras.backend as K
 # sys.path.append(os.path.join(SRC_DIR, 'model/'))
 
 import config, utils, model_builder
-#from batcher import generator
 import batcher
 import batcher_fran
 
@@ -80,7 +79,6 @@ def run(experiment_name, data_version, model_name, load_previous,
     final_exp_name = experiment_name_prefix + "final"
 #    e27_exp_name = experiment_name_prefix + "e27"
 
-#    with open(DATA_PATH + "description", 'rb') as data_file:
     with open(os.path.join(DATA_PATH, "description"), 'rb') as data_file:
         description = cPickle.load(data_file)
         print (str(os.path.join(DATA_PATH, "description"))) # DATA_PATH + "description"
@@ -148,7 +146,7 @@ def run(experiment_name, data_version, model_name, load_previous,
     has_frames_or_anim = (len(frame_vocabulary) >= 3 and n_factors_emb_frame > 1) or (n_factors_emb_anim > 1)
     
     # adagrad = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0.0) #decay=learning_rate_decay
-    # JONATHAN change Optimizer
+    #(TEAM2-change) Change Adagrad -> ADAM
     adamopt = Adam(learning_rate = learning_rate)
 
     if re.search('NNRF', model_name):
@@ -255,7 +253,7 @@ def run(experiment_name, data_version, model_name, load_previous,
         correct, _, acc = eval_bicknell_switch(model_name, experiment_name, 'bicknell', model, print_result, switch_test=False)
         result['bicknell'] = (acc, correct)
         
-        # JONATHAN: Commented out here because taking long time to evaluate DO NOT FORGET TO UNCOMMENT LATER
+        # (TEAM2-change) Commented out here because taking long time to evaluate. DO NOT FORGET TO UNCOMMENT LATER
         # correlation = eval_GS(model_name, experiment_name, 'GS2013data.txt', model, print_result)
         # result['GS'] = round(correlation, 4)
 
@@ -288,8 +286,6 @@ def run(experiment_name, data_version, model_name, load_previous,
             if batch_n % save_after_steps == 0:
                 try:
                     model.save(MODEL_PATH, tmp_exp_name, model_name, learning_rate, learning_rate_decay, self.history, self.best_validation_cost, self.best_epoch, epoch_n)
-                    # TIM's Model Path changed model path because using read-only shared disk.
-                    # model.save("model.h5", tmp_exp_name, model_name, learning_rate, learning_rate_decay, self.history, self.best_validation_cost, self.best_epoch, epoch_n)
                 except TypeError: # v1 model (without Frames / Anim or learning_rate_decay param)
                     # model.save(MODEL_PATH, tmp_exp_name, model_name, learning_rate,   self.history, self.best_validation_cost, self.best_epoch, epoch_n)
                     pass
@@ -379,9 +375,9 @@ def run(experiment_name, data_version, model_name, load_previous,
     train_start = time.perf_counter()
     while True:
         print("\nTraining batch size is now %s samples" % batch_size)
-        #model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
-#        model.optimizer = Adadelta(lr=learning_rate, epsilon=1e-08, rho=0.95)  
-        # JONATHAN change
+        # model.optimizer = Adagrad(lr=learning_rate, epsilon=1e-08, decay=0) # decay=learning_rate_decay)
+        # model.optimizer = Adadelta(lr=learning_rate, epsilon=1e-08, rho=0.95)  
+        # (TEAM2-change) Change Adagrad -> ADAM
         model.optimizer = Adam(learning_rate = learning_rate)
         print("new model optimizer: %s" % model.optimizer.__class__.__name__)
         print("new model optimizer LR: %.3f" % float(K.eval(model.optimizer.lr)))   

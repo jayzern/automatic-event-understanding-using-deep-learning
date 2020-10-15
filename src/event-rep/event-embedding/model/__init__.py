@@ -18,14 +18,14 @@ from .rofa import MTRFv4
 # classname of ResRoFA-MT: MTRFv4Res
 from .resrofa import MTRFv4Res
 
-# classname of ResRoFDense-MT: MTRFv4ResDense
+# (TEAM2-change) classname of ResRoFDense-MT: MTRFv4ResDense
 from .rofdense import MTRFv4ResDense
 
-# classname of RoFAWD-MT: MTRFv4WD
+# (TEAM2-change) classname of RoFAWD-MT: MTRFv4WD
 from .rofawd import MTRFv4WD
 
-# classname of RoFBeg-MT: MTRFv4RofBeg
-from .rofbeg import 
+# (TEAM2-change) classname of RoFBeg-MT: MTRFv4RofBeg
+from .rofbeg import MTRFv4RofBeg
 
 # ablation study: sigle task version for composition methods
 
@@ -35,5 +35,5 @@ from .rofa_st import NNRF_ROFA
 # classname of ResRoFA-ST: NNRF_ResROFA
 from .resrofa_st import NNRF_ResROFA
 
-# Yuval's model with animacy and frames
+# (TEAM2-change) Commeted out Yuval's model with animacy and frames
 #from .resrofa_fran import MTRFwFAv1Res

@@ -116,7 +116,8 @@ class MTRFv4Res(GenericModel):
             name='softmax_role_output')(tr_hidden)
 
         self.model = Model(inputs=[input_words, input_roles, target_word, target_role], outputs=[target_word_output, target_role_output])
-
+        
+        # (TEAM2-change) change metrics from accuracy -> custom_acc
         self.model.compile(optimizer, loss, [custom_acc], loss_weights)
 
 

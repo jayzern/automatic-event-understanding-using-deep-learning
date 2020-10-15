@@ -69,7 +69,8 @@ class NNRF_ROFA(GenericModel):
             name='softmax_word_output')(hidden_layer2)
 
         self.model = Model(inputs=[input_words, input_roles, target_role], outputs=[output_layer])
-
+        
+        # (TEAM2-change) change metrics from accuracy -> custom_acc
         self.model.compile(optimizer, loss, [custom_acc])
 
 

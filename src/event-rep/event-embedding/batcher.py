@@ -52,6 +52,7 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
         get_batch = get_MT_batch
 
     with open(file_name, 'r') as f:
+        # (TEAM2-change) change to readlines to avoid read errors
         if not random:
             lines = f.readlines()
 
@@ -68,6 +69,7 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
             n_neg_samples = 0
 
             for line in lines:
+                # (TEAM2-change) put try catch block here
                 try:
                     d = eval(line)
                 except:
@@ -75,7 +77,6 @@ def generator(file_name, model_name, unk_word_id, unk_role_id, missing_word_id, 
 
                 roles, words = map(list, zip(*d.items()))
 
-                # non_missing_inputs = [i for i, r in enumerate(roles) if words[i] != missing_word_id and r not in [5, 6]]
                 non_missing_inputs = [i for i, r in enumerate(roles) if words[i] != missing_word_id]
 
                 # Generate samples for each given (non-missing-word) role-word pair
@@ -142,7 +143,6 @@ def get_minibatch(file_name, unk_word_id, unk_role_id, missing_word_id, n_roles,
     #word_ids = np.arange(len(unigram_counts[0])).astype(np.float32)
 
     with open(file_name, 'r') as f:
-
         if random:
             file_length = os.stat(file_name).st_size
             lines = random_lines(f, file_length, batch_size, rng)
@@ -157,6 +157,7 @@ def get_minibatch(file_name, unk_word_id, unk_role_id, missing_word_id, n_roles,
         n_neg_samples = 0
 
         for line in lines:
+            # (TEAM2-change) put try catch block here
             try:
                 d = eval(line)
             except:
