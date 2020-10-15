@@ -24,6 +24,9 @@ from .rofdense import MTRFv4ResDense
 # classname of RoFAWD-MT: MTRFv4WD
 from .rofawd import MTRFv4WD
 
+# classname of RoFBeg-MT: MTRFv4RofBeg
+from .rofbeg import 
+
 # ablation study: sigle task version for composition methods
 
 # classname of RoFA-ST: NNRF_ROFA
