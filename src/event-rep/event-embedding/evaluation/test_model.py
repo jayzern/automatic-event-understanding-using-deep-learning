@@ -51,7 +51,7 @@ def thematic_fit_evaluation(model_name, experiment_name, model, print_result):
         result['GFiller'] = round(rho_fil, 4)
         result['greenberg'] = round(rho_gre, 4)
 
-# need to fix bug here:
+        # need to fix bug here: Fixed according to Prof. Yuval
         correct, _, acc = eval_bicknell_switch(model_name, experiment_name, 'bicknell', model, print_result, switch_test=False)
         result['bicknell'] = (acc, correct)
 
@@ -145,12 +145,12 @@ def evaluate(model_name, experiment_name, batch_size):
                                          n_roles,
                                          random=False, batch_size=batch_size)
     # Test the model
-    test_result = net.model.evaluate_generator(
-            generator = test_gen,
+    test_result = net.model.evaluate(
+            x = test_gen,
             steps = test_steps, 
-            max_q_size = 1, 
+            max_queue_size = 1, 
             workers = 1, 
-            pickle_safe = False
+            use_multiprocessing = False
         )
     print(('test_result', test_result))
 
@@ -191,7 +191,7 @@ def evaluate(model_name, experiment_name, batch_size):
             if true_r == result_role[i]:
                 result_list.append(1)
         batch_n += 1
-        print(batch_n)
+        # print(batch_n) (Team2-change) Commented out this line
         if batch_n >= test_steps:
             break
 
