@@ -27,7 +27,7 @@ import csv
 CODE_VER = "v1" # v1: legacy (Tony's). v2: with Frames/Animacy (Yuval's)
 
 import roles
-ROLES_CLS = roles.Roles2Args3Mods  #roles.Roles4Args3Mods  # roles.Roles3Args4Mods   # roles.Roles3Args3Mods 
+ROLES_CLS = roles.Roles2Args3Mods  #roles.Roles4Args3Mods  # roles.Roles3Args4Mods   # roles.Roles3Args3Mods
 #TRAIN_ROLES = ROLES_CLS.TRAIN_ROLES
 #TEST_ROLES  = ROLES_CLS.TEST_ROLES
 #ROLE_PRD    = ROLES_CLS.ROLE_PRD
@@ -41,7 +41,7 @@ if USE_FRAMES_AND_ANIM:
     FrAnSuff = ""
 else:
     FrAnSuff = "NoFrAn"
-    
+
 if USE_FRAMENET:
     #FRAMES_PATH = '/users/yuvalm/data/rw-eng-with-raw-sentences-and-heads-but-no-malt/exp5-408/frames-fn1.7.txt'
     FRAMES_PATH = '/home/ymarton/data/FrameNet/frames-fn1.7.txt'
@@ -57,16 +57,16 @@ if USE_SENTI2:
 #    ANIM_HMN = "Sentient"
 #    ANIM_NE_PERSON = "PERSON"
     ANIM_NONE = ANIMS_CLS.ANIM_NONE  #u"None"# inanimate
-    ANIMS = ANIMS_CLS.ANIMS    
+    ANIMS = ANIMS_CLS.ANIMS
     FrAnSuff += "An2" + ANIMS_CLS.__name__
-    
+
 BATCH_SIZE = 128  # Mini-batch size for RNN
 
 NUM_DEV_FILES   =   [ 217, 435, 651, 868,  1085,1302,1519,1736,
                      1953,2170,2387,2604,  2821,3038,3255,3472] #[0, 1100, 2200, 3300] #4 #14
 NUM_TEST_FILES  =   [ 218, 436, 652, 869,  1086,1303,1520,1737,
                      1954,2171,2388,2605,  2822,3039,3256,3473] #[1, 1101, 2201, 3301] #4 #14
-NUM_TRAIN_FILES =   0.001 # 40 #400 #36 #None  # None for all except dev and test files taken first; fraction for uniform sampling fraction of the files not in dev or test; 1.0 for all except any dev or test
+NUM_TRAIN_FILES =   0.01 # 40 #400 #36 #None  # None for all except dev and test files taken first; fraction for uniform sampling fraction of the files not in dev or test; 1.0 for all except any dev or test
 
 #FILES_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
 #FILES_PATH = '/media/ymarton/HDD2T/data/rw-eng/ukwac-proc-out-20190223-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
@@ -97,7 +97,7 @@ def penn2wn(first):
 
 """
 def convert_d_to_word(d):
-    ''' Convert text in <dep> tag of the labelled corpus to a triple of 
+    ''' Convert text in <dep> tag of the labelled corpus to a triple of
         lemma, first letter of P.O.S. tag and position index
     '''
     # skip attributes of algorithm equal to FAILED
@@ -117,7 +117,7 @@ def convert_d_to_word(d):
 
     if lemma == '' or pos_tag == '':
         return (None, None, None)
-    
+
     # ignore stopwords without P.O.S. tag in a list
     first = pos_tag[0]
     if first not in ['n', 'v', 'j', 'r']:
@@ -127,19 +127,19 @@ def convert_d_to_word(d):
     if re.search(r"[^a-zA-Z']+", lemma):
         return (None, None, None)
 
-    # if a apostrophe is found, ignore it and letters behind it 
+    # if a apostrophe is found, ignore it and letters behind it
     apo_ix = lemma.find("'")
     if apo_ix != -1:
         lemma = lemma[:apo_ix]
 
     # perform lemmatization
     lemma = wnl.lemmatize(lemma, penn2wn(first))
-    
+
     return lemma, pos_tag, index
 """
 
 def convert_d_to_word(d):
-    ''' Convert text in <dep> tag of the labelled corpus to a triple of 
+    ''' Convert text in <dep> tag of the labelled corpus to a triple of
         lemma, first letter of P.O.S. tag and position index
     '''
     # skip attributes of algorithm equal to FAILED
@@ -159,7 +159,7 @@ def convert_d_to_word(d):
 
     if lemma == '' or pos_tag == '':
         return (None, None, None)
-    
+
     # ignore stopwords without P.O.S. tag in a list
     first = pos_tag[0]
     if first not in ['n', 'v', 'j', 'r']:
@@ -169,14 +169,14 @@ def convert_d_to_word(d):
     if re.search(r"[^a-zA-Z']+", lemma):
         return (None, None, None)
 
-    # if a apostrophe is found, ignore it and letters behind it 
+    # if a apostrophe is found, ignore it and letters behind it
     apo_ix = lemma.find("'")
     if apo_ix != -1:
         lemma = lemma[:apo_ix]
 
     # perform lemmatization
     lemma = wnl.lemmatize(lemma, penn2wn(first))
-    
+
     return lemma, pos_tag, index
 
 
@@ -216,7 +216,7 @@ def build_frame_vocabulary():
     print("Frame vocabulary size is %d" % len(frame_vocabulary))
     return frame_vocabulary
 
-## SHOULD FIX WHEN ADDING SEQUENCE INDICATORS    
+## SHOULD FIX WHEN ADDING SEQUENCE INDICATORS
 def write_description(role_vocabulary, anim_vocabulary, word_vocabulary, frame_vocabulary,
                       unk_role_id,     unk_anim_id,     unk_word_id,     unk_frame_id,
                       missing_role_id, missing_anim_id, missing_word_id, missing_frame_id,
@@ -229,21 +229,21 @@ def write_description(role_vocabulary, anim_vocabulary, word_vocabulary, frame_v
             'word_vocabulary': word_vocabulary,
             'unk_word_id': unk_word_id,
             'missing_word_id': missing_word_id,
-            
+
             'role_vocabulary': role_vocabulary,
             'unk_role_id': unk_role_id,
             'missing_role_id': missing_role_id,
-            
+
             'frame_vocabulary':frame_vocabulary,
             'unk_frame_id': unk_frame_id,
             'missing_frame_id': missing_frame_id,
-            
+
             'anim_vocabulary': anim_vocabulary,
             'unk_anim_id': unk_anim_id,
             'missing_anim_id': missing_anim_id,
-            
+
             'minibatch_size': minibatch_size,
-            
+
  #           'NN_missing_word_id': nn_missing_word_id,
  #           'NN_unk_word_id': nn_unk_word_id,
             'dev_files': dev_files,
@@ -263,18 +263,18 @@ def write_description(role_vocabulary, anim_vocabulary, word_vocabulary, frame_v
             'role_vocabulary': role_vocabulary,
             'unk_role_id': unk_role_id,
             'missing_role_id': missing_role_id,
-            
+
             'frame_vocabulary_size': len(frame_vocabulary),
             #'frame_vocabulary': frame_vocabulary,
             'top_20_frames': ";".join(list(frame_vocabulary.keys())[:20]),
             'unk_frame_id': unk_frame_id,
             'missing_frame_id': missing_frame_id,
-            
+
             'anim_vocabulary_size': len(anim_vocabulary),
             'anim_vocabulary': anim_vocabulary,
             'unk_anim_id': unk_anim_id,
             'missing_anim_id': missing_anim_id,
-            
+
             'minibatch_size': minibatch_size,
  #           'NN_missing_word_id': nn_missing_word_id,
  #           'NN_unk_word_id': nn_unk_word_id,
@@ -284,7 +284,7 @@ def write_description(role_vocabulary, anim_vocabulary, word_vocabulary, frame_v
         }
         output.write("\n".join("%s=%s" % (k,v) for (k,v) in data.items()))
 
-        
+
 def convert_file(file, dataset_type,
                  role_vocabulary, anim_vocabulary, word_vocabulary, frame_vocabulary,
                  unk_role_id,     unk_anim_id,     unk_word_id,     unk_frame_id,
@@ -307,7 +307,7 @@ def convert_file(file, dataset_type,
         print("WARNING! unk_word_id != len(word_vocabulary)")
     #unk_role_id = len(role_vocabulary)
     #unk_word_id = len(word_vocabulary)
-    ## missing word must come before unk for nonincremental model, 
+    ## missing word must come before unk for nonincremental model,
     ## because in 'nothing' model we want to predict missing words, but we never predict unk words.
     nn_missing_word_id = len(word_vocabulary)
     nn_unk_word_id = len(word_vocabulary) + 1
@@ -315,10 +315,10 @@ def convert_file(file, dataset_type,
 
     print(("len(word_vocabulary) = %d" % len(word_vocabulary)))
     print(("vocab = %s ..." % ([k for k in word_vocabulary][:15])))
-          
+
     MAX_WARNINGS = 5
     numof_warnings = 0
-    
+
     try:
         xml = ET.fromstring(gzip.GzipFile(file).read())
     except:
@@ -328,9 +328,8 @@ def convert_file(file, dataset_type,
     for s in xml.findall("s"):
         skip_sentence = False
         sentence_nn_output = ""
-        content_word_indices = ""
 
-        sentence_ngram_rf = ""        
+        sentence_ngram_rf = ""
         sentence_roles = []
         sentence_words = []
         sentence_predicate_beginnings = []
@@ -338,9 +337,9 @@ def convert_file(file, dataset_type,
         for p in s.findall("predicate"):
             predicate_roles = {}
             predicate_words = {}
-            word_order_dict = {}
+            role_order_dict = {}
 
-            # Sample for non-incremental model 
+            # Sample for non-incremental model
             #sample = dict((r, nn_missing_word_id) for r in (role_vocabulary.values() + [unk_role_id]))
             if USE_FRAMES_AND_ANIM:
                 sample = dict((r, (missing_word_id,missing_anim_id,missing_frame_id)) for r in set(list(role_vocabulary.values()) + [unk_role_id]))
@@ -355,7 +354,7 @@ def convert_file(file, dataset_type,
                 frame_id= unk_frame_id
                 role = d.get("type").upper()
                 role_id = role_vocabulary.get(role, unk_role_id)
-                
+
                 # multiple words with the same role within a predicate make evaluation hard to compare
                 # so skip examples with multiple args of same role (but allow multiple modifiers of same role)
 #                if sample[role_id] != nn_missing_word_id and dataset_type != 'train':
@@ -371,14 +370,14 @@ def convert_file(file, dataset_type,
                         print(("roles: %s" %  role_vocabulary))
                     skip_sentence = True
                     break
-                
-                # index of the first word. Will be used for ordering the samples. 
+
+                # index of the first word. Will be used for ordering the samples.
                 # -1 to convert 1-based indexing into 0-based one.
                 i = int(d.text.split()[0].split("/")[-1])
 
                 word_id    = word_vocabulary.get(word, unk_word_id)
                 nn_word_id = word_vocabulary.get(word, nn_unk_word_id)
-                                
+
                 #sample[role_id] = nn_word_id
                 predicate_roles[i] = role_id
                 #predicate_words[i] = word_id
@@ -387,17 +386,22 @@ def convert_file(file, dataset_type,
                     sample[role_id] = (word_id,anim_id,frame_id)
                 else:
                     predicate_words[i] = word_id
-                    sample[role_id]    = word_id     
-                    word_order_dict[word_id] = int(index)
+                    sample[role_id]    = word_id
+                    role_order_dict[role_id] = int(index)
             if skip_sentence:
                 break
 
             if len(predicate_roles) == 0:
                 continue
 
-            sentence_nn_output += "%r\n" % sample
-            content_word_indices += "%r\n" % word_order_dict
-            sorted_predicate_roles = [r for i, r in sorted(predicate_roles.items())]     
+            # ADD SOMETHING HERE TO REORDER sample depending on word_order_dict
+            ordered_sample = {k:sample[k] for k, v in sorted(role_order_dict.items(), key=lambda item: item[1])}
+            for r in set(list(role_vocabulary.values()) + [unk_role_id]):
+              if r not in ordered_sample:
+                ordered_sample[r] = missing_word_id
+
+            sentence_nn_output += "%r\n" % ordered_sample
+            sorted_predicate_roles = [r for i, r in sorted(predicate_roles.items())]
             sorted_predicate_words = [w for i, w in sorted(predicate_words.items())]
             predicate_beginnings = [1] + [0] * (len(sorted_predicate_words) - 1)
 
@@ -406,23 +410,22 @@ def convert_file(file, dataset_type,
             sentence_predicate_beginnings += predicate_beginnings
             sentence_ngram_rf += " ".join(
                 [reverse_word_vocabulary.get(w, "<unk>") for w in sorted_predicate_words]) + "\n"
-            
+
         if skip_sentence:
             continue
 
         file_nn_output += sentence_nn_output
-        file_cwi_output += content_word_indices
 
         file_roles += sentence_roles
         file_words += sentence_words
         file_predicate_beginnings += sentence_predicate_beginnings
         file_ngram_rf += sentence_ngram_rf
-        
+
 
     print(("Number of multiple arg warnings: %d / %d %d %d" % (numof_warnings, len(file_nn_output), len(file_roles), len(file_words))))
 
     #return file_nn_output, file_cwi_output, file_roles, file_words, file_predicate_beginnings, file_ngram_rf
-    return file_nn_output, file_roles, file_words, file_cwi_output
+    return file_nn_output, file_roles, file_words
 
 
 def convert_file_v2(file, dataset_type,
@@ -440,13 +443,13 @@ def convert_file_v2(file, dataset_type,
     numof_warnings = 0
 
     ROLE_PRD = ROLES_CLS.ROLE_PRD
-    
+
     if unk_role_id != len(role_vocabulary):
         print("WARNING! unk_role_id != len(role_vocabulary)")
-        
+
 #    unk_role_id = len(role_vocabulary)
 #    unk_word_id = len(word_vocabulary)
-    # missing word must come before unk for nonincremental model, 
+    # missing word must come before unk for nonincremental model,
     # because in 'nothing' model we want to predict missing words, but we never predict unk words.
 #    nn_missing_word_id = len(word_vocabulary)
 #    nn_unk_word_id = len(word_vocabulary) + 1
@@ -474,41 +477,41 @@ def convert_file_v2(file, dataset_type,
             predicate_roles = {}
             predicate_words = {}
 
-            ## Sample for non-incremental model 
+            ## Sample for non-incremental model
             #sample = dict((r, nn_missing_word_id) for r in (role_vocabulary.values() + [unk_role_id]))
             #sample = dict((r, (unk_word_id,unk_anim_id,unk_frame_id)) for r in (role_vocabulary.values() + [unk_role_id]))
             if USE_FRAMES_AND_ANIM:
                 sample = dict((r, (missing_word_id,missing_anim_id,missing_frame_id)) for r in set(list(role_vocabulary.values()) + [unk_role_id]))
             else:
                 sample = dict((r, missing_word_id) for r in set(list(role_vocabulary.values()) + [unk_role_id]))
-             
+
             for arg_node in fr_node.findall("Arg"):
                 arg_head = arg_node.attrib.get('head')
                 if not arg_head:
                     continue  # skip
-                
+
                 role = arg_node.attrib.get('role')
                 if not role:
                     continue  # skip
                 role = role.upper()
-                
+
 #                if role in ("ARG3","ARG4","ARG5"):
 #                    role = "ARG3-4-5"
 #                elif (role[:4] == "ARGM") and (role not in ("ARGM-LOC", "ARGM-TMP", "ARGM-MNR")):
 #                    role = "ARGM-OTHER"
                 role = ROLES_CLS.adjustRole(role)
-                    
+
 #                if role not in role_vocabulary:
 #                    role = ROLE_OTHER
 
                 word_id = word_vocabulary.get(arg_head, unk_word_id)
                 role_id = role_vocabulary.get(role, unk_role_id)
-                
+
                 arg_tokens =   arg_node.attrib.get('tokens',"").strip().split(' ')
                 head_idx = int(arg_node.attrib.get('head_index'))
                 arg_start= int(arg_node.attrib.get('span_begin'))
                 head_rel_idx = head_idx - arg_start
-                    
+
                 if USE_FRAMES_AND_ANIM:
                     anim = ""
                     frame_name = ""
@@ -537,7 +540,7 @@ def convert_file_v2(file, dataset_type,
                     frame_id= frame_vocabulary.get(frame_name, unk_frame_id)
                     if anim_id == unk_anim_id:
                         print("\tDBG: anim: %s, anim_id: %d, head_rel_idx %d = head_idx %d - arg_start %d, \t len(arg_tokens)=%d,\t arg_tokens[head_rel_idx]=%s" % (anim, anim_id, head_rel_idx, head_idx, arg_start,  len(arg_tokens), arg_tokens[head_rel_idx]))
-                    
+
                 # multiple words with the same role within a predicate make evaluation hard to compare
                 # so skip examples with multiple args of same role (but allow multiple modifiers of same role)
 #                if sample[role_id] != nn_missing_word_id and dataset_type != 'train':
@@ -550,20 +553,20 @@ def convert_file_v2(file, dataset_type,
                         print(("WARNING %d/%d: skipping example with role %s:%s, arg_head %s, in sample:fr_node '%s':'%s'" % (numof_warnings, MAX_WARNINGS, role,role_id, arg_head, sample,ET.tostring(fr_node)[:100])))
 #                        print("WARNING: skipping example with multiple args of same role: '%s'" % fr_node)
                     if numof_warnings == 1:
-                        print(("roles: %s" %  role_vocabulary))                    
+                        print(("roles: %s" %  role_vocabulary))
                     skip_frame = True
                     break
 #
-#                # index of the first word. Will be used for ordering the samples. 
+#                # index of the first word. Will be used for ordering the samples.
 #                # -1 to convert 1-based indexing into 0-based one.
 #                i = int(d.text.split()[0].split("/")[-1])
 
 #                word_id = role_vocabulary.get(word, unk_word_id)
 #                nn_word_id = word_vocabulary.get(word, nn_unk_word_id)
-                
-#                content_word_indices.append(i)                
+
+#                content_word_indices.append(i)
 #                sample[role_id] = nn_word_id
-                
+
                 predicate_roles[head_idx] = role_id
                 if USE_FRAMES_AND_ANIM:
                     predicate_words[head_idx] = (word_id,anim_id,frame_id)
@@ -581,7 +584,7 @@ def convert_file_v2(file, dataset_type,
                 continue
 
             sentence_nn_output += "%r\n" % sample
-            sorted_predicate_roles = [r for i, r in sorted(predicate_roles.items())]     
+            sorted_predicate_roles = [r for i, r in sorted(predicate_roles.items())]
             sorted_predicate_words = [w for i, w in sorted(predicate_words.items())]
 
             sentence_roles += sorted_predicate_roles
@@ -594,7 +597,7 @@ def convert_file_v2(file, dataset_type,
         file_nn_output += sentence_nn_output
         file_roles += sentence_roles
         file_words += sentence_words
-        
+
     # end S (sentence) loop
 
     print(("Number of multiple arg warnings: %d / %d %d %d" % (numof_warnings, len(file_nn_output), len(file_roles), len(file_words))))
@@ -615,14 +618,13 @@ def convert_data(input_files, dataset_type,
 
     all_roles = []
     all_words = []
-    all_cwi_output = ""
 
     my_convert_file = convert_file if (CODE_VER == "v1") else convert_file_v2
-    
+
     for j, f in enumerate(input_files):
         print("%s %d/%d" % (dataset_type, j + 1, len(input_files)))
 
-        file_nn_output, file_roles, file_words, file_cwi_output  = my_convert_file(f, dataset_type,
+        file_nn_output, file_roles, file_words  = my_convert_file(f, dataset_type,
                                                                role_vocabulary, anim_vocabulary, word_vocabulary, frame_vocabulary,
                                                                unk_role_id,     unk_anim_id,     unk_word_id,     unk_frame_id,
                                                                missing_role_id, missing_anim_id, missing_word_id, missing_frame_id,)
@@ -630,15 +632,11 @@ def convert_data(input_files, dataset_type,
         all_nn_output += file_nn_output
         all_roles += file_roles
         all_words += file_words
-        all_cwi_output += file_cwi_output
 
     #with open(OUTPUT_PATH + "NN_" + dataset_type, "w+b") as nn_output:
     with open(OUTPUT_PATH + "NN_" + dataset_type, "w") as nn_output:
         nn_output.write(all_nn_output)
     print(("converted %d words" % len(all_words)))
-
-    with open(OUTPUT_PATH+ "word_orders_" + dataset_type, "w") as wordorder_output:
-        wordorder_output.write(all_cwi_output)
 
 
 if __name__ == '__main__':
@@ -647,15 +645,15 @@ if __name__ == '__main__':
     if not os.path.exists(OUTPUT_PATH):
         print(("MKDIR %s" % OUTPUT_PATH))
         os.mkdir(OUTPUT_PATH)
-    
+
 #    all_files = glob.glob(FILES_PATH)
     all_files = sorted(glob.glob(FILES_PATH))
     all_files = [fn.replace("20190223", "20200229") for fn in all_files] # quick n dirty hack cuz didn't convert all files
-    
+
     dev_files = all_files[:NUM_DEV_FILES] if (type(NUM_DEV_FILES) is int) else \
                 sorted(list([all_files[fi] for fi in NUM_DEV_FILES]))
     print("=======dev=======\n%r" % dev_files)
-    
+
     test_files = all_files[NUM_DEV_FILES:NUM_DEV_FILES + NUM_TEST_FILES] if (type(NUM_TEST_FILES) is int) else \
                  sorted(list([all_files[fi] for fi in NUM_TEST_FILES]))
     print("=======test=======\n%r" % test_files)
@@ -692,7 +690,7 @@ if __name__ == '__main__':
 
     if ROLES_CLS.has_role_other:
         print(("Role set has UNK role: %d" % ROLES_CLS.TRAIN_ROLES[Roles.ROLE_OTHER]))
-        unk_role_id = ROLES_CLS.TRAIN_ROLES[Roles.ROLE_OTHER] 
+        unk_role_id = ROLES_CLS.TRAIN_ROLES[Roles.ROLE_OTHER]
     else:
         unk_role_id = len(role_vocabulary)
     missing_role_id = len(role_vocabulary) + 1  #unk_role_id + 1
@@ -710,14 +708,14 @@ if __name__ == '__main__':
         unk_frame_id= None
         missing_anim_id = None
         missing_frame_id= None
-        
+
     write_description(ROLES_CLS.TEST_ROLES,  ANIMS,       word_vocabulary, frame_vocabulary,
                       unk_role_id, unk_anim_id, unk_word_id,     unk_frame_id,
                       missing_role_id, missing_anim_id, missing_word_id, missing_frame_id,
                       BATCH_SIZE, dev_files, test_files, train_files)
     print("Vocabulary building done in %d seconds" % (time() - t0))
 
-    convert_data(dev_files, 'dev', 
+    convert_data(dev_files, 'dev',
                  role_vocabulary, ANIMS,           word_vocabulary, frame_vocabulary,
                  unk_role_id,     unk_anim_id,     unk_word_id,     unk_frame_id,
                  missing_role_id, missing_anim_id, missing_word_id, missing_frame_id,
@@ -735,4 +733,3 @@ if __name__ == '__main__':
 
     print("Conversion done in %d seconds" % (time() - t0))
     print("DON'T FORGET:   cp  %s/*  ../data/test/" % OUTPUT_PATH)
-
