@@ -53,6 +53,7 @@ source activate py2
 * Python 3.7
 * CUDA 10.1
 * Tensorflow 2.3.0
+* Numpy
 
 ### first, get the docker image:
 - Install nvidia-docker if you need it (and have GPUs) : https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)
@@ -170,17 +171,6 @@ KERAS_BACKEND=theano python main2.py \
 * This format is different from the original code (Tony's)
 * Optional: You might also want to try adding `THEANO_FLAGS='device=cuda,force_device=True,floatX=float32'`
 
-## train model python3:
-```
-cd src/event-rep/event-embedding
-
-python3 main2.py \
-    MTRFv4Res \
-    exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 \
-    20200717-batch1024-iters25 \
-    --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
-```
-
 ### continued training
 to continue training a pre-trained model, or a model of which training was interupted:
 ```
@@ -191,22 +181,79 @@ KERAS_BACKEND=theano python main2.py \
     --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods \
     --load_previous True
 ```
-## continued training python3:
-```
-cd src/event-rep/event-embedding
-
-python3 main2.py \
-    MTRFv4Res \
-    exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 \
-    20200717-batch1024-iters25 \
-    --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods \
-    --load_previous True
-```
-
 ## test:
 ```
 cd src/event-rep/event-embedding
 KERAS_BACKEND=theano python evaluation/test_model.py MTRFv4Res exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1  20200717-batch1024-iters25  1024 True
 ```
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------
+## Team2 Setup (Python3 and TF2.3)
+1. Pull code from github and arrange into the following directory
+#### File arrangements
+* All files should be organized in following structure:
+```
+.
+├── data
+├── model
+├── eval_data
+└── event-embedding
+    ├── main2.py
+    ├── config.py
+    ├── utils.py
+    ├── batcher.py
+    ├── model
+    │   ├── __init__.py
+    │   ├── embeddings.py
+    │   ├── layers.py
+    │   ├── generic.py
+    │   ├── nnrf.py
+    │   ├── nnrf_mt.py
+    │   ├── rofa.py
+    │   ├── resrofa.py
+    │   ├── rofa_st.py
+    │   └── resrofa_st.py
+    │   └── rofawd.py
+    │   └── rofbeg.py
+    │   └── rofdense.py
+    ├── evaluation
+    │   ├── __init__.py
+    │   └── ...
+    └── README.md
+```
+2. Install dependencies (TensorFlow 2.3, Numpy)
+3. Download NLTK for evaluation by doing
+```
+import nltk
+nltk.download('all')
+```
+4. move into directory of main2.py file
+```
+cd event-embedding
+```
+4. Choose which models to run
+a. ResRofa (baseline)
+```
+python3 main2.py MTRFv4Res exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
+```
+b. RofWD
+```
+python3 main2.py MTRFv4WD exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
+```
+c. RofBeg
+```
+python3 main2.py MTRFv4RofBeg exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
+```
+d. ResDense
+```
+python3 main2.py MTRFv4ResDense exp9_0.001-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
+```
+5. Continue training
+```
+python3 main2.py MTRFv4Res exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods --load_previous True
+```
+6. Evaluation/Testing Run
+```
+cd evaluation
+python3 test_model.py MTRFv4Res exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1  20200717-batch1024-iters25  1024 True
+```
