@@ -191,11 +191,13 @@ KERAS_BACKEND=theano python evaluation/test_model.py MTRFv4Res exp9_0.01-16-16-R
 ## Team2 Setup (Python3 and TF2.3)
 1. Pull code from github and arrange into the following directory
 #### File arrangements
-* All files should be organized in following structure:
+* All files should be organized in following structure. model and results folder should be initially empty if we are trainining models.
 ```
-.
 ├── data
+    ├── exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1
+    ├── ....    
 ├── model
+├── results
 ├── eval_data
 └── event-embedding
     ├── main2.py
