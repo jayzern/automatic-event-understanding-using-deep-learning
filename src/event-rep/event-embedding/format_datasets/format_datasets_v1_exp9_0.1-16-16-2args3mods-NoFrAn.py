@@ -65,18 +65,18 @@ NUM_DEV_FILES   =   [ 217, 435, 651, 868,  1085,1302,1519,1736,
                      1953,2170,2387,2604,  2821,3038,3255,3472] #[0, 1100, 2200, 3300] #4 #14
 NUM_TEST_FILES  =   [ 218, 436, 652, 869,  1086,1303,1520,1737,
                      1954,2171,2388,2605,  2822,3039,3256,3473] #[1, 1101, 2201, 3301] #4 #14
-NUM_TRAIN_FILES =   0.1     # 0.01                  # 40 #400 #36 #None  # None for all except dev and test files taken first; fraction for uniform sampling fraction of the files not in dev or test; 1.0 for all except any dev or test
+NUM_TRAIN_FILES =   0.001     # 0.01                  # 40 #400 #36 #None  # None for all except dev and test files taken first; fraction for uniform sampling fraction of the files not in dev or test; 1.0 for all except any dev or test
 
 #FILES_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
 #FILES_PATH = '/media/ymarton/HDD2T/data/rw-eng/ukwac-proc-out-20190223-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
-FILES_PATH = '/media/ymarton/HDD2T/data/rw-eng/ukwac-proc-out-20200602-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
+FILES_PATH = '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
 #'/root/home/yuvalm/src/sem-fitl/event-embedding-multitask/data/rw-eng-1.0-*.converted.xml.gz'
 #'/local/xhong/corpus/oct_2016_heads/heads.ukwac.fixed-nowiki.node*.converted.xml.gz'
 
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-merged/exp6-48+a2+a345+am-other/'
 #'/local/xhong/data/oct_data/'
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp2_0.01-2-2-%s/' % CODE_VER
-OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
+OUTPUT_PATH = '../../../../../seq_event-rep/exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
 
 #wnl = WordNetLemmatizer()
 

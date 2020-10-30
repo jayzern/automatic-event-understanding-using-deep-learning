@@ -24,10 +24,12 @@ import utils
 import os
 import csv
 
+
+
 CODE_VER = "v1" # v1: legacy (Tony's). v2: with Frames/Animacy (Yuval's)
 
 import roles
-ROLES_CLS = roles.Roles2Args3Mods  #roles.Roles4Args3Mods  # roles.Roles3Args4Mods   # roles.Roles3Args3Mods
+ROLES_CLS = roles.Roles2Args3Mods  #roles.Roles4Args3Mods  # roles.Roles3Args4Mods   # roles.Roles3Args3Mods 
 #TRAIN_ROLES = ROLES_CLS.TRAIN_ROLES
 #TEST_ROLES  = ROLES_CLS.TEST_ROLES
 #ROLE_PRD    = ROLES_CLS.ROLE_PRD
@@ -41,7 +43,7 @@ if USE_FRAMES_AND_ANIM:
     FrAnSuff = ""
 else:
     FrAnSuff = "NoFrAn"
-
+    
 if USE_FRAMENET:
     #FRAMES_PATH = '/users/yuvalm/data/rw-eng-with-raw-sentences-and-heads-but-no-malt/exp5-408/frames-fn1.7.txt'
     FRAMES_PATH = '/home/ymarton/data/FrameNet/frames-fn1.7.txt'
@@ -57,9 +59,9 @@ if USE_SENTI2:
 #    ANIM_HMN = "Sentient"
 #    ANIM_NE_PERSON = "PERSON"
     ANIM_NONE = ANIMS_CLS.ANIM_NONE  #u"None"# inanimate
-    ANIMS = ANIMS_CLS.ANIMS
+    ANIMS = ANIMS_CLS.ANIMS    
     FrAnSuff += "An2" + ANIMS_CLS.__name__
-
+    
 BATCH_SIZE = 128  # Mini-batch size for RNN
 
 NUM_DEV_FILES   =   [ 217, 435, 651, 868,  1085,1302,1519,1736,
@@ -70,14 +72,14 @@ NUM_TRAIN_FILES =   0.1 # 40 #400 #36 #None  # None for all except dev and test 
 
 #FILES_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
 #FILES_PATH = '/media/ymarton/HDD2T/data/rw-eng/ukwac-proc-out-20190223-merged/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
-FILES_PATH = 'raw_data/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
+FILES_PATH = '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node*.converted.xml.converted.xml.gz'
 #'/root/home/yuvalm/src/sem-fitl/event-embedding-multitask/data/rw-eng-1.0-*.converted.xml.gz'
 #'/local/xhong/corpus/oct_2016_heads/heads.ukwac.fixed-nowiki.node*.converted.xml.gz'
 
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-merged/exp6-48+a2+a345+am-other/'
 #'/local/xhong/data/oct_data/'
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp2_0.01-2-2-%s/' % CODE_VER
-OUTPUT_PATH = 'preprocessed/test_exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
+OUTPUT_PATH = '../../../../../seq_event-rep/test_exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
 
 #wnl = WordNetLemmatizer()
 
@@ -348,46 +350,54 @@ def convert_file(file, dataset_type,
 
             for d in p.findall("dependencies/dep"):
                 word, pos_tag, index = convert_d_to_word(d)
-                if word is None:
-                    continue  # skip - otherwise cant compare to N-gram
-                anim_id = unk_anim_id
-                frame_id= unk_frame_id
-                role = d.get("type").upper()
-                role_id = role_vocabulary.get(role, unk_role_id)
 
-                # multiple words with the same role within a predicate make evaluation hard to compare
-                # so skip examples with multiple args of same role (but allow multiple modifiers of same role)
-#                if sample[role_id] != nn_missing_word_id and dataset_type != 'train':
-                if (  (USE_FRAMES_AND_ANIM and (sample[role_id][0] != missing_word_id)) \
-                   or (not USE_FRAMES_AND_ANIM and (sample[role_id] != missing_word_id))) \
-                and not (((len(role) >= 2) and (role[:2] == "AM")) \
-                      or ((len(role) >= 4) and (role[:4] == "ARGM"))) :
-                    numof_warnings += 1
-                    if numof_warnings < MAX_WARNINGS:
-                        print(("WARNING %d/%d: skipping example with role %s:%s, word %s:%s, in sample:s '%s':'%s'" % (numof_warnings, MAX_WARNINGS, role,role_id, word,index, sample,ET.tostring(s)[:60])))
-#                        print("WARNING: skipping example with multiple args of same role: '%s'" % fr_node)
-                    if numof_warnings == 1:
-                        print(("roles: %s" %  role_vocabulary))
-                    skip_sentence = True
-                    break
+                # To prevent invalid literal ValueError
+                try:
+                    checker = int(index)
 
-                # index of the first word. Will be used for ordering the samples.
-                # -1 to convert 1-based indexing into 0-based one.
-                i = int(d.text.split()[0].split("/")[-1])
+                    if word is None:
+                        continue  # skip - otherwise cant compare to N-gram
+                    anim_id = unk_anim_id
+                    frame_id= unk_frame_id
+                    role = d.get("type").upper()
+                    role_id = role_vocabulary.get(role, unk_role_id)
 
-                word_id    = word_vocabulary.get(word, unk_word_id)
-                nn_word_id = word_vocabulary.get(word, nn_unk_word_id)
+                    # multiple words with the same role within a predicate make evaluation hard to compare
+                    # so skip examples with multiple args of same role (but allow multiple modifiers of same role)
+    #                if sample[role_id] != nn_missing_word_id and dataset_type != 'train':
+                    if (  (USE_FRAMES_AND_ANIM and (sample[role_id][0] != missing_word_id)) \
+                    or (not USE_FRAMES_AND_ANIM and (sample[role_id] != missing_word_id))) \
+                    and not (((len(role) >= 2) and (role[:2] == "AM")) \
+                        or ((len(role) >= 4) and (role[:4] == "ARGM"))) :
+                        numof_warnings += 1
+                        if numof_warnings < MAX_WARNINGS:
+                            print(("WARNING %d/%d: skipping example with role %s:%s, word %s:%s, in sample:s '%s':'%s'" % (numof_warnings, MAX_WARNINGS, role,role_id, word,index, sample,ET.tostring(s)[:60])))
+    #                        print("WARNING: skipping example with multiple args of same role: '%s'" % fr_node)
+                        if numof_warnings == 1:
+                            print(("roles: %s" %  role_vocabulary))
+                        skip_sentence = True
+                        break
 
-                #sample[role_id] = nn_word_id
-                predicate_roles[i] = role_id
-                #predicate_words[i] = word_id
-                if USE_FRAMES_AND_ANIM:
-                    predicate_words[i] = (word_id,anim_id,frame_id)
-                    sample[role_id] = (word_id,anim_id,frame_id)
-                else:
-                    predicate_words[i] = word_id
-                    sample[role_id]    = word_id
-                    role_order_dict[role_id] = int(index)
+                    # index of the first word. Will be used for ordering the samples.
+                    # -1 to convert 1-based indexing into 0-based one.
+                    i = int(d.text.split()[0].split("/")[-1])
+
+                    word_id    = word_vocabulary.get(word, unk_word_id)
+                    nn_word_id = word_vocabulary.get(word, nn_unk_word_id)
+
+                    #sample[role_id] = nn_word_id
+                    predicate_roles[i] = role_id
+                    #predicate_words[i] = word_id
+                    if USE_FRAMES_AND_ANIM:
+                        predicate_words[i] = (word_id,anim_id,frame_id)
+                        sample[role_id] = (word_id,anim_id,frame_id)
+                    else:
+                        predicate_words[i] = word_id
+                        sample[role_id]    = word_id
+                        role_order_dict[role_id] = int(index)
+                except:
+                    pass
+
             if skip_sentence:
                 break
 
@@ -733,3 +743,4 @@ if __name__ == '__main__':
 
     print("Conversion done in %d seconds" % (time() - t0))
     print("DON'T FORGET:   cp  %s/*  ../data/test/" % OUTPUT_PATH)
+
