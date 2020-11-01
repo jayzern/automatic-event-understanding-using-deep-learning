@@ -37,3 +37,15 @@ from .resrofa_st import NNRF_ResROFA
 
 # (TEAM2-change) Commeted out Yuval's model with animacy and frames
 #from .resrofa_fran import MTRFwFAv1Res
+
+# classname of RoFSeq-MT: MTRFv4RofSeqLSTM
+from .rofseqlstm import MTRFv4RofSeqLSTM
+
+# classname of RoFSeq-MT: MTRFv4RofSeqBiLSTM
+from .rofseqbilstm import MTRFv4RofSeqBiLSTM
+
+# classname of RoFSeq-MT: MTRFv4RofSeqRNN
+from .rofseqrnn import MTRFv4RofSeqRNN
+
+# classname of RoFSeq-MT: MTRFv4RofSeqBiLSTMAt
+from .rofseqbilstmat import MTRFv4RofSeqBiLSTMAt
