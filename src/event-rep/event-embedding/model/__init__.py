@@ -49,3 +49,6 @@ from .rofseqrnn import MTRFv4RofSeqRNN
 
 # classname of RoFSeq-MT: MTRFv4RofSeqBiLSTMAt
 from .rofseqbilstmat import MTRFv4RofSeqBiLSTMAt
+
+# classname of RoFSeq-MT: MTRFv4RofSeqLSTM
+from .rofseqdeeplstm import MTRFv4RofSeqDeepLSTM
