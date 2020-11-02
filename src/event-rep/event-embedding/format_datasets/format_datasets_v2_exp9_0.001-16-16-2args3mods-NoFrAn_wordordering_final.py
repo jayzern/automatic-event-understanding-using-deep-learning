@@ -78,7 +78,7 @@ FILES_PATH = FILES_PATH = '../../../../../../../media/data-disk/data/annot/heads
 #'/local/xhong/data/oct_data/'
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp2_0.01-2-2-%s/' % CODE_VER
 #OUTPUT_PATH = '/home/ymarton/data/rw-eng/ukwac-proc-out-preproc4DL-20190929/exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
-OUTPUT_PATH = '../../../../../seq_event-rep/test_exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
+OUTPUT_PATH = '../../../../../seq_event-rep/worder_exp9_%s-%d-%d-%s-%s-%s/' % (NUM_TRAIN_FILES, len(NUM_DEV_FILES), len(NUM_TEST_FILES), ROLES_CLS.__name__, FrAnSuff, CODE_VER)
 
 #wnl = WordNetLemmatizer()
 
