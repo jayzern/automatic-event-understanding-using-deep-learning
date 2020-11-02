@@ -404,7 +404,7 @@ def convert_file(file, dataset_type,
             if len(predicate_roles) == 0:
                 continue
 
-            # ADD SOMETHING HERE TO REORDER sample depending on word_order_dict
+            # Reorder sample depending on order of word appearance
             ordered_sample = {k:sample[k] for k, v in sorted(role_order_dict.items(), key=lambda item: item[1])}
             for r in set(list(role_vocabulary.values()) + [unk_role_id]):
               if r not in ordered_sample:
