@@ -641,7 +641,7 @@ def convert_data(input_files, dataset_type,
         all_roles += file_roles
         all_words += file_words
 
-    with open(OUTPUT_PATH + "NN_" + dataset_type, "w+b") as nn_output:
+    with open(OUTPUT_PATH + "NN_" + dataset_type, "w") as nn_output:
         nn_output.write(all_nn_output)
     print(("converted %d words" % len(all_words)))
 

@@ -4271,3 +4271,293 @@ Traceback (most recent call last):
   File "format_datasets_v2_exp9_0.001-16-16-2args3mods-NoFrAn_wordordering.py", line 645, in convert_data
     nn_output.write(all_nn_output)
 TypeError: a bytes-like object is required, not 'str'
+=======dev=======
+['../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0217.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0436.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0652.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0870.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1087.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1304.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1521.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1739.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1957.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2174.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2392.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2610.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2827.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3044.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3261.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3478.converted.xml.converted.xml.gz']
+=======test=======
+['../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0218.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0437.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0653.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0871.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1088.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1305.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1522.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1740.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1958.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2175.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2393.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2611.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2828.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3045.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3262.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3479.converted.xml.converted.xml.gz']
+=======train=======
+['../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0000.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1002.converted.xml.converted.xml.gz', '../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2004.converted.xml.converted.xml.gz']
+3 train files out of 3490 files
+1/3 	 ../../../../../../../medi...0000.converted.xml.converted.xml.gz
+2/3 	 ../../../../../../../medi...1002.converted.xml.converted.xml.gz
+3/3 	 ../../../../../../../medi...2004.converted.xml.converted.xml.gz
+Word vocabulary size is 44787
+Vocabulary building done in 72 seconds
+dev 1/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0217.converted.xml.converted.xml.gz
+WARNING 2/5: skipping example with role ARG2:6, arg_head able, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="0">\n\t0\t0\tPRD\tAre\n\t1\t1\tARGM-NEG\tnot\n\t2\t12\tARG2\table to to demonstrate that being atte''
+WARNING 3/5: skipping example with role ARG2:6, arg_head take, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 4070}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tis\n\t0\t6\tARG2\tIn the five - passenger disabling stroke\n\t9\t15\tARG2\tthat t''
+Number of multiple arg warnings: 6483 / 3685699 184116 184116
+dev 2/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0436.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head retire, in sample:fr_node '{0: 884, 1: 15, 2: 44788, 3: 2518, 4: 44788, 5: 311, 6: 38}':'b'<Frame prd_idx="35">\n\t35\t35\tPRD\tforced\n\t29\t29\tARGM-TMP\t1998\n\t30\t30\tR-ARGM-TMP\twhen\n\t31\t34\tARG0\ta ser''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG4:6, arg_head be, in sample:fr_node '{0: 44788, 1: 799, 2: 44788, 3: 44788, 4: 44788, 5: 305, 6: 151}':'b'<Frame prd_idx="18">\n\t18\t18\tPRD\tranged\n\t11\t16\tARG1\tSpeaker Gyles Brandreth \'s varied career\n\t19\t24\tA''
+WARNING 3/5: skipping example with role ARG2:6, arg_head mp, in sample:fr_node '{0: 44788, 1: 15, 2: 44788, 3: 44788, 4: 44788, 5: 143, 6: 2}':'b'<Frame prd_idx="25">\n\t25\t25\tPRD\tbecame\n\t0\t22\tR-ARG1\tKnown for the colourful jumpers he wore on count''
+WARNING 4/5: skipping example with role ARG4:6, arg_head career, in sample:fr_node '{0: 44788, 1: 15, 2: 44788, 3: 2218, 4: 44788, 5: 283, 6: 1479}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\treturned\n\t0\t1\tARGM-TMP\tIn 1997\n\t3\t6\tARGM-ADV\twith politics behind him\n\t''
+Number of multiple arg warnings: 6184 / 3616396 179198 179198
+dev 3/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0652.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG0:0, arg_head king, in sample:fr_node '{0: 1976, 1: 2090, 2: 44788, 3: 44788, 4: 44788, 5: 1001, 6: 31}':'b'<Frame prd_idx="59">\n\t59\t59\tPRD\twore\n\t56\t57\tARG0\t28 Jews\n\t58\t58\tR-ARG0\twho\n\t60\t62\tARG1\ta Nazi unifor''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head extermination, in sample:fr_node '{0: 1226, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 211, 6: 31}':'b'<Frame prd_idx="7">\n\t7\t7\tPRD\tordered\n\t3\t5\tARG0\tthe Nazi leaders\n\t6\t6\tR-ARG0\twho\n\t8\t12\tARG2\tthe exter''
+WARNING 3/5: skipping example with role ARG2:6, arg_head jew, in sample:fr_node '{0: 44788, 1: 2608, 2: 44788, 3: 44788, 4: 44788, 5: 911, 6: 2452}':'b'<Frame prd_idx="20">\n\t20\t20\tPRD\trace\n\t18\t18\tARGM-ADJ\tmixed\n\t19\t19\tARG1\tJewish\n\t23\t25\tARG2\tto a Jew\n ''
+WARNING 4/5: skipping example with role ARG2:6, arg_head list, in sample:fr_node '{0: 9, 1: 277, 2: 44788, 3: 44788, 4: 44788, 5: 335, 6: 84}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tadd\n\t1\t1\tARG0\tI\n\t2\t2\tARGM-MOD\tcould\n\t4\t5\tARG1\t60 names\n\t6\t8\tARG2\tto tha''
+Number of multiple arg warnings: 6564 / 3811091 188729 188729
+dev 4/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0870.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head condition, in sample:fr_node '{0: 44788, 1: 1637, 2: 44788, 3: 44788, 4: 44788, 5: 225, 6: 10}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\tinvolved\n\t5\t6\tARG1\tmore genes\n\t7\t7\tR-ARG1\tthat\n\t10\t12\tARG2\tin the condi''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head movement, in sample:fr_node '{0: 44788, 1: 1637, 2: 44788, 3: 44788, 4: 44788, 5: 225, 6: 84}':'b'<Frame prd_idx="19">\n\t19\t19\tPRD\tinvolved\n\t14\t15\tARG1\ta gene\n\t16\t16\tR-ARG1\tthat\n\t17\t17\tARGM-MOD\tcould''
+WARNING 3/5: skipping example with role ARG2:6, arg_head diagnosis, in sample:fr_node '{0: 2173, 1: 77, 2: 44788, 3: 44788, 4: 44788, 5: 13930, 6: 29}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tpave\n\t5\t6\tARG0\ttheir findings\n\t7\t7\tARGM-MOD\twill\n\t9\t10\tARG1\tthe way\n\t11''
+WARNING 4/5: skipping example with role ARG2:6, arg_head intelligent, in sample:fr_node '{0: 44788, 1: 50, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tare\n\t1\t3\tARG1\tPeople with dyslexia\n\t5\t5\tARGM-NEG\tnot\n\t6\t9\tARG2\tless int''
+Number of multiple arg warnings: 6530 / 3784070 188208 188208
+dev 5/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1087.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head community, in sample:fr_node '{0: 2417, 1: 457, 2: 44788, 3: 44788, 4: 44788, 5: 339, 6: 32}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tlearn\n\t0\t0\tARGM-MOD\tCan\n\t1\t3\tARG0\teducational software developers\n\t5\t5\t''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG1:1, arg_head project, in sample:fr_node '{0: 24306, 1: 458, 2: 44788, 3: 44788, 4: 44788, 5: 528, 6: 44788}':'b'<Frame prd_idx="120">\n\t120\t120\tPRD\tfunded\n\t104\t104\tARG1\ttechnology\n\t119\t119\tARG0\tEsprit\n\t121\t122\tARG''
+WARNING 3/5: skipping example with role ARG2:6, arg_head usable, in sample:fr_node '{0: 44788, 1: 113, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 46}':'b'<Frame prd_idx="16">\n\t16\t16\tPRD\tbe\n\t13\t14\tARG1\tthe system\n\t15\t15\tARGM-MOD\twould\n\t17\t17\tARG2\tusable\n ''
+WARNING 4/5: skipping example with role ARG0:0, arg_head boulay, in sample:fr_node '{0: 238, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1358, 6: 44788}':'b'<Frame prd_idx="21">\n\t21\t21\tPRD\tdemonstrated\n\t0\t2\tARG0\tThe Added Value\n\t5\t18\tARG0\tBen du Boulay from''
+Number of multiple arg warnings: 7026 / 3689295 183758 183758
+dev 6/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1304.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG0:0, arg_head partnership, in sample:fr_node '{0: 11, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 674, 6: 44788}':'b'<Frame prd_idx="13">\n\t13\t13\tPRD\tpromote\n\t0\t0\tARG0\tIt\n\t7\t9\tARG0\ta strategic partnership\n\t14\t20\tARG1\ta''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG1:1, arg_head foster, in sample:fr_node '{0: 44788, 1: 193, 2: 44788, 3: 44788, 4: 44788, 5: 337, 6: 44788}':'b'<Frame prd_idx="57">\n\t57\t57\tPRD\tEnsure\n\t58\t73\tARG1\tthe key issues of sustainability , equalities , s''
+WARNING 3/5: skipping example with role ARG2:6, arg_head representative, in sample:fr_node '{0: 44788, 1: 11, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 1904}':'b'<Frame prd_idx="14">\n\t14\t14\tPRD\tbe\n\t11\t11\tARG1\tit\n\t12\t12\tARGM-MOD\tcan\n\t13\t13\tARGM-NEG\tnever\n\t15\t15\tA''
+WARNING 4/5: skipping example with role ARG2:6, arg_head represent, in sample:fr_node '{0: 44788, 1: 647, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 2178}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tis\n\t0\t3\tARGM-PRP\tTo overcome this constraint\n\t4\t7\tARG1\tan important pri''
+Number of multiple arg warnings: 6669 / 3781737 187937 187937
+dev 7/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1521.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG1:1, arg_head scheme, in sample:fr_node '{0: 44788, 1: 12465, 2: 44788, 3: 44788, 4: 44788, 5: 67, 6: 44788}':'b'<Frame prd_idx="29">\n\t29\t29\tPRD\tgiving\n\t28\t28\tARG1\tpayroll\n\t30\t30\tARG1\tscheme\n         <Arg head="gi''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role R-ARG2:6, arg_head lifestyle, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 974, 6: 50}':'b'<Frame prd_idx="27">\n\t27\t27\tPRD\treflect\n\t16\t24\tARG2\tyoung people between the ages of 13 and 25\n\t25\t2''
+WARNING 3/5: skipping example with role ARG2:6, arg_head underway, in sample:fr_node '{0: 44788, 1: 5670, 2: 44788, 3: 333, 4: 44788, 5: 2, 6: 24}':'b'<Frame prd_idx="20">\n\t20\t20\tPRD\tis\n\t17\t17\tARG1\tfundraising\n\t19\t19\tR-ARG1\twhich\n\t21\t21\tARGM-TMP\talrea''
+WARNING 4/5: skipping example with role ARG2:6, arg_head participate, in sample:fr_node '{0: 44788, 1: 228, 2: 44788, 3: 44788, 4: 44788, 5: 620, 6: 80}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tencouraged\n\t0\t0\tARG1\tStaff\n\t2\t2\tARGM-DIS\talso\n\t4\t30\tARG2\tto participate''
+Number of multiple arg warnings: 6482 / 3770994 186958 186958
+dev 8/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1739.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG0:0, arg_head he, in sample:fr_node '{0: 5085, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 4339, 6: 43}':'b'<Frame prd_idx="51">\n\t51\t51\tPRD\tdebut\n\t46\t47\tARG0\tRex Harrison\n\t48\t48\tARGM-LVB\tmade\n\t49\t49\tARG0\this\n''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG1:1, arg_head star, in sample:fr_node '{0: 44788, 1: 15, 2: 44788, 3: 44788, 4: 44788, 5: 889, 6: 44788}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tstarring\n\t2\t2\tARG1\the\n\t5\t9\tARG1\ta bona fide British star\n\t12\t31\tARG2''
+WARNING 3/5: skipping example with role C-ARG1:6, arg_head prosper, in sample:fr_node '{0: 44788, 1: 799, 2: 44788, 3: 44788, 4: 44788, 5: 306, 6: 72}':'b'<Frame prd_idx="10">\n\t10\t10\tPRD\tcontinued\n\t7\t7\tR-ARGM-LOC\twhere\n\t8\t9\tARG1\this career\n\t11\t12\tC-ARG1\tt''
+Number of multiple arg warnings: 6560 / 3623119 181363 181363
+dev 9/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1957.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 8, 1: 514, 2: 44788, 3: 44788, 4: 44788, 5: 335, 6: 84}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tadd\n\t4\t9\tARGM-ADV\tif you were a registered user\n\t10\t10\tARG0\tyou\n\t11\t''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role C-ARG1:6, arg_head develop, in sample:fr_node '{0: 44788, 1: 371, 2: 44788, 3: 44788, 4: 44788, 5: 58, 6: 29}':'b'<Frame prd_idx="25">\n\t25\t25\tPRD\tgo\n\t11\t23\tARG1\t50 % of women who develop diabetes while pregnant ( g''
+WARNING 3/5: skipping example with role ARG2:6, arg_head people, in sample:fr_node '{0: 788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 67, 6: 24}':'b'<Frame prd_idx="18">\n\t18\t18\tPRD\tgives\n\t5\t16\tARG0\ta revamped version of its popular Eating Well with ''
+WARNING 4/5: skipping example with role ARG2:6, arg_head low, in sample:fr_node '{0: 44788, 1: 2223, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 10}':'b'<Frame prd_idx="40">\n\t40\t40\tPRD\tis\n\t37\t38\tARG1\ta diet\n\t39\t39\tR-ARG1\tthat\n\t41\t47\tARG2\tlow in fat , sa''
+Number of multiple arg warnings: 6305 / 3592973 177887 177887
+dev 10/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2174.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head requirement, in sample:fr_node '{0: 44788, 1: 104, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="6">\n\t6\t6\tPRD\tis\n\t0\t5\tARG1\tHelps make liberty have improved in\n\t7\t7\tARGM-NEG\tnot\n\t8\t1''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head buy, in sample:fr_node '{0: 44788, 1: 300, 2: 44788, 3: 44788, 4: 44788, 5: 7199, 6: 2843}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tcomputed\n\t0\t1\tARGM-DIS\tLiberty mutual\n\t3\t6\tARG1\tthe cost of rates\n\t9\t11''
+WARNING 3/5: skipping example with role ARG1:1, arg_head artists, in sample:fr_node '{0: 44788, 1: 44787, 2: 44788, 3: 44788, 4: 44788, 5: 53, 6: 44788}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tget\n\t0\t3\tARG1\tYears \' quot tramontin\n\t7\t10\tARG1\tthe independent insu''
+WARNING 4/5: skipping example with role ARG1:1, arg_head into, in sample:fr_node '{0: 44788, 1: 44787, 2: 44788, 3: 44788, 4: 44788, 5: 109, 6: 44788}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tbacked\n\t0\t2\tARG1\tPhysical damage insurancethere\n\t5\t5\tARG1\tinto\n        ''
+Number of multiple arg warnings: 6387 / 3706252 183205 183205
+dev 11/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2392.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head disintegrate, in sample:fr_node '{0: 44788, 1: 107, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="7">\n\t7\t7\tPRD\tis\n\t5\t6\tARG1\tpublic life\n\t8\t8\tARGM-NEG\tnot\n\t9\t10\tARG2\tto disintegrate\n ''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head question, in sample:fr_node '{0: 145, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 411, 6: 29}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tbegin\n\t0\t1\tARG0\tThe research\n\t2\t2\tARGM-MOD\twill\n\t9\t29\tARG2\twith the gen''
+WARNING 3/5: skipping example with role ARG2:6, arg_head concern, in sample:fr_node '{0: 44788, 1: 172, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tbe\n\t0\t0\tARGM-DIS\tT\n\t1\t2\tARG1\the project\n\t3\t3\tARGM-MOD\twill\n\t5\t10\tARG2\ta''
+WARNING 4/5: skipping example with role ARG2:6, arg_head examine, in sample:fr_node '{0: 44788, 1: 257, 2: 44788, 3: 44788, 4: 44788, 5: 37, 6: 29}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tused\n\t0\t1\tARG1\tQuantitative data\n\t2\t2\tARGM-MOD\twill\n\t5\t13\tARG2\tto exami''
+Number of multiple arg warnings: 6538 / 3733699 186077 186077
+dev 12/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2610.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role R-ARG0:6, arg_head speak, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 56, 6: 106}':'b'<Frame prd_idx="24">\n\t24\t24\tPRD\tsaid\n\t0\t0\tARGM-DIS\tBut\n\t2\t12\tR-ARG0\tspeaking to the Mail for the fir''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head man, in sample:fr_node '{0: 464, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 191, 6: 10}':'b'<Frame prd_idx="19">\n\t19\t19\tPRD\tled\n\t17\t17\tARG0\tevidence\n\t18\t18\tR-ARG0\tthat\n\t20\t25\tARG2\tto the two m''
+WARNING 3/5: skipping example with role ARG2:6, arg_head appropriate, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="24">\n\t24\t24\tPRD\tbe\n\t4\t19\tARGM-CAU\tAs a file is still outstanding as to whether or no''
+WARNING 4/5: skipping example with role ARG2:6, arg_head as, in sample:fr_node '{0: 44788, 1: 464, 2: 44788, 3: 44788, 4: 44788, 5: 905, 6: 22}':'b'<Frame prd_idx="40">\n\t40\t40\tPRD\tregarded\n\t11\t36\tARG1\tevidence of retractions by key prosecution witn''
+Number of multiple arg warnings: 6308 / 3706929 182664 182664
+dev 13/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2827.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head lonely, in sample:fr_node '{0: 44788, 1: 1235, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 231}':'b'<Frame prd_idx="6">\n\t6\t6\tPRD\tBe\n\t1\t4\tARG1\tThe Feeling - \'\n\t5\t5\tARGM-NEG\tNever\n\t7\t7\tARG2\tLonely\n     ''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head number, in sample:fr_node '{0: 44788, 1: 11, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 73}':'b'<Frame prd_idx="17">\n\t17\t17\tPRD\t\'s\n\t1\t1\tARGM-DIS\tlike\n\t16\t16\tARG1\tIt\n\t18\t31\tARG2\tsingle number two f''
+WARNING 3/5: skipping example with role ARG2:6, arg_head flexibility, in sample:fr_node '{0: 44788, 1: 2165, 2: 44788, 3: 44788, 4: 44788, 5: 67, 6: 82}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tgiven\n\t0\t0\tARG1\tConsideration\n\t1\t1\tARGM-MOD\tshould\n\t4\t12\tARG2\tto flexib''
+WARNING 4/5: skipping example with role ARG2:6, arg_head available, in sample:fr_node '{0: 44788, 1: 3265, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 82}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tbe\n\t0\t9\tARG1\t7.1.2 IMPLICATIONS FOR PRACTICE IN TEACHER EDUCATION Co''
+Number of multiple arg warnings: 6451 / 3744184 186042 186042
+dev 14/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3044.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head adviser, in sample:fr_node '{0: 44788, 1: 8, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 102}':'b'<Frame prd_idx="16">\n\t16\t16\tPRD\tare\n\t13\t13\tARGM-ADV\tthen\n\t15\t15\tARG1\tyou\n\t17\t25\tARG2\tCounty / Island''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head guides, in sample:fr_node '{0: 44788, 1: 188, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tbe\n\t0\t1\tARG1\tTeam members\n\t2\t2\tARGM-MOD\twill\n\t4\t9\tARG2\tGuides over 12 y''
+WARNING 3/5: skipping example with role ARG2:6, arg_head participant, in sample:fr_node '{0: 44788, 1: 1482, 2: 44788, 3: 44788, 4: 44788, 5: 1681, 6: 29}':'b'<Frame prd_idx="18">\n\t18\t18\tPRD\treserved\n\t14\t15\tARG1\tindoor accommodation\n\t16\t16\tARGM-MOD\twill\n\t19\t2''
+WARNING 4/5: skipping example with role ARG4:6, arg_head headquarters, in sample:fr_node '{0: 44788, 1: 156, 2: 44788, 3: 44788, 4: 44788, 5: 283, 6: 32}':'b'<Frame prd_idx="21">\n\t21\t21\tPRD\treturned\n\t11\t13\tARG1\tthe Application Form\n\t14\t14\tR-ARG1\twhich\n\t15\t15''
+Number of multiple arg warnings: 6550 / 3628145 180541 180541
+dev 15/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3261.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role R-ARG0:6, arg_head who, in sample:fr_node '{0: 228, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 20, 6: 31}':'b'<Frame prd_idx="34">\n\t34\t34\tPRD\thave\n\t20\t20\tARG0\tstaff\n\t21\t21\tR-ARG0\twho\n\t33\t33\tR-ARG0\twho\n\t35\t40\tAR''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head situation, in sample:fr_node '{0: 12, 1: 746, 2: 44788, 3: 44788, 4: 44788, 5: 331, 6: 32}':'b'<Frame prd_idx="18">\n\t18\t18\tPRD\tapply\n\t12\t13\tR-ARG2\tfrom which\n\t14\t14\tARG0\tthey\n\t15\t15\tARGM-MOD\tcan\n''
+WARNING 3/5: skipping example with role ARG2:6, arg_head consultant, in sample:fr_node '{0: 44788, 1: 1226, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 466}':'b'<Frame prd_idx="30">\n\t30\t30\tPRD\tis\n\t0\t22\tR-ARG1\tRelating supervision to the job and the person Model''
+WARNING 4/5: skipping example with role ARG4:6, arg_head world, in sample:fr_node '{0: 44788, 1: 8, 2: 44788, 3: 44788, 4: 44788, 5: 75, 6: 1606}':'b'<Frame prd_idx="5">\n\t5\t5\tPRD\tcome\n\t1\t1\tARG1\tYou\n\t4\t4\tARGM-NEG\tt\n\t6\t8\tARG4\tINTO this world\n         <''
+Number of multiple arg warnings: 6450 / 3690303 182828 182828
+dev 16/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3478.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head important, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 1066}':'b'<Frame prd_idx="39">\n\t39\t39\tPRD\tis\n\t22\t36\tARGM-ADV\tIf you are suffering from diarrhoea and or vomiti''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head people, in sample:fr_node '{0: 10226, 1: 8707, 2: 44788, 3: 44788, 4: 44788, 5: 1476, 6: 65}':'b'<Frame prd_idx="13">\n\t13\t13\tPRD\tspread\n\t0\t10\tARG1\tThe bacteria , parasites and viruses that cause di''
+WARNING 3/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 44788, 1: 8376, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 10}':'b'<Frame prd_idx="5">\n\t5\t5\tPRD\tis\n\t1\t3\tARG1\ta separate towel\n\t4\t4\tR-ARG1\tthat\n\t6\t7\tARG2\tfor you\n      ''
+WARNING 4/5: skipping example with role ARG0:0, arg_head you, in sample:fr_node '{0: 8, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1148, 6: 44788}':'b'<Frame prd_idx="48">\n\t48\t48\tPRD\tdry\n\t32\t32\tARG0\tyou\n\t45\t45\tARG0\tyou\n\t49\t49\tARG1\tyou\n         <Arg he''
+Number of multiple arg warnings: 6432 / 3763273 187007 187007
+converted 2946518 words
+test 1/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0218.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG0:0, arg_head you, in sample:fr_node '{0: 8, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 70, 6: 29}':'b'<Frame prd_idx="150">\n\t150\t150\tPRD\tknow\n\t143\t143\tARG0\tYou\n\t144\t144\tARGM-MOD\twill\n\t148\t148\tARG0\tyou\n\t''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG4:6, arg_head office, in sample:fr_node '{0: 44788, 1: 156, 2: 44788, 3: 44788, 4: 44788, 5: 283, 6: 82}':'b'<Frame prd_idx="29">\n\t29\t29\tPRD\treturned\n\t17\t26\tARG1\ttheir priority application forms for the Powerg''
+WARNING 3/5: skipping example with role ARG2:6, arg_head able, in sample:fr_node '{0: 44788, 1: 17, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="1">\n\t1\t1\tPRD\tare\n\t0\t0\tARG1\tWe\n\t2\t2\tARGM-NEG\tnot\n\t3\t15\tARG2\table to marry up forms at''
+WARNING 4/5: skipping example with role C-ARG1:6, arg_head most, in sample:fr_node '{0: 17, 1: 211, 2: 44788, 3: 333, 4: 44788, 5: 20, 6: 3712}':'b'<Frame prd_idx="2">\n\t2\t2\tPRD\thave\n\t0\t0\tARG0\tWe\n\t1\t1\tARGM-TMP\talready\n\t3\t3\tARG1\torders\n\t5\t8\tARG2\tfrom''
+Number of multiple arg warnings: 6410 / 3691931 183541 183541
+test 2/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0437.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 264, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 67, 6: 29}':'b'<Frame prd_idx="23">\n\t23\t23\tPRD\tgive\n\t7\t8\tARG0\tThis programme\n\t22\t22\tARGM-MOD\twill\n\t24\t24\tARG2\tyou\n\t''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG3:6, arg_head course, in sample:fr_node '{0: 44788, 1: 6382, 2: 44788, 3: 44788, 4: 44788, 5: 305, 6: 10}':'b'<Frame prd_idx="19">\n\t19\t19\tPRD\trange\n\t13\t17\tARG1\tcounselling and counselling skills programmes\n\t18\t''
+WARNING 3/5: skipping example with role ARG0:0, arg_head who, in sample:fr_node '{0: 2399, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1090, 6: 44788}':'b'<Frame prd_idx="38">\n\t38\t38\tPRD\tenhance\n\t26\t26\tARG0\tpractitioners\n\t27\t27\tARG0\twho\n\t39\t40\tARG1\ttheir ''
+WARNING 4/5: skipping example with role ARG2:6, arg_head student, in sample:fr_node '{0: 291, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 67, 6: 24}':'b'<Frame prd_idx="29">\n\t29\t29\tPRD\tgive\n\t24\t27\tARG0\tone - day events\n\t28\t28\tR-ARG0\twhich\n\t30\t30\tARG2\tst''
+Number of multiple arg warnings: 6577 / 3750913 186478 186478
+test 3/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0653.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG1:1, arg_head recommend, in sample:fr_node '{0: 1165, 1: 216, 2: 44788, 3: 639, 4: 44788, 5: 130, 6: 44788}':'b'<Frame prd_idx="25">\n\t25\t25\tPRD\tcalled\n\t0\t6\tARG0\t13 Apr 99 Financial Services Consumer Panel\n\t24\t24\t''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head product, in sample:fr_node '{0: 44788, 1: 263, 2: 44788, 3: 44788, 4: 44788, 5: 1974, 6: 31}':'b'<Frame prd_idx="28">\n\t28\t28\tPRD\texcluded\n\t24\t25\tARG1\tthose customers\n\t26\t26\tR-ARG1\twho\n\t29\t31\tARG2\tf''
+WARNING 3/5: skipping example with role ARG1:1, arg_head be, in sample:fr_node '{0: 44788, 1: 914, 2: 44788, 3: 44788, 4: 44788, 5: 183, 6: 44788}':'b'<Frame prd_idx="60">\n\t60\t60\tPRD\tturn\n\t54\t59\tARG1\tthe current voluntary codes of practice\n\t62\t67\tARG1''
+WARNING 4/5: skipping example with role ARG2:6, arg_head free, in sample:fr_node '{0: 44788, 1: 438, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 82}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tbe\n\t0\t10\tARG1\tThe Ombudsman scheme ( like all existing financial Omb''
+Number of multiple arg warnings: 6724 / 3762831 188275 188275
+test 4/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0871.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG4:6, arg_head overseas, in sample:fr_node '{0: 15, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 58, 6: 990}':'b'<Frame prd_idx="13">\n\t13\t13\tPRD\tgoing\n\t4\t4\tARG0\the\n\t12\t12\tARGM-ADV\tprobably\n\t14\t14\tARG4\toverseas\n\t15''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head success, in sample:fr_node '{0: 44788, 1: 5160, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tbe\n\t0\t5\tARG1\tThe raid planned for 24 May\n\t6\t6\tARGM-MOD\twould\n\t7\t7\tARGM-''
+WARNING 3/5: skipping example with role ARG1:1, arg_head line, in sample:fr_node '{0: 44787, 1: 10541, 2: 44788, 3: 44788, 4: 5225, 5: 5122, 6: 31}':'b'<Frame prd_idx="14">\n\t14\t14\tPRD\tfled\n\t6\t7\tARG0\tGerman sentries\n\t8\t8\tR-ARG0\twho\n\t9\t12\tARGM-MNR\tprompt''
+WARNING 4/5: skipping example with role ARG2:6, arg_head possible, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="33">\n\t33\t33\tPRD\tbeen\n\t17\t27\tARGM-ADV\twhilst he would have a proper burial by the Ger''
+Number of multiple arg warnings: 6461 / 3743309 186588 186588
+test 5/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1088.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role R-ARG2:6, arg_head that, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1150, 6: 1466}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\treplace\n\t3\t6\tARG2\tthe proposed new framework\n\t7\t7\tR-ARG2\tthat\n\t8\t8\tARGM''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head simple, in sample:fr_node '{0: 44788, 1: 1466, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 10}':'b'<Frame prd_idx="17">\n\t17\t17\tPRD\tbe\n\t6\t11\tARG1\ta unit - based credit framework\n\t12\t12\tR-ARG1\tthat\n\t18''
+WARNING 3/5: skipping example with role ARG2:6, arg_head able, in sample:fr_node '{0: 44788, 1: 428, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="2">\n\t2\t2\tPRD\tbe\n\t0\t0\tARG1\tUsers\n\t1\t1\tARGM-MOD\twill\n\t3\t17\tARG2\table to achieve indivi''
+WARNING 4/5: skipping example with role ARG2:6, arg_head able, in sample:fr_node '{0: 44788, 1: 428, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="2">\n\t2\t2\tPRD\tbe\n\t0\t0\tARG1\tUsers\n\t1\t1\tARGM-MOD\twill\n\t3\t12\tARG2\table to transfer credi''
+Number of multiple arg warnings: 6357 / 3768272 186805 186805
+test 6/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1305.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head construction, in sample:fr_node '{0: 2561, 1: 44788, 2: 537, 3: 44788, 4: 44788, 5: 191, 6: 24}':'b'<Frame prd_idx="55">\n\t55\t55\tPRD\tlead\n\t42\t46\tARGM-LOC\ta sociotechnical space of calculation\n\t48\t49\tR-''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head debate, in sample:fr_node '{0: 175, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1031, 6: 29}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tcontribute\n\t0\t1\tARG0\tThis study\n\t2\t2\tARGM-MOD\twill\n\t4\t25\tARG2\tto the de''
+WARNING 4/5: skipping example with role ARG2:6, arg_head chart, in sample:fr_node '{0: 44788, 1: 164, 2: 44788, 3: 44788, 4: 44788, 5: 139, 6: 22}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tbased\n\t2\t4\tARG1\ta price move\n\t5\t5\tARGM-MOD\twill\n\t6\t6\tARGM-NEG\tnot\n\t9\t11''
+Number of multiple arg warnings: 6703 / 3635744 181347 181347
+test 7/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1522.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head alive, in sample:fr_node '{0: 44788, 1: 405, 2: 24226, 3: 44788, 4: 44788, 5: 75, 6: 72}':'b'<Frame prd_idx="20">\n\t20\t20\tPRD\tcomes\n\t10\t13\tARGM-LOC\tthe Birthplace of Volleyball\n\t14\t14\tR-ARGM-LOC''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role C-ARG1:6, arg_head include, in sample:fr_node '{0: 44788, 1: 265, 2: 44788, 3: 44788, 4: 44788, 5: 3520, 6: 172}':'b'<Frame prd_idx="10">\n\t10\t10\tPRD\tdevised\n\t0\t7\tARG1\tA Project Plan and detailed timetable of activity\n''
+WARNING 3/5: skipping example with role ARG2:6, arg_head report, in sample:fr_node '{0: 44788, 1: 946, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="5">\n\t5\t5\tPRD\tbe\n\t0\t3\tARG1\tCommunication between project collaborators\n\t4\t4\tARGM-MOD\t''
+WARNING 4/5: skipping example with role ARG2:6, arg_head community, in sample:fr_node '{0: 44788, 1: 2173, 2: 44788, 3: 44788, 4: 44788, 5: 5683, 6: 29}':'b'<Frame prd_idx="7">\n\t7\t7\tPRD\tdisseminated\n\t0\t4\tARG1\tThe findings of the project\n\t5\t5\tARGM-MOD\twill\n\t''
+Number of multiple arg warnings: 6735 / 3742146 186545 186545
+test 8/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1740.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 802, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 129, 6: 29}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tshow\n\t0\t10\tARG0\tWWF Cymru \'s green guide WWF Cymru \'s Pocket Green G''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head available, in sample:fr_node '{0: 44788, 1: 910, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 80}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tare\n\t0\t3\tARG1\tCopies of the guide\n\t5\t5\tARGM-ADV\talso\n\t6\t6\tARG2\tavailabl''
+WARNING 3/5: skipping example with role ARG1:1, arg_head you, in sample:fr_node '{0: 44788, 1: 125, 2: 44788, 3: 44788, 4: 44788, 5: 143, 6: 44788}':'b'<Frame prd_idx="5">\n\t5\t5\tPRD\tBecome\n\t0\t1\tARG1\tOther things\n\t2\t2\tARG1\tyou\n\t3\t3\tARGM-MOD\tcan\n\t6\t9\tARG2''
+WARNING 4/5: skipping example with role ARG2:6, arg_head prepare, in sample:fr_node '{0: 44788, 1: 308, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 31}':'b'<Frame prd_idx="7">\n\t7\t7\tPRD\tis\n\t4\t5\tARG1\ta person\n\t6\t6\tR-ARG1\twho\n\t8\t32\tARG2\tprepared to take a few''
+Number of multiple arg warnings: 6634 / 3725959 184854 184854
+test 9/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1958.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head patch, in sample:fr_node '{0: 44788, 1: 1051, 2: 44788, 3: 44788, 4: 44788, 5: 1268, 6: 47}':'b'<Frame prd_idx="6">\n\t6\t6\tPRD\timplemented\n\t0\t1\tARGM-ADV\tRunning time\n\t3\t4\tARG1\tThe software\n\t7\t15\tARG''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 8, 1: 1428, 2: 597, 3: 44788, 4: 44788, 5: 1146, 6: 170}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\tthrow\n\t0\t5\tARGM-LOC\tIn both games 501 and 301\n\t7\t7\tARG0\tyou\n\t8\t8\tARGM-M''
+WARNING 3/5: skipping example with role ARG2:6, arg_head base, in sample:fr_node '{0: 44788, 1: 1253, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 3860}':'b'<Frame prd_idx="78">\n\t78\t78\tPRD\tis\n\t76\t77\tARG1\tThe module\n\t79\t79\tARGM-ADV\tessentially\n\t80\t82\tARG2\tre''
+WARNING 4/5: skipping example with role ARG2:6, arg_head place, in sample:fr_node '{0: 44788, 1: 700, 2: 44788, 3: 44788, 4: 44788, 5: 51, 6: 29}':'b'<Frame prd_idx="110">\n\t110\t110\tPRD\ttake\n\t107\t108\tARG1\tworkshop sessions\n\t109\t109\tARGM-MOD\twill\n\t111\t''
+Number of multiple arg warnings: 6671 / 3721682 184379 184379
+test 10/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2175.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG3:6, arg_head fee, in sample:fr_node '{0: 17, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 587, 6: 10}':'b'<Frame prd_idx="16">\n\t16\t16\tPRD\tdeliver\n\t5\t5\tR-ARG1\tthat\n\t6\t6\tARG0\twe\n\t17\t33\tARG3\tfor a flat fee of ''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head bill, in sample:fr_node '{0: 17, 1: 300, 2: 44788, 3: 44788, 4: 44788, 5: 335, 6: 619}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tadd\n\t0\t0\tARG0\tWe\n\t1\t1\tARGM-MOD\twill\n\t2\t2\tARGM-ADV\tsimply\n\t4\t5\tARG1\tthe ''
+WARNING 3/5: skipping example with role ARG2:6, arg_head litre, in sample:fr_node '{0: 44788, 1: 5698, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 24}':'b'<Frame prd_idx="25">\n\t25\t25\tPRD\tis\n\t19\t22\tARG1\t12 litres of water\n\t24\t24\tR-ARG1\twhich\n\t26\t42\tARG2\t20''
+WARNING 4/5: skipping example with role ARG2:6, arg_head price, in sample:fr_node '{0: 44788, 1: 10, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 169}':'b'<Frame prd_idx="14">\n\t14\t14\tPRD\tis\n\t12\t12\tARG1\tthat\n\t13\t13\tARGM-ADV\ttoo\n\t15\t17\tARG2\ta fair price\n   ''
+Number of multiple arg warnings: 6603 / 3686803 182807 182807
+test 11/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2393.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head relax, in sample:fr_node '{0: 44788, 1: 1341, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 24}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tis\n\t2\t5\tARG1\ta workshop style presentation\n\t7\t7\tR-ARG1\twhich\n\t9\t12\tARG2''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG1:1, arg_head you, in sample:fr_node '{0: 44788, 1: 8, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 32}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tare\n\t0\t5\tARGM-ADV\tNo matter what condition you have\n\t7\t7\tARG1\tyou\n\t8''
+WARNING 3/5: skipping example with role ARG2:6, arg_head run, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 260}':'b'<Frame prd_idx="53">\n\t53\t53\tPRD\tare\n\t54\t56\tARG2\tfamily and friends\n\t57\t73\tARG2\tThe Expert Patients P''
+WARNING 4/5: skipping example with role ARG2:6, arg_head they, in sample:fr_node '{0: 351, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 721, 6: 29}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tenable\n\t4\t8\tARG0\tthe additional skills and knowledge\n\t10\t10\tR-ARG0\tw''
+Number of multiple arg warnings: 6503 / 3753404 186389 186389
+test 12/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2611.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG3:6, arg_head lot, in sample:fr_node '{0: 1408, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 160, 6: 288}':'b'<Frame prd_idx="49">\n\t49\t49\tPRD\toffers\n\t45\t48\tARG0\tendlers adults and babies\n\t50\t52\tARG3\taround $ 45''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG1:1, arg_head sale, in sample:fr_node '{0: 9, 1: 85, 2: 44788, 3: 44788, 4: 44788, 5: 221, 6: 44788}':'b'<Frame prd_idx="13">\n\t13\t13\tPRD\tasking\n\t11\t11\tARG0\tI\n\t14\t16\tARG1\tonly $ 30\n\t17\t20\tARG1\tfor a quick s''
+WARNING 3/5: skipping example with role ARG2:6, arg_head plant, in sample:fr_node '{0: 44788, 1: 18, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 1627}':'b'<Frame prd_idx="17">\n\t17\t17\tPRD\tis\n\t15\t15\tARGM-DIS\tYes\n\t16\t16\tARG1\tThis\n\t18\t24\tARG2\ta very fast - gr''
+WARNING 4/5: skipping example with role ARG2:6, arg_head you, in sample:fr_node '{0: 11, 1: 31421, 2: 44788, 3: 2508, 4: 44788, 5: 51, 6: 29}':'b'<Frame prd_idx="16">\n\t16\t16\tPRD\ttake\n\t11\t13\tARGM-TMP\tas it floats\n\t14\t14\tARG0\tit\n\t15\t15\tARGM-MOD\twil''
+Number of multiple arg warnings: 6543 / 3682444 183617 183617
+test 13/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2828.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head panel, in sample:fr_node '{0: 44788, 1: 129, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="16">\n\t16\t16\tPRD\tbe\n\t0\t14\tARG1\tRachel Elnaugh , star of the BBC \'s business talent sh''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head place, in sample:fr_node '{0: 44788, 1: 413, 2: 44788, 3: 44788, 4: 44788, 5: 51, 6: 29}':'b'<Frame prd_idx="2">\n\t2\t2\tPRD\ttake\n\t0\t0\tARG1\tNN\n\t1\t1\tARGM-MOD\twill\n\t3\t3\tARG2\tplace\n\t4\t6\tARGM-TMP\ton 2''
+WARNING 3/5: skipping example with role ARG1:1, arg_head msps, in sample:fr_node '{0: 44788, 1: 279, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="4">\n\t4\t4\tPRD\tbe\n\t0\t2\tARG1\tFacing the panel\n\t3\t3\tARGM-MOD\twill\n\t5\t19\tARG1\tMSPs Christ''
+WARNING 4/5: skipping example with role ARG2:6, arg_head interesting, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tbe\n\t2\t2\tARGM-MOD\twill\n\t4\t4\tARG2\tinteresting\n\t5\t27\tARG1\tto see if our po''
+Number of multiple arg warnings: 6527 / 3695403 183841 183841
+test 14/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3045.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head ready, in sample:fr_node '{0: 44788, 1: 162, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="37">\n\t37\t37\tPRD\twas\n\t33\t35\tARG1\tthe whole site\n\t36\t36\tARGM-ADV\talmost\n\t38\t38\tARGM-NE''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head one, in sample:fr_node '{0: 44788, 1: 242, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tis\n\t3\t7\tARG1\tthe design you see now\n\t9\t9\tARGM-NEG\tnot\n\t10\t18\tARG2\tthe o''
+WARNING 3/5: skipping example with role ARG0:0, arg_head which, in sample:fr_node '{0: 50, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 202, 6: 44788}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tmeans\n\t3\t9\tARG0\ta lot more people than last time\n\t11\t11\tARG0\twhich\n\t''
+WARNING 4/5: skipping example with role ARG2:6, arg_head start, in sample:fr_node '{0: 44788, 1: 9, 2: 44788, 3: 44788, 4: 44788, 5: 833, 6: 22}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\twait\n\t0\t0\tARG1\tI\n\t1\t1\tARGM-MOD\tcan\n\t2\t2\tARGM-NEG\tnot\n\t4\t13\tARG2\tto star''
+Number of multiple arg warnings: 6711 / 3750433 187868 187868
+test 15/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3262.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head membership, in sample:fr_node '{0: 41, 1: 1247, 2: 44788, 3: 44788, 4: 44788, 5: 51, 6: 32}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\ttake\n\t0\t7\tARGM-ADV\tAlthough aimed squarely at journalists across the''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head able, in sample:fr_node '{0: 44788, 1: 8, 2: 44788, 3: 102, 4: 44788, 5: 2, 6: 29}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tbe\n\t0\t0\tARG1\tYou\n\t1\t1\tARGM-MOD\twill\n\t2\t2\tARGM-TMP\tthen\n\t4\t16\tARG2\table ''
+WARNING 3/5: skipping example with role ARG1:1, arg_head you, in sample:fr_node '{0: 44788, 1: 93, 2: 44788, 3: 44788, 4: 44788, 5: 145, 6: 44788}':'b'<Frame prd_idx="13">\n\t13\t13\tPRD\tresearch\n\t11\t11\tARG1\tinformation\n\t14\t14\tARG1\tyou\n         <Arg head=''
+WARNING 4/5: skipping example with role ARG3:6, arg_head benefit, in sample:fr_node '{0: 44788, 1: 2336, 2: 44788, 3: 44788, 4: 2039, 5: 242, 6: 84}':'b'<Frame prd_idx="19">\n\t19\t19\tPRD\tdesigned\n\t12\t12\tARGM-MNR\thow\n\t13\t15\tARG1\tnational IPR regimes\n\t16\t16''
+Number of multiple arg warnings: 6445 / 3678288 183251 183251
+test 16/16
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node3479.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG2:6, arg_head relevant, in sample:fr_node '{0: 44788, 1: 268, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 10}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tare\n\t9\t10\tARG1\tsearch terms\n\t11\t11\tR-ARG1\tthat\n\t13\t16\tARG2\trelevant ''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head high, in sample:fr_node '{0: 44788, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 378, 6: 2604}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\tlisted\n\t0\t3\tARGM-ADV\tThe higher you bid\n\t5\t6\tARG2\tthe higher\n\t7\t7\tARG1\t''
+WARNING 3/5: skipping example with role ARG3:6, arg_head traffic, in sample:fr_node '{0: 8, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 244, 6: 85}':'b'<Frame prd_idx="7">\n\t7\t7\tPRD\tpay\n\t5\t5\tARG0\tyou\n\t6\t6\tARGM-ADV\tonly\n\t8\t12\tARG3\tfor the traffic we deli''
+WARNING 4/5: skipping example with role ARG3:6, arg_head customer, in sample:fr_node '{0: 8, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 244, 6: 85}':'b'<Frame prd_idx="9">\n\t9\t9\tPRD\tpay\n\t6\t6\tARG0\tyou\n\t7\t7\tARGM-ADV\tonly\n\t10\t19\tARG3\tfor the customers they''
+Number of multiple arg warnings: 6615 / 3771991 186360 186360
+converted 2962945 words
+train 1/3
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node0000.converted.xml.converted.xml.gz
+WARNING 2/5: skipping example with role ARG2:6, arg_head from, in sample:fr_node '{0: 44788, 1: 11, 2: 44788, 3: 44788, 4: 44788, 5: 3075, 6: 22}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\ttransmitted\n\t0\t0\tARG1\tIt\n\t2\t2\tARGM-NEG\tnot\n\t4\t4\tARG2\tfrom\n         <Arg''
+WARNING 3/5: skipping example with role ARG2:6, arg_head fun, in sample:fr_node '{0: 44788, 1: 1239, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 32}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tbe\n\t5\t6\tARG1\tfavourite charity\n\t7\t7\tARGM-MOD\tcan\n\t9\t9\tARG2\tfun\n        ''
+WARNING 4/5: skipping example with role ARG2:6, arg_head family, in sample:fr_node '{0: 8, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 53, 6: 32}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tget\n\t9\t9\tARG0\tyou\n\t10\t10\tARGM-MOD\tcan\n\t13\t16\tARG2\twith family and fr''
+Number of multiple arg warnings: 8160 / 4113020 210448 210448
+train 2/3
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node1002.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG0:0, arg_head hopeful, in sample:fr_node '{0: 470, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 624, 6: 82}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tavoid\n\t0\t2\tARG0\tThe bands sound\n\t10\t10\tARGM-MOD\tshould\n\t11\t11\tARG0\th''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head band, in sample:fr_node '{0: 44788, 1: 3807, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 84}':'b'<Frame prd_idx="3">\n\t3\t3\tPRD\tbe\n\t0\t1\tARG1\tThe Panic\n\t2\t2\tARGM-MOD\tcould\n\t4\t11\tARG2\ta band to look ou''
+WARNING 3/5: skipping example with role ARG0:0, arg_head who, in sample:fr_node '{0: 50, 1: 44788, 2: 44788, 3: 44788, 4: 44788, 5: 1619, 6: 44788}':'b'<Frame prd_idx="20">\n\t20\t20\tPRD\tcook\n\t12\t12\tARG0\tpeople\n\t13\t13\tARG0\twho\n         <Arg head="cook" he''
+WARNING 4/5: skipping example with role ARG2:6, arg_head cook, in sample:fr_node '{0: 44788, 1: 18, 2: 44788, 3: 44788, 4: 44788, 5: 2, 6: 22}':'b'<Frame prd_idx="8">\n\t8\t8\tPRD\tis\n\t7\t7\tARG1\tthis\n\t9\t9\tARGM-NEG\tnot\n\t10\t17\tARG2\ta heavy duty cook like ''
+Number of multiple arg warnings: 6554 / 3647313 182198 182198
+train 3/3
+v2 converting ../../../../../../../media/data-disk/data/annot/heads.ukwac.fixed-nowiki.node2004.converted.xml.converted.xml.gz
+WARNING 1/5: skipping example with role ARG1:1, arg_head success, in sample:fr_node '{0: 44788, 1: 1225, 2: 44788, 3: 44788, 4: 44788, 5: 853, 6: 44788}':'b'<Frame prd_idx="18">\n\t18\t18\tPRD\tproved\n\t3\t17\tARG1\tthe co - operation of police and health chiefs and''
+roles: {'ARG0': 0, 'ARG1': 1, 'ARGM-LOC': 2, 'ARGM-TMP': 3, 'ARGM-MNR': 4, 'PRD': 5}
+WARNING 2/5: skipping example with role ARG2:6, arg_head campaign, in sample:fr_node '{0: 2469, 1: 100, 2: 44788, 3: 44788, 4: 44788, 5: 6295, 6: 80}':'b'<Frame prd_idx="12">\n\t12\t12\tPRD\tpledged\n\t0\t9\tARG0\tWell - known TV personalities Fern Britton and Lor''
+WARNING 3/5: skipping example with role ARG2:6, arg_head model, in sample:fr_node '{0: 44788, 1: 11, 2: 22159, 3: 102, 4: 2385, 5: 1989, 6: 84}':'b'<Frame prd_idx="143">\n\t143\t143\tPRD\tconverted\n\t133\t134\tARGM-LOC\tthe modeller\n\t136\t136\tR-ARGM-LOC\twher''
+WARNING 4/5: skipping example with role ARG2:6, arg_head create, in sample:fr_node '{0: 44788, 1: 4938, 2: 8013, 3: 44788, 4: 44788, 5: 37, 6: 80}':'b'<Frame prd_idx="11">\n\t11\t11\tPRD\tused\n\t0\t8\tARG1\tThe designer \'s original 2 D vehicle body sketches\n\t1''
+Number of multiple arg warnings: 6496 / 3748021 186460 186460
+converted 579106 words
+Conversion done in 987 seconds
+DON'T FORGET:   cp  ../../../../../seq_event-rep/test_exp9_0.001-16-16-Roles2Args3Mods-NoFrAn-v2//*  ../data/test/
