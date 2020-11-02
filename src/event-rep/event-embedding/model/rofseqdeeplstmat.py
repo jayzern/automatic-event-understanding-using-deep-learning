@@ -7,7 +7,7 @@
 
 import numpy as np
 from tensorflow.keras import backend as K
-from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM
+from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM, Layer
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
@@ -19,14 +19,14 @@ from .custom_acc import custom_acc
 
 
 
-class MTRFv4RofSeqDeepLSTM(GenericModel):
+class MTRFv4RofSeqDeepLSTMAt(GenericModel):
     """Multi-task non-incremental role-filler
 
     """
     def __init__(self, n_word_vocab=50001, n_role_vocab=7, n_factors_emb=300, n_hidden=300, word_vocabulary=None, role_vocabulary=None, 
         unk_word_id=50000, unk_role_id=7, missing_word_id=50001, 
         using_dropout=False, dropout_rate=0.3, optimizer='adagrad', loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=[1., 1.]):
-        super(MTRFv4RofSeqDeepLSTM, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
+        super(MTRFv4RofSeqDeepLSTMAt, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
             unk_word_id, unk_role_id, missing_word_id, using_dropout, dropout_rate, optimizer, loss, metrics)
 
         # minus 1 here because one of the role is target role
@@ -112,8 +112,44 @@ class MTRFv4RofSeqDeepLSTM(GenericModel):
 
         context_embedding = LSTM(n_factors_emb, 
             input_shape=(input_length, n_factors_emb),
-            return_sequences=False,
+            return_sequences=True,
             name='rnn3')(rnn2)
+
+        class attention(Layer):
+    
+            def __init__(self, return_sequences):
+                self.return_sequences = return_sequences
+                super(attention,self).__init__()
+                
+            def build(self, input_shape):
+                
+                self.W=self.add_weight(name="att_weight", shape=(input_shape[-1],1),
+                                       initializer="normal")
+                self.b=self.add_weight(name="att_bias", shape=(input_shape[1],1),
+                                       initializer="zeros")
+                
+                super(attention,self).build(input_shape)
+                
+            def call(self, x):
+                
+                e = K.tanh(K.dot(x,self.W)+self.b)
+                a = K.softmax(e, axis=1)
+                output = x*a
+                
+                if self.return_sequences:
+                    return output
+                
+                return K.sum(output, axis=1)
+                
+            def get_config(self):
+                
+                config = super().get_config().copy()
+                config.update({'return_sequences': self.return_sequences})
+                
+                return config
+        
+        # Add Attention layer
+        context_embedding = attention(return_sequences = False)(context_embedding)
 
         # print("contextual emb input is")
         # print(n_factors_emb)
