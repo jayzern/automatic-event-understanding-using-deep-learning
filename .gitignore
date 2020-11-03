@@ -1,4 +1,5 @@
 .vscode
 .pyc
 .bak
+.DS_Store
 env

@@ -123,11 +123,11 @@ def eval_pado_mcrae(model_name, experiment_name, evaluation, model=None, print_r
 
             w = wnl.lemmatize(w, wn.VERB)
             tw = wnl.lemmatize(tw, wn.NOUN)
-
+            
             w_i = net.word_vocabulary.get(w, net.unk_word_id)
             tw_i = net.word_vocabulary.get(tw, net.unk_word_id)
             tr_i = net.role_vocabulary.get(propbank_map[tr], net.unk_role_id)
-
+            
             if tw_i == net.unk_word_id:
                 print("WARNING: skipping unknown word (w, tr, tw):", w, tr, tw)
                 oov_count[tr] = oov_count.get(tr, 0) + 1
@@ -137,13 +137,27 @@ def eval_pado_mcrae(model_name, experiment_name, evaluation, model=None, print_r
             b = float(line.split()[3])
             baseline.setdefault(tr, []).append(b)
             blist.append(b)
-
+            
 #            sample = dict((r, net.missing_word_id) for r in (net.role_vocabulary.values() + [net.unk_role_id]))
-            sample = dict((r, net.missing_word_id) for r in list(net.role_vocabulary.values())) # net.unk_role_id already added
-            sample[r_i] = w_i
+            
+            # (Team2-Change) added sequential processing for PADO/Mcrae
+            if model_name in config.SEQUENTIAL_MODEL_LIST: # list of all sequential models here
+                # evaluation for sequential models
+                sample = {}
+                sample[r_i] = w_i
+                sorted_roles = list(net.role_vocabulary.values())
+                sorted_roles.remove(r_i)
+                sorted_roles.sort()
+                # insert to dict
+                for elem in sorted_roles:
+                    sample[elem] = net.missing_word_id
+            else: 
+                # original dictionary for non-sequential models
+                sample = dict((r, net.missing_word_id) for r in list(net.role_vocabulary.values())) # net.unk_role_id already added
+                sample[r_i] = w_i
 
             sample.pop(net.role_vocabulary[propbank_map[tr]], None)
-
+            
             x_w_i = numpy.asarray([list(sample.values())], dtype=numpy.int64)
             x_r_i = numpy.asarray([list(sample.keys())], dtype=numpy.int64)
             y_w_i = numpy.asarray([tw_i])
