@@ -99,10 +99,13 @@ class MTRFv4RofSeqBiLSTM(GenericModel):
         # print(K.int_shape(residual_0))
         # print(n_factors_emb)
 
-        context_embedding = Bidirectional(LSTM(n_factors_emb, 
+        lstm, forward_h, forward_c, backward_h, backward_c = Bidirectional(LSTM(n_factors_emb, 
             input_shape=(input_length, n_factors_emb),
-            return_sequences=False,
+            return_sequences=True,
+            return_state=True,
             name='rnn'))(residual_0)
+            
+        context_embedding = Add(name='add')([forward_h, backward_h])
             
         # print(K.int_shape(context_embedding))
 

@@ -55,3 +55,9 @@ from .rofseqdeeplstm import MTRFv4RofSeqDeepLSTM
 
 # classname of RoFSeq-MT: MTRFv4RofSeqLSTM
 from .rofseqdeeplstmat import MTRFv4RofSeqDeepLSTMAt
+
+# classname of RoFSeq-MT: MTRFv4RofSeqBiLSTMAt2
+from .rofseqbilstmat2 import MTRFv4RofSeqBiLSTMAt2
+
+# classname of RoFSeq-MT: MTRFv4RofSeqBiLSTMDense
+from .rofseqbilstmdense import MTRFv4RofSeqBiLSTMDense

@@ -7,7 +7,7 @@
 
 import numpy as np
 from tensorflow.keras import backend as K
-from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM
+from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM, Bidirectional, Flatten, Activation, RepeatVector, Permute
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
@@ -18,14 +18,14 @@ from .generic import GenericModel
 from .custom_acc import custom_acc
 
 
-class MTRFv4RofSeqLSTM(GenericModel):
+class MTRFv4RofSeqBiLSTMAt2(GenericModel):
     """Multi-task non-incremental role-filler
 
     """
     def __init__(self, n_word_vocab=50001, n_role_vocab=7, n_factors_emb=300, n_hidden=300, word_vocabulary=None, role_vocabulary=None, 
         unk_word_id=50000, unk_role_id=7, missing_word_id=50001, 
         using_dropout=False, dropout_rate=0.3, optimizer='adagrad', loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=[1., 1.]):
-        super(MTRFv4RofSeqLSTM, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
+        super(MTRFv4RofSeqBiLSTMAt2, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
             unk_word_id, unk_role_id, missing_word_id, using_dropout, dropout_rate, optimizer, loss, metrics)
 
         # minus 1 here because one of the role is target role
@@ -99,10 +99,20 @@ class MTRFv4RofSeqLSTM(GenericModel):
         # print(K.int_shape(residual_0))
         # print(n_factors_emb)
 
-        context_embedding = LSTM(n_factors_emb, 
+        activations = Bidirectional(LSTM(n_factors_emb, 
             input_shape=(input_length, n_factors_emb),
-            return_sequences=False,
-            name='rnn')(residual_0)
+            return_sequences=True,
+            name='rnn'))(residual_0)
+
+        attention = Dense(1, activation = 'tanh')(activations)
+        attention = Flatten()(attention)
+        attention = Activation('softmax')(attention)
+        attention = RepeatVector(2 * n_factors_emb)(attention)
+        attention = Permute([2,1])(attention)
+
+        context_embedding = Multiply()([activations, attention])
+        context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(2 * n_factors_emb,))(context_embedding)
+            
             
         # print(K.int_shape(context_embedding))
 

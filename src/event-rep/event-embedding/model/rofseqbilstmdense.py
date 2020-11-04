@@ -7,7 +7,7 @@
 
 import numpy as np
 from tensorflow.keras import backend as K
-from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM
+from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Add, Multiply, Masking, RNN, LSTM, Bidirectional, Concatenate
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
@@ -18,14 +18,14 @@ from .generic import GenericModel
 from .custom_acc import custom_acc
 
 
-class MTRFv4RofSeqLSTM(GenericModel):
+class MTRFv4RofSeqBiLSTMDense(GenericModel):
     """Multi-task non-incremental role-filler
 
     """
     def __init__(self, n_word_vocab=50001, n_role_vocab=7, n_factors_emb=300, n_hidden=300, word_vocabulary=None, role_vocabulary=None, 
         unk_word_id=50000, unk_role_id=7, missing_word_id=50001, 
         using_dropout=False, dropout_rate=0.3, optimizer='adagrad', loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=[1., 1.]):
-        super(MTRFv4RofSeqLSTM, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
+        super(MTRFv4RofSeqBiLSTMDense, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary, 
             unk_word_id, unk_role_id, missing_word_id, using_dropout, dropout_rate, optimizer, loss, metrics)
 
         # minus 1 here because one of the role is target role
@@ -99,10 +99,20 @@ class MTRFv4RofSeqLSTM(GenericModel):
         # print(K.int_shape(residual_0))
         # print(n_factors_emb)
 
-        context_embedding = LSTM(n_factors_emb, 
+        lstm, forward_h, forward_c, backward_h, backward_c = Bidirectional(LSTM(n_factors_emb, 
             input_shape=(input_length, n_factors_emb),
-            return_sequences=False,
-            name='rnn')(residual_0)
+            return_sequences=True,
+            return_state=True,
+            name='rnn'))(residual_0)
+            
+        context_embedding = Concatenate(name='concat')([forward_h, backward_h])
+
+        context_embedding = Dense(n_hidden, 
+            activation = 'linear',
+            name = 'dense_emb')(context_embedding)
+
+        context_embedding = PReLU(alpha_initializer='ones',
+            name='non_lin_dense')(context_embedding)
             
         # print(K.int_shape(context_embedding))
 
