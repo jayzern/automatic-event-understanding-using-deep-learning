@@ -105,21 +105,47 @@ def eval_GS(model_name, experiment_name, eval_file_name, model=None, print_resul
             V_ri = net.role_vocabulary['V']
             A0_ri = net.role_vocabulary['A0']
             A1_ri = net.role_vocabulary['A1']
+            
+            # (Team2-Change) added sequential processing for eval_MNR_LOC
+            if model_name in config.SEQUENTIAL_MODEL_LIST: # list of all sequential models here
+                # evaluation for sequential models
+                sent1_x = {}
+                sent2_x = {}
+                # do insertion in order
+                sent1_x[V_ri] = V1_i
+                sent2_x[V_ri] = V2_i
+                if not verb_baseline: 
+                    sent1_x[A0_ri] = A0_i
+                    sent1_x[A1_ri] = A1_i
+                    sent2_x[A0_ri] = A0_i
+                    sent2_x[A1_ri] = A1_i
+                sorted_roles = list(net.role_vocabulary.values())
+                sorted_roles.remove(V_ri)
+                sorted_roles.remove(A0_ri)
+                sorted_roles.remove(A1_ri)
+                sorted_roles.remove(n_input_length)
+                sorted_roles.sort()
 
-            sent1_x = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values())))
-            sent2_x = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values())))
+                # insert to dict
+                for elem in sorted_roles:
+                    sent1_x[elem] = net.missing_word_id
+                    sent2_x[elem] = net.missing_word_id
+                    
+            else:
+                sent1_x = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values())))
+                sent2_x = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values())))   
+            
+                sent1_x.pop(n_input_length)
+                sent2_x.pop(n_input_length)
 
-            sent1_x.pop(n_input_length)
-            sent2_x.pop(n_input_length)
-
-            sent1_x[V_ri] = V1_i
-            sent2_x[V_ri] = V2_i
-
-            if not verb_baseline: 
-                sent1_x[A0_ri] = A0_i
-                sent1_x[A1_ri] = A1_i
-                sent2_x[A0_ri] = A0_i
-                sent2_x[A1_ri] = A1_i
+                sent1_x[V_ri] = V1_i
+                sent2_x[V_ri] = V2_i
+                
+                if not verb_baseline: 
+                    sent1_x[A0_ri] = A0_i
+                    sent1_x[A1_ri] = A1_i
+                    sent2_x[A0_ri] = A0_i
+                    sent2_x[A1_ri] = A1_i
 
             zeroA = np.array([0])
 
@@ -127,7 +153,8 @@ def eval_GS(model_name, experiment_name, eval_file_name, model=None, print_resul
             s1_r = np.array(list(sent1_x.keys())).reshape((1, n_input_length))
             s2_w = np.array(list(sent2_x.values())).reshape((1, n_input_length))
             s2_r = np.array(list(sent2_x.keys())).reshape((1, n_input_length))
-
+            
+            
             if re.search('NNRF', model_name):
                 sent1_emb = sent_model.predict([s1_w, s1_r, zeroA])
                 sent2_emb = sent_model.predict([s2_w, s2_r, zeroA])

@@ -91,15 +91,28 @@ def eval_greenberg(model_name, experiment_name, evaluation, model=None, print_re
                 continue
             
             b = float(line.split()[-1])
-
-            sample = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values()) + [net.unk_role_id]))
-            sample[r_i] = w_i
+            
+             # (Team2-Change) added sequential processing for PADO/Mcrae
+            if model_name in config.SEQUENTIAL_MODEL_LIST: # list of all sequential models here
+                # evaluation for sequential models
+                sample = {}
+                sample[r_i] = w_i
+                sorted_roles = list(net.role_vocabulary.values())
+                sorted_roles.remove(r_i)
+                sorted_roles.sort()
+                # insert to dict
+                for elem in sorted_roles:
+                    sample[elem] = net.missing_word_id
+            else:
+                sample = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values()) + [net.unk_role_id]))
+                sample[r_i] = w_i
+            
             sample.pop(tr_i, None)
-
+            
             x_w_i = numpy.asarray([list(sample.values())], dtype=numpy.int64)
             x_r_i = numpy.asarray([list(sample.keys())], dtype=numpy.int64)
             y_w_i = numpy.asarray([tw_i], dtype=numpy.int64)
-
+            
             p = net.p_words(x_w_i, x_r_i, y_w_i, y_r_i)
             # pr = net.p_roles(x_w_i, x_r_i, y_w_i, y_r_i)
            
@@ -143,11 +156,17 @@ if __name__ == "__main__":
         sys.exit("Model name input argument missing missing")
     
     if len(sys.argv) > 2:
-        experiment_version = sys.argv[2]
+        data_version = sys.argv[2]
+    else:
+        sys.exit("Data version name input argument is missing")
+        
+    if len(sys.argv) > 3:
+        experiment_version = sys.argv[3]
     else:
         sys.exit("Experiment input argument missing missing")
 
-    experiment_name = model_name + '_' + experiment_version
+    #experiment_name = model_name + '_' + experiment_version
+    experiment_name = model_name + '_' + data_version + '_' + experiment_version
     
     eval_greenberg_all(model_name, experiment_name)
 

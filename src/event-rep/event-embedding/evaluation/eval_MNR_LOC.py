@@ -19,7 +19,8 @@ sys.path.append(SRC_DIR)
 import model_builder
 import config
 
-MODEL_PATH = config.MODEL_VERSION
+# MODEL_PATH = config.MODEL_VERSION
+MODEL_PATH = config.MODEL_PATH
 EVAL_PATH = os.path.join(config.EVAL_PATH, 'single/')
 RV_EVAL_PATH = os.path.join(config.EVAL_PATH, 'rv/')
 RESULTS_PATH = config.RESULTS_PATH
@@ -106,16 +107,29 @@ def eval_MNR_LOC(model_name, experiment_name, evaluation, model=None, print_resu
 
             b = float(line.split()[-1 if remove_suffix else -2])
             baseline.append(b)
-
-            input_roles_words = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values()) + [net.unk_role_id]))
-            input_roles_words[r_i] = w_i
+            
+            # (Team2-Change) added sequential processing for eval_MNR_LOC
+            if model_name in config.SEQUENTIAL_MODEL_LIST: # list of all sequential models here
+                # evaluation for sequential models
+                input_roles_words = {}
+                input_roles_words[r_i] = w_i
+                sorted_roles = list(net.role_vocabulary.values())
+                sorted_roles.remove(r_i)
+                sorted_roles.sort()
+                # insert to dict
+                for elem in sorted_roles:
+                    input_roles_words[elem] = net.missing_word_id
+            else:
+                input_roles_words = dict((r, net.missing_word_id) for r in (list(net.role_vocabulary.values()) + [net.unk_role_id]))
+                input_roles_words[r_i] = w_i
+            
             input_roles_words.pop(tr_i, None)
 
             x_w_i = numpy.asarray([list(input_roles_words.values())], dtype=numpy.int64)
             x_r_i = numpy.asarray([list(input_roles_words.keys())], dtype=numpy.int64)
 
             y_w_i = numpy.asarray([tw_i], dtype=numpy.int64)
-
+            
             p = net.p_words(x_w_i, x_r_i, y_w_i, y_r_i)
             # pr = net.p_roles(x_w_i, x_r_i, y_w_i, y_r_i)
 

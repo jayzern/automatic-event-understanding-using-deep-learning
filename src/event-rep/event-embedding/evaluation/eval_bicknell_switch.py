@@ -76,6 +76,11 @@ def eval_bicknell_switch(model_name, experiment_name, evaluation, model=None, pr
             b_correct = d2[4]
             b_incorrect = d[4]
         
+        print("A1_correct", A1_correct)
+        print("A1_incorrect", A1_incorrect)
+        print("b_correct", b_correct)
+        print("b_incorrect", b_incorrect)
+        
         if A1_correct not in net.word_vocabulary or A1_incorrect not in net.word_vocabulary:
             if A1_correct not in net.word_vocabulary and print_result:
                 print("%s MISSING FROM VOCABULARY. SKIPPING..." % A1_correct)
@@ -84,11 +89,23 @@ def eval_bicknell_switch(model_name, experiment_name, evaluation, model=None, pr
         else:
             roles = list(net.role_vocabulary.values())
             del roles[net.unk_role_id]
-
-            input_roles_words = dict((r, net.missing_word_id) for r in (roles))
-        
-            input_roles_words[net.role_vocabulary["A0"]] = utils.input_word_index(net.word_vocabulary, A0, net.unk_word_id, warn_unk=True)
-            input_roles_words[net.role_vocabulary["V"]] = utils.input_word_index(net.word_vocabulary, V, net.unk_word_id, warn_unk=True)
+            
+            # (Team2-Change) added sequential processing for eval_MNR_LOC
+            if model_name in config.SEQUENTIAL_MODEL_LIST: # list of all sequential models here
+                # evaluation for sequential models
+                input_roles_words = {}
+                input_roles_words[net.role_vocabulary["A0"]] = utils.input_word_index(net.word_vocabulary, A0, net.unk_word_id, warn_unk=True)
+                input_roles_words[net.role_vocabulary["V"]] = utils.input_word_index(net.word_vocabulary, V, net.unk_word_id, warn_unk=True)
+                roles.remove(net.role_vocabulary["A0"])
+                roles.remove(net.role_vocabulary["V"])
+                roles.sort()
+                # insert to dict
+                for elem in roles:
+                    input_roles_words[elem] = net.missing_word_id
+            else:
+                input_roles_words = dict((r, net.missing_word_id) for r in (roles))        
+                input_roles_words[net.role_vocabulary["A0"]] = utils.input_word_index(net.word_vocabulary, A0, net.unk_word_id, warn_unk=True)
+                input_roles_words[net.role_vocabulary["V"]] = utils.input_word_index(net.word_vocabulary, V, net.unk_word_id, warn_unk=True)
         
             sample = (
                 numpy.asarray([list(input_roles_words.values()), list(input_roles_words.values())], dtype=numpy.int64),     # x_w_i
@@ -116,7 +133,6 @@ def eval_bicknell_switch(model_name, experiment_name, evaluation, model=None, pr
     result_list = []
     
     for x_w_i, x_r_i, y_w_i, y_r_i, bicknell, context, a1 in samples:
-        
         p = net.p_words(x_w_i, x_r_i, y_w_i, y_r_i)
                 
         p_correct = p[0]
