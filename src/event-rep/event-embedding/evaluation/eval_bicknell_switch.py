@@ -76,11 +76,6 @@ def eval_bicknell_switch(model_name, experiment_name, evaluation, model=None, pr
             b_correct = d2[4]
             b_incorrect = d[4]
         
-        print("A1_correct", A1_correct)
-        print("A1_incorrect", A1_incorrect)
-        print("b_correct", b_correct)
-        print("b_incorrect", b_incorrect)
-        
         if A1_correct not in net.word_vocabulary or A1_incorrect not in net.word_vocabulary:
             if A1_correct not in net.word_vocabulary and print_result:
                 print("%s MISSING FROM VOCABULARY. SKIPPING..." % A1_correct)
