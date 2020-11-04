@@ -61,3 +61,6 @@ from .rofseqbilstmat2 import MTRFv4RofSeqBiLSTMAt2
 
 # classname of RoFSeq-MT: MTRFv4RofSeqBiLSTMDense
 from .rofseqbilstmdense import MTRFv4RofSeqBiLSTMDense
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAt
+from .rofseqat import MTRFv4RofSeqAt
