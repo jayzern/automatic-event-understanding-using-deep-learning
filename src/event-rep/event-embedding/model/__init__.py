@@ -64,3 +64,15 @@ from .rofseqbilstmdense import MTRFv4RofSeqBiLSTMDense
 
 # classname of RoFSeq-MT: MTRFv4RofSeqAt
 from .rofseqat import MTRFv4RofSeqAt
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAtLoc
+from .rofseqatloc import MTRFv4RofSeqAtLoc
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAtDot
+from .rofseqatdot import MTRFv4RofSeqAtDot
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAtScaledDot
+from .rofseqatscaleddot import MTRFv4RofSeqAtScaledDot
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAtGen
+from .rofseqatgen import MTRFv4RofSeqAtGen

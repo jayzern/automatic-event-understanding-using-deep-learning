@@ -272,4 +272,5 @@ SRC = False
 Sequential Model List
 '''
 SEQUENTIAL_MODEL_LIST = ["MTRFv4RofSeqLSTM", "MTRFv4RofSeqBiLSTM", "MTRFv4RofSeqRNN", "MTRFv4RofSeqBiLSTMAt", "MTRFv4RofSeqDeepLSTM", "MTRFv4RofSeqDeepLSTMAt",
-"MTRFv4RofSeqBiLSTMDense", "MTRFv4RofSeqBiLSTMAt2", "MTRFv4RofSeqAt"]
+"MTRFv4RofSeqBiLSTMDense", "MTRFv4RofSeqBiLSTMAt2", "MTRFv4RofSeqAt", "MTRFv4RofSeqAtLoc", "MTRFv4RofSeqAtDot",
+"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen"]
