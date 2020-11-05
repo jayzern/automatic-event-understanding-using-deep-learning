@@ -36,8 +36,8 @@ DATA_PATH = '/media/data-disk/data/event-rep/exp9_0.1-16-16-Roles2Args3Mods-NoFr
 
 # data2 path
 # DATA2_DIR = os.path.join(BASE_DIR, 'data/')
-DATA2_DIR = '/media/data-disk/data/event-rep/'
-# DATA2_DIR = '/home/yn2373/seq_event-rep/'
+# DATA2_DIR = '/media/data-disk/data/event-rep/'
+DATA2_DIR = '/home/yn2373/seq_event-rep/'
 
 # Model path
 MODEL_PATH = os.path.join(BASE_DIR, 'model/')
@@ -273,4 +273,4 @@ Sequential Model List
 '''
 SEQUENTIAL_MODEL_LIST = ["MTRFv4RofSeqLSTM", "MTRFv4RofSeqBiLSTM", "MTRFv4RofSeqRNN", "MTRFv4RofSeqBiLSTMAt", "MTRFv4RofSeqDeepLSTM", "MTRFv4RofSeqDeepLSTMAt",
 "MTRFv4RofSeqBiLSTMDense", "MTRFv4RofSeqBiLSTMAt2", "MTRFv4RofSeqAt", "MTRFv4RofSeqAtLoc", "MTRFv4RofSeqAtDot",
-"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen"]
+"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen", "MTRFv4RofSeqConv"]

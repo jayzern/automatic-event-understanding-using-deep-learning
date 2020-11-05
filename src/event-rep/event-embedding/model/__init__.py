@@ -21,7 +21,7 @@ from .resrofa import MTRFv4Res
 # (TEAM2-change) classname of ResRoFDense-MT: MTRFv4ResDense
 from .rofdense import MTRFv4ResDense
 
-# (TEAM2-change) classname of ResRoFDense-MT: MTRFv4ResDense
+# (TEAM2-change) classname of ResRoFDenseV2-MT: MTRFv4ResDense_v2
 from .rofdense_v2 import MTRFv4ResDense_v2
 
 # (TEAM2-change) classname of RoFAWD-MT: MTRFv4WD
@@ -30,7 +30,7 @@ from .rofawd import MTRFv4WD
 # (TEAM2-change) classname of RoFBeg-MT: MTRFv4RofBeg
 from .rofbeg import MTRFv4RofBeg
 
-# (TEAM2-change) classname of RoFBeg-MT: MTRFv4RofBeg
+# (TEAM2-change) classname of RoFBegV2-MT: MTRFv4RofBeg_v2
 from .rofbeg_v2 import MTRFv4RofBeg_v2
 
 # ablation study: sigle task version for composition methods
@@ -82,3 +82,9 @@ from .rofseqatscaleddot import MTRFv4RofSeqAtScaledDot
 
 # classname of RoFSeq-MT: MTRFv4RofSeqAtGen
 from .rofseqatgen import MTRFv4RofSeqAtGen
+
+# classname of RoFSeq-MT: MTRFv4RofSeqAtGen
+from .rofseqatgen import MTRFv4RofSeqAtGen
+
+# classname of RoFSeqConv-MT: MTRFv4RofSeqConv
+from .rofseqconv import MTRFv4RofSeqConv
