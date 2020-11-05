@@ -35,8 +35,8 @@ DATA_PATH = os.path.join(BASE_DIR, 'data/')
 DATA_PATH = '/media/data-disk/data/event-rep/exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1/'
 
 # data2 path
-DATA2_DIR = os.path.join(BASE_DIR, 'data/')
-# DATA2_DIR = '/media/data-disk/data/event-rep'
+# DATA2_DIR = os.path.join(BASE_DIR, 'data/')
+DATA2_DIR = '/media/data-disk/data/event-rep/'
 # DATA2_DIR = '/home/yn2373/seq_event-rep/'
 
 # Model path
