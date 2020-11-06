@@ -98,7 +98,7 @@ class MTRFv4RofSeqAtGen(GenericModel):
             def build(self, input_shape):
                 
                 self.W=self.add_weight(name="att_weight", shape=(input_shape[-1],input_shape[-1]),
-                                       initializer="normal")
+                                       initializer="glorot_uniform", trainable=True)
                 
                 super(general,self).build(input_shape)
                 
