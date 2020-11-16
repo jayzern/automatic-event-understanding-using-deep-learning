@@ -75,11 +75,11 @@ ANIMS = {ANIM_NONE: 0, "Animate": 1, ANIM_HMN: 2}
 """
 # Semantic role dict
 ROLES_SHORT = {
-    "A0": 0, 
-    "A1": 1, 
-    "AM-LOC": 2, 
-    "AM-TMP": 3, 
-    "AM-MNR": 4, 
+    "A0": 0,
+    "A1": 1,
+    "AM-LOC": 2,
+    "AM-TMP": 3,
+    "AM-MNR": 4,
     "V": 5,
     "<OTHER>": 6
     }
@@ -208,7 +208,7 @@ MAR17_TEST_SIZE = 200000
 # 297778 ../data/exp5-408/NN_test
 # 29939975 ../data/exp5-408/NN_train
 EXP5_408_VALID_SIZE = 299722 / 10
-EXP5_408_TEST_SIZE  = 297778 
+EXP5_408_TEST_SIZE  = 297778
 
 
 # exp6-48 files:
@@ -222,13 +222,13 @@ EXP6_48_TEST_SIZE  = 297778
 #  318482 exp1_0.01-4-4/NN_dev
 #   313730 exp1_0.01-4-4/NN_test
 #  2708494 exp1_0.01-4-4/NN_train
-EXP1_20190929_VALID_SIZE = 2708494 
+EXP1_20190929_VALID_SIZE = 2708494
 EXP1_20190929_TEST_SIZE  = 313730
 
 
 # data sizes to be used now:
 #VALID_SIZE = EXP1_20190929_VALID_SIZE # = 1561092
-#TEST_SIZE  = EXP1_20190929_TEST_SIZE  #= 240000 # 1576000   
+#TEST_SIZE  = EXP1_20190929_TEST_SIZE  #= 240000 # 1576000
 
 def getValidationSetSize(data_version):
     ret_val, VALID_SIZE = subprocess.getstatusoutput("wc -l  \"%s/%s/NN_dev\"" % (DATA2_DIR, data_version))
@@ -262,7 +262,7 @@ Evaluation configuration
 '''
 ### *** Important ***
 #   This option is for evaluation of Semantic Role Classification where semantic role is not given for each input word.
-#   Do not set this to True during the training! 
+#   Do not set this to True during the training!
 # SRC = True
 SRC = False
 
@@ -273,4 +273,4 @@ Sequential Model List
 '''
 SEQUENTIAL_MODEL_LIST = ["MTRFv4RofSeqLSTM", "MTRFv4RofSeqBiLSTM", "MTRFv4RofSeqRNN", "MTRFv4RofSeqBiLSTMAt", "MTRFv4RofSeqDeepLSTM", "MTRFv4RofSeqDeepLSTMAt",
 "MTRFv4RofSeqBiLSTMDense", "MTRFv4RofSeqAt", "MTRFv4RofSeqAtLoc", "MTRFv4RofSeqAtDot",
-"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen", "MTRFv4RofSeqConv"]
+"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen", "MTRFv4RofSeqConv", "MTRFv4RofTargSeqAt"]

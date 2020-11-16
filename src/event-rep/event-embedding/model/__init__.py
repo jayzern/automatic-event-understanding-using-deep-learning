@@ -82,3 +82,6 @@ from .rofseqatgen import MTRFv4RofSeqAtGen
 
 # classname of RoFSeqConv-MT: MTRFv4RofSeqConv
 from .rofseqconv import MTRFv4RofSeqConv
+
+# classname of RoFSeqConv-MT: MTRFv4RofTargSeqAt
+from .rofseqtargetat import MTRFv4RofTargSeqAt
