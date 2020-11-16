@@ -15,6 +15,9 @@
 5. Check the checkbox to install NVIDIA GPU driver automatically on first startup
 6. Boot disk of 100GB is enough for training
 
+#### Screenshot of Deep Learning VM Setup <br/>
+<img src=https://github.com/15huangtimothy/bloomberg-event-embedding-team2/blob/master/setup_gcloud.JPG width=300 height=400/>
+
 ### Setup Google Cloud bucket to store files (optional)
 1. Create 3 different storage buckets (one for training scripts, one for preprocessed data, one for trained model weights)
 2. setup of the three buckets <br/>
