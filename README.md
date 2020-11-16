@@ -53,7 +53,7 @@
     ├── exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1
     ├── exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v2
     ├── exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1
-    ├── exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1 (renamed, previously exp7_0.1-16-16-NoFrAn-v2 which is 10%v2 data)
+    ├── exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1 (renamed from exp7_0.1-16-16-NoFrAn-v2)
     ├── worder_exp9_0.001-16-16-Roles2Args3Mods-NoFrAn-v1
     ├── worder_exp9_0.001-16-16-Roles2Args3Mods-NoFrAn-v2
     ├── worder_exp9_0.01-16-16-Roles2Args3Mods-NoFrAn-v1
@@ -127,7 +127,8 @@ screen -s workspace -L LOG_NAME python3 main2.py MODEL_NAME DATA_FOLDER_NAME EXP
     - DATA_FOLDER_NAME = name of data folder (Ex: exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1)
     - EXPERIMENT_NAME = name of experiment (Ex: 20200717-batch1024-iters25)
     - NUM_EPOCHS = number of epochs used for training (Ex: 25). Note: training can last less than NUM_EPOCHS due to early stopping
-    - BATCH_SIZE = batchsize used for experiment
+    - BATCH_SIZE = batchsize used for experiment (Ex: 1024)
+    - LOG_NAME = log name txt file (Ex: log_0.1v1_resrofa_trial1.txt)
     
 - Example commands for ResRoFa without screen command (Baseline)
 ```
