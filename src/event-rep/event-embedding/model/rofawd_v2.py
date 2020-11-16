@@ -44,8 +44,10 @@ class MTRFv4WD_v2(GenericModel):
         input_words_ohe = K.one_hot(input_words, n_word_vocab)
         input_roles_ohe = K.one_hot(input_roles, n_role_vocab)
 
-        ## ADDED
+        # embedding init
         emb_init = glorot_uniform()
+
+        # embeddings for word and role
         word_embedding = Embedding(n_word_vocab, n_factors_emb, 
             embeddings_initializer=emb_init,
             name='org_word_embedding')(input_words)
@@ -80,17 +82,13 @@ class MTRFv4WD_v2(GenericModel):
             input_shape=(n_factors_emb,), 
             name='role_based_word_embedding')(product)
 
-        ## REPLACE
-        # embedding_layer = factored_embedding(input_words, input_roles, n_word_vocab, n_role_vocab, glorot_uniform(), 
-        #     missing_word_id, input_length, n_factors_emb, n_hidden, True, using_dropout, dropout_rate)
-
         # concatenate
         embedding_concat_layer = Concatenate(name = "embedding_concat_layer")([input_words_ohe, input_roles_ohe, embedding_layer])
 
         # non-linear layer, using 1 to initialize
         non_linearity = PReLU(alpha_initializer='ones')(embedding_concat_layer)
 
-        ## ADDED
+        # dense to match shapes then add residual connection
         flattened = Flatten(name = "flattened")(non_linearity)
         dense = Dense(n_factors_emb, 
             activation='linear', 
@@ -98,17 +96,6 @@ class MTRFv4WD_v2(GenericModel):
             )(flattened)
         residual_0 = Add(name='residual_0')([product, dense])
 
-        ## REMOVE
-        # #instead of taking the mean, we Flatten and do a Dense
-        # flattened = Flatten(name = "flattened")(non_linearity)
-        # dense = Dense(n_factors_emb, 
-        #     activation='linear', 
-        #     input_shape=(input_length * (n_factors_emb + n_word_vocab + n_role_vocab), ),
-        #     )(flattened)
-        # #PRelu activation
-        # non_linearity_2 = PReLU(alpha_initializer='ones')(dense)
-
-        ## ADDED
         # mean on input_length direction;
         # obtaining context embedding layer, shape is (batch_size, n_hidden)
         context_embedding = Lambda(lambda x: K.mean(x, axis=1), 
