@@ -151,9 +151,10 @@ screen -s workspace -L log_0.1v1_resrofa_trial1.txt python3 main2.py MTRFv4Res \
 | RoFWD  | rofawd.py  | MTRFv4WD  | exp9...  |
 | ResRoFDense  | rofdense_v2.py  | MTRFv4ResDense_v2  | exp9...  |
 | ResRoFBeg  | rofbeg_v2.py  | MTRFv4RofBeg_v2  | exp9...  |
-| ResRoFWD  | ?  | ?  | exp9...  |
+| ResRoFWD  | rofawd_v2.py  | MTRFv4WD_v2  | exp9...  |
 | ResRoFSeqRNN  | rofseqrnn.py  | MTRFv4RofSeqRNN | worder_exp9...  |
 | ResRoFSeqLSTM  | rofseqlstm.py  | MTRFv4RofSeqLSTM | worder_exp9...  |
+| ResRoFSeqDeepLSTM  | rofseqdeeplstm.py  | MTRFv4RofSeqDeepLSTM | worder_exp9...  |
 | ResRoFSeqBiLSTM  | rofseqbilstm.py  | MTRFv4RofSeqBiLSTM | worder_exp9...  |
 | ResRoFSeqBiLSTMDense  | rofseqbilstmdense.py  | MTRFv4RofSeqBiLSTMDense | worder_exp9...  |
 | ResRoFSeqBiLSTMAt  | rofseqbilstmat.py  | MTRFv4RofSeqBiLSTMAt | worder_exp9...  |
@@ -162,6 +163,7 @@ screen -s workspace -L log_0.1v1_resrofa_trial1.txt python3 main2.py MTRFv4Res \
 | ResRoFSeqAtScaledDot  | rofseqatscaleddot.py  | MTRFv4RofSeqAtScaledDot | worder_exp9...  |
 | ResRoFSeqAtGen  | rofseqatgen.py  | MTRFv4RofSeqAtGen | worder_exp9...  |
 | ResRoFSeqAtLoc  | rofseqatloc.py  | MTRFv4RofSeqAtLoc | worder_exp9...  |
+| ResRoFSeqTargAt  | rofseqtargetat.py  | MTRFv4RofSeqTargAt | worder_exp9...  |
 | ResRoFSeqConv  | rofseqconv.py  | MTRFv4RofSeqConv | worder_exp9...  |
 
 5. Continue training from last checkpoint
