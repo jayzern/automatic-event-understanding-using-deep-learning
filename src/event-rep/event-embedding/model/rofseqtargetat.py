@@ -18,7 +18,7 @@ from .generic import GenericModel
 from .custom_acc import custom_acc
 
 
-class MTRFv4RofTargSeqAt(GenericModel):
+class MTRFv4RofSeqTargAt(GenericModel):
     """Multi-task non-incremental role-filler
 
     """
