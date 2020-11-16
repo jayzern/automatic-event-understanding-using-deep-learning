@@ -273,4 +273,4 @@ Sequential Model List
 '''
 SEQUENTIAL_MODEL_LIST = ["MTRFv4RofSeqLSTM", "MTRFv4RofSeqBiLSTM", "MTRFv4RofSeqRNN", "MTRFv4RofSeqBiLSTMAt", "MTRFv4RofSeqDeepLSTM", "MTRFv4RofSeqDeepLSTMAt",
 "MTRFv4RofSeqBiLSTMDense", "MTRFv4RofSeqAt", "MTRFv4RofSeqAtLoc", "MTRFv4RofSeqAtDot",
-"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen", "MTRFv4RofSeqConv", "MTRFv4RofTargSeqAt"]
+"MTRFv4RofSeqAtScaledDot", "MTRFv4RofSeqAtGen", "MTRFv4RofSeqConv", "MTRFv4RofSeqTargAt"]
