@@ -137,13 +137,28 @@ screen -s workspace -L log_0.1v1_resrofa_trial1.txt python3 main2.py MTRFv4Res \
         exp9_0.1-16-16-Roles2Args3Mods-NoFrAn-v1 20200717-batch1024-iters25 \
         --epochs 25 --batch_size 1024 --role_set Roles2Args3Mods
 ```
-- Table of all model names, files, and data used
+- Table of all model name, model file, model name command, and data used
 
-| Model Name | Model File | Data Used |
-| ------------- | ------------- | ------------- | 
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-
+| Model Name | Model File | Model Name Command | Data Used |
+| ------------- | ------------- | ------------- | ------------- | 
+| ResRofa-MT  | resrofa.py  | MTRFv4Res  | exp9...  |
+| RoFDense  | rofdense.py  | MTRFv4ResDense  | exp9...  |
+| RoFBeg  | rofbeg.py  | MTRFv4RofBeg  | exp9...  |
+| RoFWD  | rofawd.py  | MTRFv4WD  | exp9...  |
+| ResRoFDense  | rofdense_v2.py  | MTRFv4ResDense_v2  | exp9...  |
+| ResRoFBeg  | rofbeg_v2.py  | MTRFv4RofBeg_v2  | exp9...  |
+| ResRoFWD  | ?  | ?  | exp9...  |
+| ResRoFSeqRNN  | rofseqrnn.py  | MTRFv4RofSeqRNN | worder_exp9...  |
+| ResRoFSeqLSTM  | rofseqlstm.py  | MTRFv4RofSeqLSTM | worder_exp9...  |
+| ResRoFSeqBiLSTM  | rofseqbilstm.py  | MTRFv4RofSeqBiLSTM | worder_exp9...  |
+| ResRoFSeqBiLSTMDense  | rofseqbilstmdense.py  | MTRFv4RofSeqBiLSTMDense | worder_exp9...  |
+| ResRoFSeqBiLSTMAt  | rofseqbilstmat.py  | MTRFv4RofSeqBiLSTMAt | worder_exp9...  |
+| ResRoFSeqAt  | rofseqat.py  | MTRFv4RofSeqAt | worder_exp9...  |
+| ResRoFSeqAtDot  | rofseqatdot.py  | MTRFv4RofSeqAtDot | worder_exp9...  |
+| ResRoFSeqAtScaledDot  | rofseqatscaleddot.py  | MTRFv4RofSeqAtScaledDot | worder_exp9...  |
+| ResRoFSeqAtGen  | rofseqatgen.py  | MTRFv4RofSeqAtGen | worder_exp9...  |
+| ResRoFSeqAtLoc  | rofseqatloc.py  | MTRFv4RofSeqAtLoc | worder_exp9...  |
+| ResRoFSeqConv  | rofseqconv.py  | MTRFv4RofSeqConv | worder_exp9...  |
 
 5. Continue training from last checkpoint
 ```
