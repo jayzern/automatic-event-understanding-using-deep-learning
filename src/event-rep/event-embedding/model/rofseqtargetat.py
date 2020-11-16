@@ -11,6 +11,7 @@ from tensorflow.keras.layers import Input, Embedding, Dropout, Dense, Lambda, Ad
 from tensorflow.keras.initializers import glorot_uniform
 from tensorflow.keras.layers import PReLU
 from tensorflow.keras.models import Model, load_model
+from tensorflow import squeeze
 
 from .embeddings import factored_embedding
 from .layers import target_word_hidden, target_role_hidden
