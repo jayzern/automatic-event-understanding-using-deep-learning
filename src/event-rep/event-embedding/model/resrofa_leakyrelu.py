@@ -25,7 +25,7 @@ class MTRFv4ResLeakyReLU(GenericModel):
     def __init__(self, n_word_vocab=50001, n_role_vocab=7, n_factors_emb=300, n_hidden=300, word_vocabulary=None, role_vocabulary=None,
         unk_word_id=50000, unk_role_id=7, missing_word_id=50001,
         using_dropout=False, dropout_rate=0.3, optimizer='adagrad', loss='sparse_categorical_crossentropy', metrics=['accuracy'], loss_weights=[1., 1.]):
-        super(MTRFv4Res, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary,
+        super(MTRFv4ResLeakyReLU, self).__init__(n_word_vocab, n_role_vocab, n_factors_emb, n_hidden, word_vocabulary, role_vocabulary,
             unk_word_id, unk_role_id, missing_word_id, using_dropout, dropout_rate, optimizer, loss, metrics)
 
         # minus 1 here because one of the role is target role
@@ -78,7 +78,7 @@ class MTRFv4ResLeakyReLU(GenericModel):
             name='lin_proj')(product)
 
         non_lin = LeakyReLU(
-            alpha_=0.3,
+            alpha=0.3,
             name='non_lin')(lin_proj)
 
         # fully connected layer, output shape is (batch_size, input_length, n_hidden)
