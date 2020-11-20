@@ -86,5 +86,8 @@ from .rofseqatgen import MTRFv4RofSeqAtGen
 # classname of RoFSeqConv-MT: MTRFv4RofSeqConv
 from .rofseqconv import MTRFv4RofSeqConv
 
-# classname of RoFSeqConv-MT: MTRFv4RofSeqTargAt
+# classname of RoFSeqTargAt-MT: MTRFv4RofSeqTargAt
 from .rofseqtargetat import MTRFv4RofSeqTargAt
+
+# class name of ResRoFA-MT with LeakyRelu nonlinear function
+from .resrofa_leakyrelu import MTRFv4ResLeakyReLU
