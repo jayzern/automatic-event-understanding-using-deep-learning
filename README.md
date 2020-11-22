@@ -146,6 +146,8 @@ screen -s workspace -L log_0.1v1_resrofa_trial1.txt python3 main2.py MTRFv4Res \
 | Model Name | Model File | Model Name Command | Data Used |
 | ------------- | ------------- | ------------- | ------------- | 
 | ResRofa-MT  | resrofa.py  | MTRFv4Res  | exp9...  |
+| ResRofa-MT LeakyReLU  | resrofa_leakyrelu.py  | MTRFv4ResLeakyReLU  | exp9...  |
+| ResRofa-MT SharedReLU | resrofa_shared.py  | MTRFv4ResShared  | exp9...  |
 | RoFDense  | rofdense.py  | MTRFv4ResDense  | exp9...  |
 | RoFBeg  | rofbeg.py  | MTRFv4RofBeg  | exp9...  |
 | RoFWD  | rofawd.py  | MTRFv4WD  | exp9...  |
