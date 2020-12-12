@@ -116,7 +116,7 @@ class MTRFv4RofSeqAtGen(GenericModel):
         attention = Permute([2,1])(attention)
 
         context_embedding = Multiply()([activations, attention])
-        context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,))(context_embedding)
+        context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,), name='context_embedding')(context_embedding)
             
             
         # print(K.int_shape(context_embedding))

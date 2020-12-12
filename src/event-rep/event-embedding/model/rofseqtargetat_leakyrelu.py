@@ -128,10 +128,10 @@ class MTRFv4RofSeqTargAtLeakyReLU(GenericModel):
         targ_role_attention = Permute([2,1])(targ_role_attention)
 
         targ_word_context_embedding = Multiply()([activations, targ_word_attention])
-        targ_word_context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,))(targ_word_context_embedding)
+        targ_word_context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,), name='context_embedding')(targ_word_context_embedding)
 
         targ_role_context_embedding = Multiply()([activations, targ_role_attention])
-        targ_role_context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,))(targ_role_context_embedding)
+        targ_role_context_embedding = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(n_factors_emb,), name='context_embedding')(targ_role_context_embedding)
 
         # print(K.int_shape(context_embedding))
 
